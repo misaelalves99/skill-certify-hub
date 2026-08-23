@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -8,19 +9,19 @@ export default function Home() {
       </a>
 
       <header className={styles.header}>
-        <a className={styles.brand} href="/" aria-label="Skill Certify Hub home">
+        <Link className={styles.brand} href="/" aria-label="Skill Certify Hub home">
           <span className={styles.brandMark} aria-hidden="true">
             SC
           </span>
           <span>Skill Certify Hub</span>
-        </a>
+        </Link>
 
         <details className={styles.mobileMenu}>
           <summary aria-label="Open navigation menu">Menu</summary>
           <nav aria-label="Mobile navigation">
-            <a href="/" aria-current="page">
+            <Link href="/" aria-current="page">
               Home
-            </a>
+            </Link>
           </nav>
         </details>
 
@@ -33,9 +34,9 @@ export default function Home() {
         <aside className={styles.sidebar}>
           <nav aria-label="Primary navigation">
             <p className={styles.navLabel}>Workspace</p>
-            <a className={styles.navItem} href="/" aria-current="page">
+            <Link className={styles.navItem} href="/" aria-current="page">
               Home
-            </a>
+            </Link>
           </nav>
         </aside>
 
