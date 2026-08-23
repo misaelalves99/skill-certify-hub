@@ -2,28 +2,8 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { certifications } from "./catalog";
 import styles from "./page.module.css";
-
-const certifications = [
-  {
-    id: "cert-frontend-foundations",
-    title: "Frontend Foundations",
-    issuer: "Synthetic Learning Institute",
-    level: "Foundational",
-  },
-  {
-    id: "cert-web-platform",
-    title: "Web Platform Essentials",
-    issuer: "Demo Standards Academy",
-    level: "Intermediate",
-  },
-  {
-    id: "cert-typescript-practice",
-    title: "TypeScript Practice",
-    issuer: "Sample Developer Guild",
-    level: "Intermediate",
-  },
-] as const;
 
 export default function CertificationsPage() {
   const [query, setQuery] = useState("");
@@ -130,9 +110,12 @@ export default function CertificationsPage() {
                       </div>
                       <h3>{certification.title}</h3>
                       <p>{certification.issuer}</p>
-                      <div className={styles.cardBoundary}>
-                        Detail view is deferred to the next governed task.
-                      </div>
+                      <Link
+                        className={styles.detailLink}
+                        href={`/certifications/${certification.id}`}
+                      >
+                        View synthetic detail
+                      </Link>
                     </article>
                   ))}
                 </div>
