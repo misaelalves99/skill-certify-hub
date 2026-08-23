@@ -7,16 +7,21 @@ const pageSource = await readFile(
   "utf8",
 );
 
+const normalizedPageSource = pageSource.replace(/\s+/g, " ");
+
 test("dashboard exposes the approved empty-state experience", () => {
-  assert.match(pageSource, /Your certification workspace/);
-  assert.match(pageSource, /Nothing to track yet/);
-  assert.match(pageSource, /Your dashboard is ready for the catalog/);
-  assert.match(pageSource, /Synthetic preview/);
+  assert.match(normalizedPageSource, /Your certification workspace/);
+  assert.match(normalizedPageSource, /Nothing to track yet/);
+  assert.match(normalizedPageSource, /Your dashboard is ready for the catalog/);
+  assert.match(normalizedPageSource, /Synthetic preview/);
 });
 
 test("dashboard does not present deferred capabilities as implemented", () => {
-  assert.match(pageSource, /No certifications or progress records are loaded/);
-  assert.match(pageSource, /does not represent a connected account, saved progress, or live catalog data/);
-  assert.match(pageSource, /Pending a governed implementation task/);
-  assert.doesNotMatch(pageSource, /href="\/certifications"/);
+  assert.match(normalizedPageSource, /No certifications or progress records are loaded/);
+  assert.match(
+    normalizedPageSource,
+    /does not represent a connected account, saved progress, or live catalog data/,
+  );
+  assert.match(normalizedPageSource, /Pending a governed implementation task/);
+  assert.doesNotMatch(normalizedPageSource, /href="\/certifications"/);
 });
