@@ -25,5 +25,9 @@ test("dashboard exposes catalog navigation without implying deferred capabilitie
   assert.match(normalizedPageSource, /Synthetic catalog/);
   assert.match(normalizedPageSource, /href="\/certifications"/);
   assert.match(normalizedPageSource, /Browse synthetic catalog/);
-  assert.doesNotMatch(normalizedPageSource, /saved account|live catalog|persistent progress/i);
+  assert.match(
+    normalizedPageSource,
+    /remains intentionally empty rather than inventing user history, analytics, or backend state/,
+  );
+  assert.doesNotMatch(normalizedPageSource, /Sign in|Log in|Saved progress|Live catalog/i);
 });
