@@ -22,6 +22,7 @@ export default function Home() {
             <Link href="/" aria-current="page">
               Dashboard
             </Link>
+            <Link href="/certifications">Certifications</Link>
           </nav>
         </details>
 
@@ -37,10 +38,10 @@ export default function Home() {
             <Link className={styles.navItem} href="/" aria-current="page">
               Dashboard
             </Link>
-            <span className={styles.navPending} aria-disabled="true">
+            <Link className={styles.navPending} href="/certifications">
               Certifications
-              <small>Coming next</small>
-            </span>
+              <small>Synthetic catalog</small>
+            </Link>
           </nav>
         </aside>
 
@@ -84,16 +85,15 @@ export default function Home() {
                 <p className={styles.sectionLabel}>Empty state</p>
                 <h2 id="empty-title">Your dashboard is ready for the catalog</h2>
                 <p>
-                  The next frontend surface will introduce a certification list
-                  using clearly identified synthetic data. Until then, this
-                  dashboard stays intentionally empty rather than inventing user
-                  history, analytics, or backend state.
+                  The certification list now uses clearly identified synthetic data.
+                  This dashboard remains intentionally empty rather than inventing
+                  user history, analytics, or backend state.
                 </p>
               </div>
-              <div className={styles.nextStep} aria-label="Next product step">
-                <span>Next surface</span>
+              <div className={styles.nextStep} aria-label="Available product step">
+                <span>Available surface</span>
                 <strong>Certifications catalog</strong>
-                <small>Pending a governed implementation task</small>
+                <Link href="/certifications">Browse synthetic catalog</Link>
               </div>
             </section>
           </div>
