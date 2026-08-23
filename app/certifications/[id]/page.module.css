@@ -1,0 +1,141 @@
+.main {
+  min-height: 100vh;
+  background: var(--color-canvas);
+  color: var(--color-text);
+  padding: clamp(36px, 6vw, 72px) clamp(22px, 7vw, 96px) 72px;
+}
+
+.content {
+  width: min(100%, 920px);
+  margin: 0 auto;
+}
+
+.backLink {
+  display: inline-flex;
+  color: var(--color-text-secondary);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.headingRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 42px;
+}
+
+.eyebrow,
+.label {
+  color: var(--color-text-eyebrow);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.headingRow h1 {
+  max-width: 720px;
+  margin-top: 10px;
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 650;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.badge {
+  flex: 0 0 auto;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-subtle);
+  padding: 8px 11px;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.summary {
+  max-width: 760px;
+  margin-top: 24px;
+  color: var(--color-text-muted);
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.65;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 42px;
+}
+
+.panel > div,
+.boundary {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 18px;
+  background: var(--color-surface);
+  padding: 24px;
+}
+
+.value {
+  margin-top: 10px;
+  color: var(--color-text);
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.boundary {
+  margin-top: 18px;
+  background: var(--color-surface-subtle);
+}
+
+.boundary h2 {
+  margin-top: 8px;
+  font-size: clamp(24px, 3vw, 32px);
+  letter-spacing: -0.035em;
+}
+
+.boundary p:last-child {
+  max-width: 760px;
+  margin-top: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.backLink:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  .main {
+    padding: 32px 22px 56px;
+  }
+
+  .headingRow {
+    display: block;
+    margin-top: 34px;
+  }
+
+  .badge {
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+  .panel {
+    grid-template-columns: 1fr;
+    margin-top: 34px;
+  }
+}
