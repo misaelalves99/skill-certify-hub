@@ -23,6 +23,7 @@ export default function Home() {
               Dashboard
             </Link>
             <Link href="/certifications">Certifications</Link>
+            <Link href="/practices">Practices</Link>
           </nav>
         </details>
 
@@ -41,6 +42,10 @@ export default function Home() {
             <Link className={styles.navPending} href="/certifications">
               Certifications
               <small>Synthetic catalog</small>
+            </Link>
+            <Link className={styles.navPending} href="/practices">
+              Practices
+              <small>Local synthetic status</small>
             </Link>
           </nav>
         </aside>
@@ -91,9 +96,10 @@ export default function Home() {
                 </p>
               </div>
               <div className={styles.nextStep} aria-label="Available product step">
-                <span>Available surface</span>
-                <strong>Certifications catalog</strong>
+                <span>Available surfaces</span>
+                <strong>Catalog and practices</strong>
                 <Link href="/certifications">Browse synthetic catalog</Link>
+                <Link href="/practices">Review practice status</Link>
               </div>
             </section>
           </div>
