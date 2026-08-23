@@ -30,7 +30,7 @@ test("evidence surface preserves frontend-only non-persistent boundaries", () =>
   assert.match(normalizedPageSource, /no upload, remote storage, account association, API, database or persistence/);
   assert.doesNotMatch(normalizedPageSource, /fetch\s*\(/);
   assert.doesNotMatch(normalizedPageSource, /localStorage|sessionStorage|indexedDB/i);
-  assert.doesNotMatch(normalizedPageSource, /FormData|multipart|upload/i);
+  assert.doesNotMatch(normalizedPageSource, /\bFormData\b|multipart\/form-data|type=["']file["']/i);
 });
 
 test("repository exposes a reproducible axe scan for the evidence route", () => {
