@@ -27,9 +27,7 @@ export default function CertificationsPage() {
 
   return (
     <div className={styles.shell}>
-      <a className={styles.skipLink} href="#main-content">
-        Skip to main content
-      </a>
+      <a className={styles.skipLink} href="#main-content">Skip to main content</a>
 
       <header className={styles.header}>
         <Link className={styles.brand} href="/" aria-label="Skill Certify Hub home">
@@ -43,12 +41,11 @@ export default function CertificationsPage() {
             <Link href="/">Dashboard</Link>
             <Link href="/certifications" aria-current="page">Certifications</Link>
             <Link href="/practices">Practices</Link>
+            <Link href="/evidence">Evidence</Link>
           </nav>
         </details>
 
-        <div className={styles.status} aria-label="Application status">
-          Frontend preview
-        </div>
+        <div className={styles.status} aria-label="Application status">Frontend preview</div>
       </header>
 
       <div className={styles.workspace}>
@@ -56,10 +53,9 @@ export default function CertificationsPage() {
           <nav aria-label="Primary navigation">
             <p className={styles.navLabel}>Workspace</p>
             <Link className={styles.navLink} href="/">Dashboard</Link>
-            <Link className={styles.navItem} href="/certifications" aria-current="page">
-              Certifications
-            </Link>
+            <Link className={styles.navItem} href="/certifications" aria-current="page">Certifications</Link>
             <Link className={styles.navLink} href="/practices">Practices</Link>
+            <Link className={styles.navLink} href="/evidence">Evidence</Link>
           </nav>
         </aside>
 
@@ -112,10 +108,7 @@ export default function CertificationsPage() {
                       </div>
                       <h3>{certification.title}</h3>
                       <p>{certification.issuer}</p>
-                      <Link
-                        className={styles.detailLink}
-                        href={`/certifications/${certification.id}`}
-                      >
+                      <Link className={styles.detailLink} href={`/certifications/${certification.id}`}>
                         View synthetic detail
                       </Link>
                     </article>
