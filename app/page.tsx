@@ -20,13 +20,13 @@ export default function Home() {
           <summary aria-label="Open navigation menu">Menu</summary>
           <nav aria-label="Mobile navigation">
             <Link href="/" aria-current="page">
-              Home
+              Dashboard
             </Link>
           </nav>
         </details>
 
         <div className={styles.status} aria-label="Application status">
-          Foundation
+          Frontend preview
         </div>
       </header>
 
@@ -35,27 +35,66 @@ export default function Home() {
           <nav aria-label="Primary navigation">
             <p className={styles.navLabel}>Workspace</p>
             <Link className={styles.navItem} href="/" aria-current="page">
-              Home
+              Dashboard
             </Link>
+            <span className={styles.navPending} aria-disabled="true">
+              Certifications
+              <small>Coming next</small>
+            </span>
           </nav>
         </aside>
 
         <main className={styles.main} id="main-content" tabIndex={-1}>
           <div className={styles.content}>
-            <p className={styles.eyebrow}>Product foundation</p>
-            <h1>Skill Certify Hub</h1>
-            <p className={styles.lead}>
-              A responsive application structure ready for future product
-              capabilities.
-            </p>
+            <div className={styles.intro}>
+              <div>
+                <p className={styles.eyebrow}>Dashboard</p>
+                <h1>Your certification workspace</h1>
+                <p className={styles.lead}>
+                  Start from a clear overview while the certification catalog is
+                  being built as the next governed product surface.
+                </p>
+              </div>
 
-            <section className={styles.foundation} aria-labelledby="foundation-title">
-              <h2 id="foundation-title">Foundation shell</h2>
+              <div className={styles.previewBadge}>
+                <span aria-hidden="true" />
+                Synthetic preview
+              </div>
+            </div>
+
+            <section className={styles.summary} aria-labelledby="summary-title">
+              <div>
+                <p className={styles.sectionLabel}>Current view</p>
+                <h2 id="summary-title">Nothing to track yet</h2>
+              </div>
               <p>
-                This baseline establishes navigation, semantic landmarks and a
-                responsive composition without introducing future feature
-                screens.
+                No certifications or progress records are loaded in this frontend
+                slice. This empty state is intentional and does not represent a
+                connected account, saved progress, or live catalog data.
               </p>
+            </section>
+
+            <section className={styles.emptyState} aria-labelledby="empty-title">
+              <div className={styles.emptyIcon} aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </div>
+              <div className={styles.emptyCopy}>
+                <p className={styles.sectionLabel}>Empty state</p>
+                <h2 id="empty-title">Your dashboard is ready for the catalog</h2>
+                <p>
+                  The next frontend surface will introduce a certification list
+                  using clearly identified synthetic data. Until then, this
+                  dashboard stays intentionally empty rather than inventing user
+                  history, analytics, or backend state.
+                </p>
+              </div>
+              <div className={styles.nextStep} aria-label="Next product step">
+                <span>Next surface</span>
+                <strong>Certifications catalog</strong>
+                <small>Pending a governed implementation task</small>
+              </div>
             </section>
           </div>
         </main>

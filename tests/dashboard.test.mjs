@@ -1,0 +1,27 @@
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import test from "node:test";
+
+const pageSource = await readFile(
+  new URL("../app/page.tsx", import.meta.url),
+  "utf8",
+);
+
+const normalizedPageSource = pageSource.replace(/\s+/g, " ");
+
+test("dashboard exposes the approved empty-state experience", () => {
+  assert.match(normalizedPageSource, /Your certification workspace/);
+  assert.match(normalizedPageSource, /Nothing to track yet/);
+  assert.match(normalizedPageSource, /Your dashboard is ready for the catalog/);
+  assert.match(normalizedPageSource, /Synthetic preview/);
+});
+
+test("dashboard does not present deferred capabilities as implemented", () => {
+  assert.match(normalizedPageSource, /No certifications or progress records are loaded/);
+  assert.match(
+    normalizedPageSource,
+    /does not represent a connected account, saved progress, or live catalog data/,
+  );
+  assert.match(normalizedPageSource, /Pending a governed implementation task/);
+  assert.doesNotMatch(normalizedPageSource, /href="\/certifications"/);
+});
