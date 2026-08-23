@@ -1,69 +1,65 @@
-import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className={styles.shell}>
+      <a className={styles.skipLink} href="#main-content">
+        Skip to main content
+      </a>
+
+      <header className={styles.header}>
+        <Link className={styles.brand} href="/" aria-label="Skill Certify Hub home">
+          <span className={styles.brandMark} aria-hidden="true">
+            SC
+          </span>
+          <span>Skill Certify Hub</span>
+        </Link>
+
+        <details className={styles.mobileMenu}>
+          <summary aria-label="Open navigation menu">Menu</summary>
+          <nav aria-label="Mobile navigation">
+            <Link href="/" aria-current="page">
+              Home
+            </Link>
+          </nav>
+        </details>
+
+        <div className={styles.status} aria-label="Application status">
+          Foundation
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </header>
+
+      <div className={styles.workspace}>
+        <aside className={styles.sidebar}>
+          <nav aria-label="Primary navigation">
+            <p className={styles.navLabel}>Workspace</p>
+            <Link className={styles.navItem} href="/" aria-current="page">
+              Home
+            </Link>
+          </nav>
+        </aside>
+
+        <main className={styles.main} id="main-content" tabIndex={-1}>
+          <div className={styles.content}>
+            <p className={styles.eyebrow}>Product foundation</p>
+            <h1>Skill Certify Hub</h1>
+            <p className={styles.lead}>
+              A responsive application structure ready for future product
+              capabilities.
+            </p>
+
+            <section className={styles.foundation} aria-labelledby="foundation-title">
+              <h2 id="foundation-title">Foundation shell</h2>
+              <p>
+                This baseline establishes navigation, semantic landmarks and a
+                responsive composition without introducing future feature
+                screens.
+              </p>
+            </section>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }

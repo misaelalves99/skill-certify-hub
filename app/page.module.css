@@ -1,150 +1,236 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+.shell {
+  min-height: 100vh;
+  background: #f6f7f9;
+  color: #17191c;
+}
 
-  --text-primary: #000;
-  --text-secondary: #666;
+.skipLink {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  transform: translateY(-160%);
+  border-radius: 8px;
+  background: #17191c;
+  color: #fff;
+  padding: 10px 14px;
+  font-weight: 600;
+}
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+.skipLink:focus {
+  transform: translateY(0);
+}
 
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
-  flex: 1;
-  flex-direction: column;
+  min-height: 68px;
   align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid #e2e5e9;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 0 28px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.brandMark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 9px;
+  background: #17191c;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.status {
+  border: 1px solid #d9dde3;
+  border-radius: 999px;
+  background: #f8f9fa;
+  padding: 7px 11px;
+  color: #5d636d;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.workspace {
+  display: grid;
+  min-height: calc(100vh - 68px);
+  grid-template-columns: 220px minmax(0, 1fr);
+}
+
+.sidebar {
+  border-right: 1px solid #e2e5e9;
+  background: #fff;
+  padding: 30px 18px;
+}
+
+.navLabel {
+  margin: 0 10px 10px;
+  color: #7a818c;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.navItem {
+  display: block;
+  border-radius: 9px;
+  background: #f0f2f5;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 650;
 }
 
 .main {
-  display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  min-width: 0;
+  padding: clamp(44px, 8vw, 96px) clamp(24px, 7vw, 96px);
+  outline: none;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+.content {
+  width: min(100%, 760px);
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+.eyebrow {
+  margin-bottom: 14px;
+  color: #666d77;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
 }
 
-.intro p {
-  max-width: 440px;
+.content h1 {
+  max-width: 680px;
+  font-size: clamp(42px, 7vw, 72px);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.lead {
+  max-width: 620px;
+  margin-top: 24px;
+  color: #565d67;
+  font-size: clamp(18px, 2.3vw, 22px);
+  line-height: 1.6;
+}
+
+.foundation {
+  margin-top: 56px;
+  border-top: 1px solid #dfe3e8;
+  padding-top: 28px;
+}
+
+.foundation h2 {
+  margin-bottom: 10px;
   font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+  letter-spacing: -0.02em;
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
+.foundation p {
+  max-width: 620px;
+  color: #656c76;
+  line-height: 1.7;
 }
 
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+.mobileMenu {
+  display: none;
+  position: relative;
 }
 
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
+.mobileMenu summary {
   cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  list-style: none;
+  border: 1px solid #d9dde3;
+  border-radius: 8px;
+  padding: 8px 11px;
+  font-size: 14px;
+  font-weight: 650;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.mobileMenu summary::-webkit-details-marker {
+  display: none;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.mobileMenu nav {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 160px;
+  border: 1px solid #dfe3e8;
+  border-radius: 10px;
+  background: #fff;
+  padding: 8px;
+  box-shadow: 0 14px 40px rgba(23, 25, 28, 0.12);
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+.mobileMenu nav a {
+  display: block;
+  border-radius: 7px;
+  padding: 9px 10px;
+  font-weight: 600;
+}
+
+.brand:focus-visible,
+.navItem:focus-visible,
+.mobileMenu summary:focus-visible,
+.mobileMenu nav a:focus-visible {
+  outline: 3px solid #17191c;
+  outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  .header {
+    min-height: 62px;
+    padding: 0 18px;
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  .status,
+  .sidebar {
+    display: none;
   }
-}
 
-@media (max-width: 600px) {
+  .mobileMenu {
+    display: block;
+  }
+
+  .workspace {
+    min-height: calc(100vh - 62px);
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .main {
-    padding: 48px 24px;
+    padding: 48px 22px 64px;
   }
 
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+  .foundation {
+    margin-top: 44px;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+@media (max-width: 380px) {
+  .brand {
+    gap: 9px;
+    font-size: 14px;
   }
 
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .brandMark {
+    width: 30px;
+    height: 30px;
   }
-}
-
-.code {
-  font-family: var(--font-geist-mono);
-  font-size: 0.9em;
-  background: color-mix(in srgb, currentColor 8%, transparent);
-  padding: 0.1em 0.4em;
-  border-radius: 6px;
 }
