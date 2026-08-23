@@ -16,12 +16,14 @@ test("dashboard exposes the approved empty-state experience", () => {
   assert.match(normalizedPageSource, /Synthetic preview/);
 });
 
-test("dashboard does not present deferred capabilities as implemented", () => {
+test("dashboard exposes catalog navigation without implying deferred capabilities", () => {
   assert.match(normalizedPageSource, /No certifications or progress records are loaded/);
   assert.match(
     normalizedPageSource,
     /does not represent a connected account, saved progress, or live catalog data/,
   );
-  assert.match(normalizedPageSource, /Pending a governed implementation task/);
-  assert.doesNotMatch(normalizedPageSource, /href="\/certifications"/);
+  assert.match(normalizedPageSource, /Synthetic catalog/);
+  assert.match(normalizedPageSource, /href="\/certifications"/);
+  assert.match(normalizedPageSource, /Browse synthetic catalog/);
+  assert.doesNotMatch(normalizedPageSource, /saved account|live catalog|persistent progress/i);
 });
