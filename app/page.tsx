@@ -19,11 +19,10 @@ export default function Home() {
         <details className={styles.mobileMenu}>
           <summary aria-label="Open navigation menu">Menu</summary>
           <nav aria-label="Mobile navigation">
-            <Link href="/" aria-current="page">
-              Dashboard
-            </Link>
+            <Link href="/" aria-current="page">Dashboard</Link>
             <Link href="/certifications">Certifications</Link>
             <Link href="/practices">Practices</Link>
+            <Link href="/evidence">Evidence</Link>
           </nav>
         </details>
 
@@ -36,9 +35,7 @@ export default function Home() {
         <aside className={styles.sidebar}>
           <nav aria-label="Primary navigation">
             <p className={styles.navLabel}>Workspace</p>
-            <Link className={styles.navItem} href="/" aria-current="page">
-              Dashboard
-            </Link>
+            <Link className={styles.navItem} href="/" aria-current="page">Dashboard</Link>
             <Link className={styles.navPending} href="/certifications">
               Certifications
               <small>Synthetic catalog</small>
@@ -46,6 +43,10 @@ export default function Home() {
             <Link className={styles.navPending} href="/practices">
               Practices
               <small>Local synthetic status</small>
+            </Link>
+            <Link className={styles.navPending} href="/evidence">
+              Evidence
+              <small>Session-only links</small>
             </Link>
           </nav>
         </aside>
@@ -97,9 +98,10 @@ export default function Home() {
               </div>
               <div className={styles.nextStep} aria-label="Available product step">
                 <span>Available surfaces</span>
-                <strong>Catalog and practices</strong>
+                <strong>Catalog, practices and evidence</strong>
                 <Link href="/certifications">Browse synthetic catalog</Link>
                 <Link href="/practices">Review practice status</Link>
+                <Link href="/evidence">Register local evidence</Link>
               </div>
             </section>
           </div>
