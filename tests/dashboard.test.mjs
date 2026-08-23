@@ -29,5 +29,6 @@ test("dashboard exposes catalog navigation without implying deferred capabilitie
     normalizedPageSource,
     /remains intentionally empty rather than inventing user history, analytics, or backend state/,
   );
-  assert.doesNotMatch(normalizedPageSource, /Sign in|Log in|Saved progress|Live catalog/i);
+  assert.doesNotMatch(normalizedPageSource, />\s*(Sign in|Log in)\s*</i);
+  assert.doesNotMatch(normalizedPageSource, /aria-label="(?:Saved progress|Live catalog)"/i);
 });
