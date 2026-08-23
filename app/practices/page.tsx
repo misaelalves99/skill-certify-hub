@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./page.module.css";
 
 type PracticeStatus = "now" | "next" | "quarantine";
+
+const statusOrder: PracticeStatus[] = ["now", "next", "quarantine"];
 
 const statusLabels: Record<PracticeStatus, string> = {
   now: "Now",
@@ -16,19 +18,22 @@ const practices = [
   {
     id: "practice-semantic-layout",
     title: "Build a semantic page shell",
-    description: "Practice landmarks, heading order and keyboard-safe navigation in a small frontend exercise.",
+    description:
+      "Practice landmarks, heading order and keyboard-safe navigation in a small frontend exercise.",
     status: "now",
   },
   {
     id: "practice-filter-state",
     title: "Model a filtered empty state",
-    description: "Exercise a deterministic local filter without implying remote data or persistence.",
+    description:
+      "Exercise a deterministic local filter without implying remote data or persistence.",
     status: "next",
   },
   {
     id: "practice-error-boundary",
     title: "Review an async error-state pattern",
-    description: "Held until a governed asynchronous data source exists so the practice does not simulate a fake backend failure.",
+    description:
+      "Held until a governed asynchronous data source exists so the practice does not simulate a fake backend failure.",
     status: "quarantine",
   },
 ] as const satisfies ReadonlyArray<{
@@ -40,9 +45,35 @@ const practices = [
 
 export default function PracticesPage() {
   const [activeStatus, setActiveStatus] = useState<PracticeStatus>("now");
+  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const visiblePractices = practices.filter(
     (practice) => practice.status === activeStatus,
   );
+
+  const moveToTab = (index: number) => {
+    const nextStatus = statusOrder[index];
+    setActiveStatus(nextStatus);
+    tabRefs.current[index]?.focus();
+  };
+
+  const handleTabKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement>,
+    index: number,
+  ) => {
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      event.preventDefault();
+      moveToTab((index + 1) % statusOrder.length);
+    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      event.preventDefault();
+      moveToTab((index - 1 + statusOrder.length) % statusOrder.length);
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      moveToTab(0);
+    } else if (event.key === "End") {
+      event.preventDefault();
+      moveToTab(statusOrder.length - 1);
+    }
+  };
 
   return (
     <div className={styles.shell}>
@@ -103,9 +134,12 @@ export default function PracticesPage() {
               </div>
 
               <div className={styles.tabs} role="tablist" aria-label="Practice status">
-                {(Object.keys(statusLabels) as PracticeStatus[]).map((status) => (
+                {statusOrder.map((status, index) => (
                   <button
                     key={status}
+                    ref={(element) => {
+                      tabRefs.current[index] = element;
+                    }}
                     type="button"
                     role="tab"
                     aria-selected={activeStatus === status}
@@ -113,6 +147,7 @@ export default function PracticesPage() {
                     id={`practice-tab-${status}`}
                     tabIndex={activeStatus === status ? 0 : -1}
                     onClick={() => setActiveStatus(status)}
+                    onKeyDown={(event) => handleTabKeyDown(event, index)}
                   >
                     {statusLabels[status]}
                   </button>
