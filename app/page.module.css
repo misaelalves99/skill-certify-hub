@@ -1,7 +1,7 @@
 .shell {
   min-height: 100vh;
-  background: #f6f7f9;
-  color: #17191c;
+  background: var(--color-canvas);
+  color: var(--color-text);
 }
 
 .skipLink {
@@ -10,9 +10,9 @@
   left: 12px;
   z-index: 100;
   transform: translateY(-160%);
-  border-radius: 8px;
-  background: #17191c;
-  color: #fff;
+  border-radius: var(--radius-md);
+  background: var(--color-text);
+  color: var(--color-on-dark);
   padding: 10px 14px;
   font-weight: 600;
 }
@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  border-bottom: 1px solid #e2e5e9;
+  border-bottom: 1px solid var(--color-border);
   background: rgba(255, 255, 255, 0.96);
   padding: 0 28px;
 }
@@ -48,17 +48,17 @@
   width: 34px;
   height: 34px;
   place-items: center;
-  border-radius: 9px;
-  background: #17191c;
-  color: #fff;
+  border-radius: var(--radius-lg);
+  background: var(--color-text);
+  color: var(--color-on-dark);
   font-size: 12px;
   letter-spacing: 0.04em;
 }
 
 .status {
-  border: 1px solid #d9dde3;
-  border-radius: 999px;
-  background: #f8f9fa;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-subtle);
   padding: 7px 11px;
   color: #5d636d;
   font-size: 13px;
@@ -72,14 +72,14 @@
 }
 
 .sidebar {
-  border-right: 1px solid #e2e5e9;
-  background: #fff;
+  border-right: 1px solid var(--color-border);
+  background: var(--color-surface);
   padding: 30px 18px;
 }
 
 .navLabel {
   margin: 0 10px 10px;
-  color: #7a818c;
+  color: var(--color-text-subtle);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -88,8 +88,8 @@
 
 .navItem {
   display: block;
-  border-radius: 9px;
-  background: #f0f2f5;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-muted);
   padding: 10px 12px;
   font-size: 14px;
   font-weight: 650;
@@ -107,7 +107,7 @@
 
 .eyebrow {
   margin-bottom: 14px;
-  color: #666d77;
+  color: var(--color-text-eyebrow);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.09em;
@@ -125,14 +125,14 @@
 .lead {
   max-width: 620px;
   margin-top: 24px;
-  color: #565d67;
+  color: var(--color-text-muted);
   font-size: clamp(18px, 2.3vw, 22px);
   line-height: 1.6;
 }
 
 .foundation {
   margin-top: 56px;
-  border-top: 1px solid #dfe3e8;
+  border-top: 1px solid var(--color-border-subtle);
   padding-top: 28px;
 }
 
@@ -144,7 +144,7 @@
 
 .foundation p {
   max-width: 620px;
-  color: #656c76;
+  color: var(--color-text-secondary);
   line-height: 1.7;
 }
 
@@ -156,8 +156,8 @@
 .mobileMenu summary {
   cursor: pointer;
   list-style: none;
-  border: 1px solid #d9dde3;
-  border-radius: 8px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
   padding: 8px 11px;
   font-size: 14px;
   font-weight: 650;
@@ -172,16 +172,16 @@
   top: calc(100% + 10px);
   right: 0;
   min-width: 160px;
-  border: 1px solid #dfe3e8;
-  border-radius: 10px;
-  background: #fff;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
   padding: 8px;
   box-shadow: 0 14px 40px rgba(23, 25, 28, 0.12);
 }
 
 .mobileMenu nav a {
   display: block;
-  border-radius: 7px;
+  border-radius: var(--radius-sm);
   padding: 9px 10px;
   font-weight: 600;
 }
@@ -190,7 +190,7 @@
 .navItem:focus-visible,
 .mobileMenu summary:focus-visible,
 .mobileMenu nav a:focus-visible {
-  outline: 3px solid #17191c;
+  outline: 3px solid var(--color-focus);
   outline-offset: 3px;
 }
 
