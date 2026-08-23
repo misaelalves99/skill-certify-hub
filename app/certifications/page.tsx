@@ -42,6 +42,7 @@ export default function CertificationsPage() {
           <nav aria-label="Mobile navigation">
             <Link href="/">Dashboard</Link>
             <Link href="/certifications" aria-current="page">Certifications</Link>
+            <Link href="/practices">Practices</Link>
           </nav>
         </details>
 
@@ -58,6 +59,7 @@ export default function CertificationsPage() {
             <Link className={styles.navItem} href="/certifications" aria-current="page">
               Certifications
             </Link>
+            <Link className={styles.navLink} href="/practices">Practices</Link>
           </nav>
         </aside>
 
