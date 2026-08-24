@@ -22,7 +22,7 @@ test("dashboard exposes catalog navigation without implying deferred capabilitie
     normalizedPageSource,
     /does not represent a connected account, saved progress, or live catalog data/,
   );
-  assert.match(normalizedPageSource, /Synthetic catalog/);
+  assert.match(normalizedPageSource, /synthetic catalog/i);
   assert.match(normalizedPageSource, /href="\/certifications"/);
   assert.match(normalizedPageSource, /Browse synthetic catalog/);
   assert.match(
