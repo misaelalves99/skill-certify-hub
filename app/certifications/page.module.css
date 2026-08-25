@@ -319,6 +319,7 @@
 }
 
 @media (max-width: 920px) {
+  .filterPanel { grid-template-columns: 1fr; gap: 18px; }
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
@@ -330,7 +331,7 @@
   .main { padding: 42px 22px 56px; }
   .intro { display: block; }
   .previewBadge { display: inline-block; margin-top: 22px; }
-  .filterPanel { grid-template-columns: 1fr; gap: 18px; margin-top: 34px; padding: 22px; }
+  .filterPanel { margin-top: 34px; padding: 22px; }
   .resultsHeader { display: block; }
   .resultsHeader > span { display: inline-block; margin-top: 8px; }
   .grid { grid-template-columns: 1fr; }
