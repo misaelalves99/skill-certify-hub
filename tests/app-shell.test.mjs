@@ -2,10 +2,10 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-const shellSource = await readFile(
-  new URL("../app/_components/AppShell.tsx", import.meta.url),
-  "utf8",
-);
+const [shellSource, shellStyles] = await Promise.all([
+  readFile(new URL("../app/_components/AppShell.tsx", import.meta.url), "utf8"),
+  readFile(new URL("../app/_components/AppShell.module.css", import.meta.url), "utf8"),
+]);
 
 const pageSources = await Promise.all(
   [
@@ -17,6 +17,7 @@ const pageSources = await Promise.all(
 );
 
 const normalizedShellSource = shellSource.replace(/\s+/g, " ");
+const normalizedShellStyles = shellStyles.replace(/\s+/g, " ");
 
 test("shared application shell owns repeated navigation semantics", () => {
   assert.match(normalizedShellSource, /function AppShell/);
@@ -25,6 +26,17 @@ test("shared application shell owns repeated navigation semantics", () => {
   assert.match(normalizedShellSource, /aria-label="Primary navigation"/);
   assert.match(normalizedShellSource, /aria-current=\{activePath === item\.href \? "page" : undefined\}/);
   assert.match(normalizedShellSource, /id="main-content"/);
+});
+
+test("shared shell keeps navigation notes on the stronger text token", () => {
+  assert.match(
+    normalizedShellStyles,
+    /\.navLink small \{[^}]*color: var\(--color-text-secondary\)/,
+  );
+  assert.doesNotMatch(
+    normalizedShellStyles,
+    /\.navLink small \{[^}]*color: var\(--color-text-subtle\)/,
+  );
 });
 
 test("dashboard and core frontend surfaces consume the shared shell", () => {
