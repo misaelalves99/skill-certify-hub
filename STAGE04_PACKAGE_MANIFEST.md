@@ -12,6 +12,9 @@ It does not decide G-P4, authorize Stage 05, implement a backend, or convert doc
 - package version: `stage04-gp4-v1`
 - source revision: `14a63df920808967a7ebc07ae1753f7f26d3a09c`
 - digest algorithm: `SHA-256`
+- payload files: `12`
+- canonical payload bytes: `173134`
+- canonical SHA-256: `a839e59a027d2aa8ad35b7f7f08ff0c3dc556f621154033de52bf4adc7c8e8e8`
 - digest scope: canonical package payload bytes only
 - manifest inclusion in digest: **excluded** to avoid self-reference
 
@@ -123,7 +126,16 @@ $digest = ([System.BitConverter]::ToString($sha256.ComputeHash($packageBytes))).
 "sha256=$digest"
 ```
 
-The resulting `sha256` is the canonical package digest candidate for `04.015` only after it is independently reproduced and recorded.
+Expected canonical output:
+
+```text
+package_id=skillcertify-stage04-gp4
+package_version=stage04-gp4-v1
+source_revision=14a63df920808967a7ebc07ae1753f7f26d3a09c
+payload_files=12
+payload_bytes=173134
+sha256=a839e59a027d2aa8ad35b7f7f08ff0c3dc556f621154033de52bf4adc7c8e8e8
+```
 
 ## 6. Digest verification rule
 
@@ -145,8 +157,8 @@ The digest must never be copied from narrative without reproduction.
 Three identities are intentionally distinct:
 
 1. **source revision** — `14a63df920808967a7ebc07ae1753f7f26d3a09c`, whose payload bytes are hashed;
-2. **manifest revision** — the commit that introduces this file on the `04.014` branch;
-3. **package digest** — SHA-256 of the canonical payload stream built from the source revision.
+2. **manifest revision** — the commit that records this file and canonical digest on the `04.014` branch;
+3. **package digest** — `a839e59a027d2aa8ad35b7f7f08ff0c3dc556f621154033de52bf4adc7c8e8e8`, SHA-256 of the canonical payload stream built from the source revision.
 
 The manifest commit is not part of the payload digest. This allows the manifest to record the externally reproduced digest without changing the bytes being hashed.
 
@@ -199,7 +211,14 @@ Changes only to review commentary outside the payload do not change this digest,
 5. an independent rerun reproduces the same identity or the discrepancy is resolved;
 6. the final recorded package identity is handed to `04.015`.
 
-Until those steps occur, no canonical digest is claimed by this document.
+The current recorded package identity is:
+
+- package id: `skillcertify-stage04-gp4`;
+- package version: `stage04-gp4-v1`;
+- source revision: `14a63df920808967a7ebc07ae1753f7f26d3a09c`;
+- payload files: `12`;
+- payload bytes: `173134`;
+- SHA-256: `a839e59a027d2aa8ad35b7f7f08ff0c3dc556f621154033de52bf4adc7c8e8e8`.
 
 ## 11. Human G-P4 boundary
 
