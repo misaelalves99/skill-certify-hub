@@ -1,4 +1,4 @@
-name: Quality
+﻿name: Quality
 
 on:
   pull_request:
@@ -23,8 +23,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: npm
+
+      - name: Pin npm
+        run: npm install --global npm@11.13.0
 
       - name: Install dependencies
         run: npm ci
