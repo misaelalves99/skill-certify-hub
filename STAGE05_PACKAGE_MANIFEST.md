@@ -110,19 +110,19 @@ Serialization identifier:
 git-blob-bytes-with-length-prefix-v1
 ```
 
-## 5. Required computed fields
+## 5. Verified computed fields
 
-The following values must be populated from an actual local recomputation against the fixed `source_revision` before `05.011` can be considered evidence-complete:
+The following values were produced by an actual local recomputation against the fixed `source_revision` and supplied as execution evidence for this task:
 
 ```yaml
 payload_file_count: 11
-payload_content_bytes: PENDING_LOCAL_RECOMPUTATION
-serialized_package_bytes: PENDING_LOCAL_RECOMPUTATION
-sha256: PENDING_LOCAL_RECOMPUTATION
-verification_status: PENDING
+payload_content_bytes: 116273
+serialized_package_bytes: 116820
+sha256: 50152217fb968a33dd67a239e6dad8f1158ff0427f3dfd5904ab7913f9f561c3
+verification_status: VERIFIED_LOCAL_RECOMPUTATION
 ```
 
-No digest value may be invented or inferred.
+No digest value was inferred from narrative or branch state.
 
 ## 6. Reproducible PowerShell verification procedure
 
@@ -146,9 +146,9 @@ $payload = @(
   'STAGE05_QUALITY_ASSURANCE_ASSESSMENT.md'
 )
 
-$utf8 = [System.Text.UTF8Encoding]::new($false)
+$utf8 = New-Object System.Text.UTF8Encoding($false)
 $ascii = [System.Text.Encoding]::ASCII
-$stream = [System.IO.MemoryStream]::new()
+$stream = New-Object System.IO.MemoryStream
 $contentBytesTotal = [int64]0
 
 try {
@@ -176,8 +176,15 @@ try {
   }
 
   $serializedBytes = $stream.ToArray()
-  $sha = [System.Security.Cryptography.SHA256]::HashData($serializedBytes)
-  $digest = ([System.Convert]::ToHexString($sha)).ToLowerInvariant()
+  $sha256 = [System.Security.Cryptography.SHA256]::Create()
+  try {
+    $hashBytes = $sha256.ComputeHash($serializedBytes)
+  }
+  finally {
+    $sha256.Dispose()
+  }
+
+  $digest = (($hashBytes | ForEach-Object { $_.ToString('x2') }) -join '')
 
   [pscustomobject]@{
     SourceRevision = $sourceRevision
@@ -192,7 +199,15 @@ finally {
 }
 ```
 
-The expected output must contain exactly one source revision, file count `11`, integer byte counts, and a 64-character lowercase SHA-256 digest.
+Expected authoritative output:
+
+```text
+SourceRevision         : 58e2ff9650eb9cfb33af7b9b28ce17027d7628d3
+PayloadFileCount       : 11
+PayloadContentBytes    : 116273
+SerializedPackageBytes : 116820
+SHA256                 : 50152217fb968a33dd67a239e6dad8f1158ff0427f3dfd5904ab7913f9f561c3
+```
 
 ## 7. Verification rules
 
@@ -202,8 +217,9 @@ A recomputation is valid only if:
 - every listed payload path exists at that exact revision;
 - payload order is unchanged;
 - `PayloadFileCount` equals `11`;
-- byte counts are non-negative integers;
-- SHA-256 is 64 lowercase hexadecimal characters;
+- `PayloadContentBytes` equals `116273`;
+- `SerializedPackageBytes` equals `116820`;
+- SHA-256 equals `50152217fb968a33dd67a239e6dad8f1158ff0427f3dfd5904ab7913f9f561c3`;
 - a second execution produces identical byte counts and identical digest.
 
 A mismatch activates the package/digest hard stop.
@@ -217,23 +233,23 @@ The human decision in `05.012` must refer to all of the following fields togethe
 - `source_revision = 58e2ff9650eb9cfb33af7b9b28ce17027d7628d3`;
 - serialization identifier `git-blob-bytes-with-length-prefix-v1`;
 - exact 11-file payload list;
-- exact `payload_content_bytes`;
-- exact `serialized_package_bytes`;
-- exact SHA-256 produced by local recomputation.
+- `payload_content_bytes = 116273`;
+- `serialized_package_bytes = 116820`;
+- `sha256 = 50152217fb968a33dd67a239e6dad8f1158ff0427f3dfd5904ab7913f9f561c3`.
 
 A decision referring only to “latest”, `main`, a branch head, a PR number, or mutable narrative is insufficient package binding.
 
-## 9. Hard-stop evaluation before digest recomputation
+## 9. Hard-stop evaluation after digest verification
 
 - ambiguous source revision: `NO`;
 - mutable branch-head-only binding: `NO`;
 - payload membership ambiguous: `NO`;
 - payload order ambiguous: `NO`;
+- digest reproducibility established: `YES — LOCAL RECOMPUTATION`;
+- package/digest match established: `YES`;
 - evidence states rewritten for package convenience: `NO`;
 - G-P5 decision attempted: `NO`;
-- Stage 06 authorized: `NO`;
-- digest reproducibility established: `PENDING LOCAL RECOMPUTATION`;
-- package/digest match established: `PENDING LOCAL RECOMPUTATION`.
+- Stage 06 authorized: `NO`.
 
 ## 10. Current 05.011 disposition
 
@@ -244,13 +260,15 @@ payload_membership_explicit: true
 payload_order_fixed: true
 serialization_defined: true
 payload_file_count: 11
-payload_content_bytes: pending
-serialized_package_bytes: pending
-sha256: pending
-verification_status: pending_local_recomputation
+payload_content_bytes: 116273
+serialized_package_bytes: 116820
+sha256: 50152217fb968a33dd67a239e6dad8f1158ff0427f3dfd5904ab7913f9f561c3
+verification_status: verified_local_recomputation
 can_pass_gate: false
 gp5_decision: not_performed
 stage06_authorized: false
 ```
 
-Therefore the task is **DIGEST_VERIFICATION_PENDING**, not complete and not a G-P5 decision.
+Therefore `05.011` is **PACKAGE_DIGEST_VERIFIED / GATE_DECISION_PENDING**.
+
+It does not pass G-P5. Only the human decision in `05.012`, bound to this exact package identity and digest, may decide the gate.
