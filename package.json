@@ -12,6 +12,7 @@
     "test:journey": "node --test tests/critical-journey.test.mjs",
     "a11y:axe": "npx --yes @axe-core/cli@4.10.2 http://127.0.0.1:3000/evidence --exit",
     "guard:config-secrets": "node scripts/config-secret-guard.mjs",
+    "promotion:eligibility": "node scripts/promotion-eligibility.mjs --baseline",
     "quality": "npm run guard:config-secrets && npm run lint && npm run typecheck && npm run test && npm run build"
   },
   "dependencies": {
