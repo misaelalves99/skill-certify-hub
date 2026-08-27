@@ -5,7 +5,8 @@
   "version": "1.0.0",
   "owner": "human-coordinator",
   "status": "candidate",
-  "human_reviewed": false,
+  "human_reviewed": true,
+  "human_tooling_decision_ref": "https://github.com/misaelalves99/skill-certify-hub/issues/137#issuecomment-5446574085",
   "change_rationale": "Establish a repository-native, versioned behavioral contract for the bounded semantic-retrieval POC before any runtime grounding implementation.",
   "tooling": {
     "mode": "repo-native-source-control",
@@ -13,7 +14,8 @@
     "external_tool_selected": false,
     "historical_hint": "Langfuse",
     "historical_hint_authority": "derived-hint-only",
-    "selection_disposition": "repo-native-candidate-pending-human-review"
+    "selection_disposition": "approved-repo-native-no-external-manager",
+    "selection_authority_ref": "https://github.com/misaelalves99/skill-certify-hub/issues/137#issuecomment-5446574085"
   },
   "governed_inputs": {
     "use_case_ref": "STAGE07_AI_USE_CASE_BASELINE_ADR.md",
@@ -254,7 +256,7 @@
   "limitations": [
     "This artifact is a design/configuration contract, not evidence that the external embeddings POC has run.",
     "No grounded response, citation validation, runtime abstention result, or runtime prompt-injection result exists yet.",
-    "No external prompt-management service is selected.",
+    "No external prompt-management service is selected; human review approved repo-native source control for 07.003.",
     "AI adoption remains undecided and ai_required remains false."
   ]
 }

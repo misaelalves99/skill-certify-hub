@@ -22,13 +22,25 @@ test("Stage 07 prompt library is versioned, owned, and repo-native", () => {
   assert.equal(library.version, "1.0.0");
   assert.equal(library.owner, "human-coordinator");
   assert.equal(library.status, "candidate");
-  assert.equal(library.human_reviewed, false);
+  assert.equal(library.human_reviewed, true);
+  assert.equal(
+    library.human_tooling_decision_ref,
+    "https://github.com/misaelalves99/skill-certify-hub/issues/137#issuecomment-5446574085",
+  );
 
   assert.equal(library.tooling.mode, "repo-native-source-control");
   assert.equal(library.tooling.external_prompt_manager, null);
   assert.equal(library.tooling.external_tool_selected, false);
   assert.equal(library.tooling.historical_hint, "Langfuse");
   assert.equal(library.tooling.historical_hint_authority, "derived-hint-only");
+  assert.equal(
+    library.tooling.selection_disposition,
+    "approved-repo-native-no-external-manager",
+  );
+  assert.equal(
+    library.tooling.selection_authority_ref,
+    library.human_tooling_decision_ref,
+  );
 
   assert.equal(library.prompt_versions.length, 3);
 
@@ -79,8 +91,7 @@ test("provider-bound prompt inputs preserve the exact authorized source boundary
   );
   const resultContract = library.prompt_versions.find(
     (prompt) =>
-      prompt.prompt_id ===
-      "prompt.skillcertify.07.003.grounded-result-contract",
+      prompt.prompt_id === "prompt.skillcertify.07.003.grounded-result-contract",
   );
 
   assert.equal(queryPrompt.sent_to_provider, true);
@@ -165,9 +176,13 @@ test("static adversarial boundary cases reject scope broadening, secrets, and in
   );
 });
 
-test("Stage 07 prompt-grounding baseline remains candidate without runtime grounding claims", () => {
+test("Stage 07 prompt-grounding baseline remains candidate after human tooling review", () => {
   assert.match(baseline, /status: candidate/);
-  assert.match(baseline, /human_reviewed: false/);
+  assert.match(baseline, /human_reviewed: true/);
+  assert.match(
+    baseline,
+    /human_tooling_decision_ref: https:\/\/github\.com\/misaelalves99\/skill-certify-hub\/issues\/137#issuecomment-5446574085/,
+  );
   assert.match(baseline, /"grounded_response_refs": \[\]/);
   assert.match(baseline, /"citation_validation_ref": null/);
   assert.match(baseline, /runtime_grounding_claimed_without_evidence: false/);
