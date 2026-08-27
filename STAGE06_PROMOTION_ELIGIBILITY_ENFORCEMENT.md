@@ -519,39 +519,116 @@ Prohibited:
 - G-P6 passed;
 - Stage 07 is authorized.
 
-## 25. Post-materialization validation status
+## 25. Post-materialization local validation evidence
 
-At materialization time, the implementation is versioned but human post-materialization execution has not yet been supplied.
+Human execution after materialization was supplied for branch:
 
-Required local validation:
+```text
+task/skillcertify-06-007-promotion-eligibility-enforcement
+```
+
+Materialized implementation revision:
+
+```text
+f07ef3ecf0a32e27b9c1adb513a96063e063e1fd
+```
+
+Baseline evaluator execution:
 
 ```text
 npm run promotion:eligibility
-node --test tests/promotion-eligibility.test.mjs
-npm test
-npm run quality
-git status
 ```
 
-Expected evaluator baseline state:
+Observed deterministic result:
+
+```yaml
+state: BLOCKED
+eligible: false
+source_sha: 1dd2e4f03f847618618ecca8b9963d09468f64d1
+failed: []
+blocked:
+  - target_not_established
+  - provider_not_established
+  - mechanism_not_established
+  - credential_policy_not_established
+  - authority_not_established
+```
+
+This is the intended real-entry classification and does not indicate product failure. It records that live-promotion prerequisites remain unestablished.
+
+`--require-eligible` semantics were also directly exercised:
 
 ```text
-BLOCKED
+node scripts/promotion-eligibility.mjs --baseline --require-eligible
 ```
 
-Expected new synthetic suite:
+The PowerShell assertion requiring `$LASTEXITCODE -eq 2` completed without throwing, directly confirming the governed `BLOCKED_exit: 2` behavior.
+
+Focused synthetic evaluator suite:
+
+```yaml
+command: node --test tests/promotion-eligibility.test.mjs
+tests: 10
+pass: 10
+fail: 0
+```
+
+Observed coverage included:
+
+- real entry baseline -> `BLOCKED`;
+- fully synthetic candidate -> `ELIGIBLE`;
+- short/ambiguous source SHA -> rejected;
+- mismatched quality SHA -> rejected;
+- failed quality -> rejected;
+- unresolved hard stop -> rejected;
+- missing target -> `BLOCKED`;
+- missing mechanism -> `BLOCKED`;
+- missing authority -> `BLOCKED`;
+- unresolved provider applicability -> `BLOCKED`.
+
+Full repository test suite:
+
+```yaml
+command: npm test
+tests: 44
+pass: 44
+fail: 0
+cancelled: 0
+skipped: 0
+```
+
+Full repository quality chain:
+
+```yaml
+command: npm run quality
+config_secret_guard: pass
+lint: pass
+typecheck: pass
+tests: 44/44_pass
+build: pass
+static_ssg_generation: 10/10_pass
+```
+
+Known non-failing diagnostic preserved during execution:
+
+- Node `MODULE_TYPELESS_PACKAGE_JSON` warning for `app/certifications/catalog.ts`.
+
+Working tree after validation:
 
 ```text
-10/10 PASS
+clean
 ```
 
-Expected repository suite after adding ten tests:
+Therefore local executable evidence establishes:
 
 ```text
-44/44 PASS
+PROMOTION_ELIGIBILITY_EVALUATOR_ESTABLISHED
+SYNTHETIC_STATE_COVERAGE_ESTABLISHED
+REAL_ENTRY_BASELINE_BLOCKED_AS_DESIGNED
+LOCAL_QUALITY_PASS
 ```
 
-Remote GitHub Actions validation remains pending until the governed PR exists.
+Remote GitHub Actions validation remains pending until the governed PR executes for the current branch head.
 
 ## 26. Current disposition
 
@@ -567,10 +644,16 @@ entry_local_tests: 34/34_pass
 entry_build: pass
 entry_static_generation: 10/10_pass
 promotion_contract: established
-promotion_evaluator: materialized
-promotion_cli: materialized
-promotion_synthetic_tests: materialized
-post_materialization_local_validation: pending
+promotion_evaluator: established
+promotion_cli: established
+promotion_synthetic_tests: 10/10_pass
+post_materialization_local_validation: pass
+post_materialization_repository_tests: 44/44_pass
+post_materialization_quality: pass
+post_materialization_build: pass
+post_materialization_static_generation: 10/10_pass
+baseline_require_eligible_exit_semantics: blocked_exit_2_confirmed
+real_entry_baseline_state: blocked
 remote_ci_validation: pending
 live_promotion: false
 target_environment: not_established
@@ -584,5 +667,5 @@ stage07_authorized: false
 Current bounded disposition:
 
 ```text
-EVALUATOR_MATERIALIZED / POST_MATERIALIZATION_VALIDATION_PENDING / LIVE_PROMOTION_BLOCKED
+LOCAL_ENFORCEMENT_ESTABLISHED / SYNTHETIC_ELIGIBILITY_STATE_COVERAGE_ESTABLISHED / REAL_LIVE_PROMOTION_BLOCKED / REMOTE_CI_PENDING
 ```
