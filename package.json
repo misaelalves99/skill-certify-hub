@@ -11,7 +11,8 @@
     "test": "node --test tests/*.test.mjs",
     "test:journey": "node --test tests/critical-journey.test.mjs",
     "a11y:axe": "npx --yes @axe-core/cli@4.10.2 http://127.0.0.1:3000/evidence --exit",
-    "quality": "npm run lint && npm run typecheck && npm run test && npm run build"
+    "guard:config-secrets": "node scripts/config-secret-guard.mjs",
+    "quality": "npm run guard:config-secrets && npm run lint && npm run typecheck && npm run test && npm run build"
   },
   "dependencies": {
     "next": "16.3.2",

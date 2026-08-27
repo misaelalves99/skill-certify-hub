@@ -11,8 +11,12 @@ test("foundation quality scripts are present and deterministic", () => {
   assert.equal(packageJson.scripts.typecheck, "tsc --noEmit");
   assert.equal(packageJson.scripts.test, "node --test tests/*.test.mjs");
   assert.equal(
+    packageJson.scripts["guard:config-secrets"],
+    "node scripts/config-secret-guard.mjs",
+  );
+  assert.equal(
     packageJson.scripts.quality,
-    "npm run lint && npm run typecheck && npm run test && npm run build",
+    "npm run guard:config-secrets && npm run lint && npm run typecheck && npm run test && npm run build",
   );
 });
 
