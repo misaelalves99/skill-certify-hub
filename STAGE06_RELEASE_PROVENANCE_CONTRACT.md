@@ -690,37 +690,42 @@ Prohibited:
 
 ## 32. Post-materialization validation status
 
-At materialization time, the contract is versioned but human post-materialization validation has not yet been supplied.
-
-Required local validation:
+Human post-materialization validation was supplied for materialization revision:
 
 ```text
-npm run quality
-git tag --list
-git ls-remote --tags origin
-git status
+94b98df28aeeab37a70624eee5913038a20c1ff9
 ```
 
-Expected current release classification:
+Observed local validation:
+
+```yaml
+config_secret_guard: pass
+lint: pass
+typecheck: pass
+tests: 44/44_pass
+build: pass
+static_ssg_generation: 10/10_pass
+local_tags: none_observed
+remote_tags: none_observed
+working_tree: clean
+```
+
+The following commands produced no tag entries:
+
+```text
+git tag --list
+git ls-remote --tags origin
+```
+
+Therefore the bounded live release classification remains:
 
 ```text
 NOT_ESTABLISHED
 ```
 
-Expected repository tests:
+The validation proves the contract did not break the existing deterministic quality path and did not create local or remote tags. It does not prove a release, artifact publication, signing, attestation, SBOM, deployment, or G-P6 outcome.
 
-```text
-44/44 PASS
-```
-
-Expected build/static generation:
-
-```text
-build PASS
-10/10 static generation PASS
-```
-
-Remote GitHub Actions validation remains pending until the governed PR exists.
+Remote GitHub Actions validation remains pending until the governed PR exists and executes.
 
 ## 33. Current disposition
 
@@ -735,6 +740,7 @@ entry_local_quality: pass
 entry_local_tests: 44/44_pass
 entry_build: pass
 entry_static_generation: 10/10_pass
+materialization_revision: 94b98df28aeeab37a70624eee5913038a20c1ff9
 local_tags_at_entry: none_observed
 remote_tags_at_entry: none_observed
 github_releases_at_entry: none_observed
@@ -748,7 +754,13 @@ artifact_digest: not_established
 signing: not_established
 attestation: not_established
 sbom: not_established
-post_materialization_local_validation: pending
+post_materialization_local_validation: pass
+post_materialization_local_tests: 44/44_pass
+post_materialization_build: pass
+post_materialization_static_generation: 10/10_pass
+post_materialization_local_tags: none_observed
+post_materialization_remote_tags: none_observed
+post_materialization_working_tree: clean
 remote_ci_validation: pending
 live_release: false
 gp6_decision: not_performed
@@ -758,5 +770,5 @@ stage07_authorized: false
 Current bounded disposition:
 
 ```text
-RELEASE_PROVENANCE_CONTRACT_ESTABLISHED / POST_MATERIALIZATION_VALIDATION_PENDING / LIVE_RELEASE_NOT_ESTABLISHED
+RELEASE_PROVENANCE_CONTRACT_ESTABLISHED / LOCAL_VALIDATION_ESTABLISHED / REMOTE_CI_PENDING / LIVE_RELEASE_NOT_ESTABLISHED
 ```
