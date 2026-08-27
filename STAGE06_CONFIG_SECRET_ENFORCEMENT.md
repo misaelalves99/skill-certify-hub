@@ -207,9 +207,23 @@ The guard is still not a secret scanner and does not validate whether a value is
 7. workflow `secrets.*` introduction — rejected;
 8. workflow `environment:` binding — rejected.
 
-The examples use unmistakably synthetic identifiers only. No real credential is introduced.
+Human post-materialization execution:
 
-Execution results for these tests are not claimed until post-materialization validation is supplied.
+```text
+node --test tests/config-secret-guard.test.mjs
+```
+
+Observed result:
+
+```yaml
+tests: 8
+pass: 8
+fail: 0
+cancelled: 0
+skipped: 0
+```
+
+Therefore the controlled synthetic failure-path coverage is `ESTABLISHED` for these eight governed cases. No real credential or secret value was used.
 
 ## 11. Quality-path integration
 
@@ -238,6 +252,25 @@ npm run guard:config-secrets && npm run lint && npm run typecheck && npm run tes
 Because GitHub Actions already executes `npm run quality`, the same guard will execute locally and remotely without duplicating CI-specific policy logic.
 
 `tests/foundation.test.mjs` is updated to keep the repository's deterministic quality-contract assertion aligned with this new chain.
+
+Human post-materialization execution established:
+
+```yaml
+guard_config_secrets: pass
+repository_test_suite: 34/34_pass
+quality_chain: pass
+production_build: pass
+static_generation: 10/10_pass
+working_tree: clean
+```
+
+The explicit guard invocation returned:
+
+```text
+Config/secret policy guard: PASS
+```
+
+Known non-blocking ESLint and module-type warnings remained visible and did not change disposition.
 
 ## 12. Explicit limitations
 
@@ -280,18 +313,23 @@ ci_deploy_credentials: not_created
 
 ## 14. Post-materialization evidence state
 
-At commit materialization time:
+Direct human local execution after materialization established:
 
 ```yaml
-local_post_materialization_guard: pending_human_execution
-local_post_materialization_quality: pending_human_execution
-synthetic_negative_tests: pending_human_execution
+materialization_commit: 9ff3ce7ce297b9007737bca74e9b11bf047a182b
+local_post_materialization_guard: pass
+synthetic_negative_tests: 8/8_pass
+repository_tests: 34/34_pass
+local_post_materialization_quality: pass
+production_build: pass
+static_generation: 10/10_pass
+working_tree: clean
 remote_ci: pending_pr_execution
 ```
 
-These states must not be upgraded to PASS without direct execution evidence.
+The local PASS is authoritative only for the supplied human execution. It is not relabeled as remote CI PASS.
 
-## 15. Hard-stop evaluation at materialization
+## 15. Hard-stop evaluation after local validation
 
 - real secret committed for testing: `NO`;
 - secret value intentionally printed to logs: `NO`;
@@ -301,10 +339,11 @@ These states must not be upgraded to PASS without direct execution evidence.
 - workflow environment introduced: `NO`;
 - workflow write/deploy permission introduced: `NO`;
 - deployment/promotion/release executed: `NO`;
+- local PASS promoted to CI PASS: `NO`;
 - G-P6 attempted: `NO`;
 - Stage 07 authorization attempted: `NO`.
 
-## 16. 06.005 materialization record
+## 16. 06.005 evidence record
 
 ```yaml
 record_type: stage06-config-secret-enforcement
@@ -312,20 +351,25 @@ stage: stage.skillcertify.06
 task: task.skillcertify.06.005
 title_status: operational_non_canonical
 source_baseline: STAGE06_CONFIG_SECRETS_BASELINE.md
-policy_guard: materialized
-tracked_sensitive_filename_guard: materialized
-required_ignore_guard: materialized
-application_env_usage_guard: materialized
-workflow_secret_environment_guard: materialized
-synthetic_negative_tests: materialized
-quality_integration: materialized
+policy_guard: established_local
+tracked_sensitive_filename_guard: established_local
+required_ignore_guard: established_local
+application_env_usage_guard: established_local
+workflow_secret_environment_guard: established_local
+synthetic_negative_tests: 8/8_pass
+quality_integration: established_local
+repository_tests: 34/34_pass
+local_quality: pass
+local_build: pass
+static_generation: 10/10_pass
+working_tree: clean
 real_secret_introduced: false
 comprehensive_secret_scanner: false
 deployment_provider: not_established
 secret_store: not_established
-post_materialization_validation: pending
+remote_ci: pending_pr_execution
 gp6_decision: not_performed
 stage07_authorized: false
 ```
 
-The task remains **MATERIALIZED / VALIDATION_PENDING** until human local execution and GitHub Actions evidence are obtained.
+Therefore `06.005` is **LOCAL_ENFORCEMENT_ESTABLISHED / SYNTHETIC_FAILURE_PATH_ESTABLISHED / REMOTE_CI_PENDING** until the governed PR produces direct GitHub Actions evidence.
