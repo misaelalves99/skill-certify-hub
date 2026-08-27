@@ -717,28 +717,42 @@ Prohibited:
 
 ## 35. Post-materialization validation status
 
-At materialization time, human post-materialization validation has not yet been supplied.
-
-Required local validation:
+Human post-materialization validation was supplied for materialized revision:
 
 ```text
-npm run quality
-git grep -n -I -E 'health|readiness|liveness|rollback|monitor|telemetry|alert|smoke|deployment|deploy' -- app scripts tests .github/workflows package.json
-git status
+2da98fbc2179cd8f390824db4b317ea6591f9745
 ```
 
-Expected repository tests:
+Observed local validation:
+
+```yaml
+config_secret_guard: pass
+lint: pass
+typecheck: pass
+tests: 44/44_pass
+build: pass
+static_ssg_generation: 10/10_pass
+health_rollback_surface_grep: no_matches
+working_tree: clean
+```
+
+The surface grep was executed across:
 
 ```text
-44/44 PASS
+app
+scripts
+tests
+.github/workflows
+package.json
 ```
 
-Expected build/static generation:
+for:
 
 ```text
-build PASS
-10/10 static generation PASS
+health|readiness|liveness|rollback|monitor|telemetry|alert|smoke|deployment|deploy
 ```
+
+No matches were returned, so no executable/runtime health or rollback mechanism was introduced by this task.
 
 Remote GitHub Actions validation remains pending until the governed PR exists.
 
@@ -765,7 +779,12 @@ known_good_runtime_revision: not_established
 rollback_mechanism: not_established
 rollback_target: not_established
 post_rollback_verification: not_established
-post_materialization_local_validation: pending
+post_materialization_revision: 2da98fbc2179cd8f390824db4b317ea6591f9745
+post_materialization_local_validation: pass
+post_materialization_tests: 44/44_pass
+post_materialization_build: pass
+post_materialization_static_generation: 10/10_pass
+post_materialization_surface_grep: no_matches
 remote_ci_validation: pending
 live_rollback: false
 gp6_decision: not_performed
@@ -775,5 +794,5 @@ stage07_authorized: false
 Current bounded disposition:
 
 ```text
-HEALTH_ROLLBACK_CONTRACT_ESTABLISHED / POST_MATERIALIZATION_VALIDATION_PENDING / LIVE_HEALTH_AND_ROLLBACK_NOT_ESTABLISHED
+HEALTH_ROLLBACK_CONTRACT_ESTABLISHED / LOCAL_VALIDATION_ESTABLISHED / REMOTE_CI_PENDING / LIVE_HEALTH_AND_ROLLBACK_NOT_ESTABLISHED
 ```
