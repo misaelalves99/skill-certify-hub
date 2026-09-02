@@ -94,7 +94,7 @@ test("missing provider usage remains unavailable and does not fabricate token or
   const event = await runTelemetryProbe({
     query: "web standards",
     apiKey: "test-only-placeholder",
-    fetchImpl: async () => fakeEmbeddingResponse({ usage: undefined }),
+    fetchImpl: async () => fakeEmbeddingResponse({ usage: null }),
     traceId: "trace-07-008-no-usage",
     clock: sequenceClock(10, 11),
   });
