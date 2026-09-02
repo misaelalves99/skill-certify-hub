@@ -176,18 +176,35 @@ test("static adversarial boundary cases reject scope broadening, secrets, and in
   );
 });
 
-test("Stage 07 prompt-grounding baseline remains candidate after human tooling review", () => {
-  assert.match(baseline, /status: candidate/);
+test("shared Stage 07 prompt-grounding baseline is ready after 07.004 human review without implying AI value", () => {
+  assert.match(baseline, /status: ready/);
   assert.match(baseline, /human_reviewed: true/);
   assert.match(
     baseline,
-    /human_tooling_decision_ref: https:\/\/github\.com\/misaelalves99\/skill-certify-hub\/issues\/137#issuecomment-5446574085/,
+    /human_citation_support_review_ref: https:\/\/github\.com\/misaelalves99\/skill-certify-hub\/issues\/139#issuecomment-5512928118/,
   );
-  assert.match(baseline, /"grounded_response_refs": \[\]/);
-  assert.match(baseline, /"citation_validation_ref": null/);
-  assert.match(baseline, /runtime_grounding_claimed_without_evidence: false/);
-  assert.match(baseline, /external_api_call_performed: false/);
+  assert.match(
+    baseline,
+    /"grounded_response_refs": \[\s*"STAGE07_GROUNDED_ASSISTANT_RUNTIME_EVIDENCE\.md#4-semantic-ranking-observations"\s*\]/,
+  );
+  assert.match(
+    baseline,
+    /"citation_validation_ref": "STAGE07_GROUNDED_ASSISTANT_RUNTIME_EVIDENCE\.md#6-human-citationsupport-decision"/,
+  );
+  assert.match(
+    baseline,
+    /"abstention_or_no_source_ref": "tests\/stage07-grounded-poc\.test\.mjs"/,
+  );
+  assert.match(
+    baseline,
+    /"prompt_injection_test_ref": "tests\/stage07-grounded-poc\.test\.mjs"/,
+  );
+  assert.match(baseline, /"unsupported_claims_open": 0/);
+  assert.match(baseline, /expected_top1_matches: 2/);
+  assert.match(baseline, /expected_top1_misses: 1/);
+  assert.match(baseline, /semantic_ranking_miss_preserved: true/);
   assert.match(baseline, /ai_required: false/);
+  assert.match(baseline, /production_ai_authorized: false/);
   assert.match(baseline, /gp7_performed: false/);
-  assert.doesNotMatch(baseline, /status: ready/);
+  assert.doesNotMatch(baseline, /AI_VALUE_ESTABLISHED|G-P7_PASS|production_ai_authorized: true/);
 });
