@@ -5,19 +5,20 @@
 ```yaml
 record_type: prompt-grounding-baseline
 stage_id: stage.skillcertify.07
-task_id: task.skillcertify.07.003
-task_title: Criar prompt library versionada
+origin_task_id: task.skillcertify.07.003
+last_evidence_task_id: task.skillcertify.07.004
 workstream_id: workstream.skillcertify.07.03
 workstream_title: Prompt & Grounded Experience
 source_stage_manifest_version: "1.7.0"
-source_repository_revision: d2c564b10f993e83a78b6a0d2c55a7a3751012c1
-issue_ref: https://github.com/misaelalves99/skill-certify-hub/issues/137
+issue_ref_origin: https://github.com/misaelalves99/skill-certify-hub/issues/137
+issue_ref_runtime: https://github.com/misaelalves99/skill-certify-hub/issues/139
 human_tooling_decision_ref: https://github.com/misaelalves99/skill-certify-hub/issues/137#issuecomment-5446574085
-status: candidate
+human_citation_support_review_ref: https://github.com/misaelalves99/skill-certify-hub/issues/139#issuecomment-5512928118
+status: ready
 human_reviewed: true
 repo_native_prompt_library: true
 external_prompt_manager_selected: false
-external_api_call_performed: false
+external_api_call_performed: true
 ai_required: false
 production_ai_authorized: false
 gp7_performed: false
@@ -25,35 +26,11 @@ gp7_performed: false
 
 ## 1. Purpose
 
-This record materializes the versioned behavioral/configuration layer for the bounded Stage 07 semantic-retrieval POC.
+This is the shared Stage 07 prompt/grounding contract. `07.003` created the repository-native versioned prompt/output layer; `07.004` supplied real bounded runtime evidence, deterministic citation/support validation, abstention/fallback tests and explicit human citation/support review.
 
-The prompt library is repository-native and source-controlled. Human review explicitly approved this tooling disposition for `07.003`; no external prompt-management service is selected.
+`status: ready` means the **bounded grounding contract** satisfies the canonical schema. It does not mean AI has proven product value, semantic ranking is perfect, production is authorized, or G-P7 has passed.
 
-This task does not execute the OpenAI API and does not claim grounded runtime behavior, citation integrity, semantic quality, AI value, production readiness, or G-P7 PASS.
-
-## 2. Canonical task and contract
-
-Canonical task:
-
-```text
-task.skillcertify.07.003 — Criar prompt library versionada
-```
-
-Canonical objective:
-
-> Versionar prompts, outputs esperados, refusal behavior e testes de mudança com source control.
-
-Canonical workstream control question:
-
-> o comportamento está versionado e a resposta consegue sustentar claims por fonte ou recusar de forma correta?
-
-The Stage 07 source package defines `AI Prompt & Grounded Experience Baseline` in:
-
-```text
-00-control/contracts/ai-prompt-grounding-baseline.schema.json
-```
-
-Current contract state:
+## 2. Canonical contract state
 
 ```json
 {
@@ -65,49 +42,21 @@ Current contract state:
     "prompt.skillcertify.07.003.grounded-result-contract@1.0.0"
   ],
   "schema_or_output_contract_ref": "prompts/semantic-retrieval-poc.v1.json#output_contracts/semantic_retrieval_result",
-  "grounded_response_refs": [],
-  "citation_validation_ref": null,
-  "abstention_or_no_source_ref": "prompts/semantic-retrieval-poc.v1.json#prompt_versions/2/abstention_fallback_rule",
-  "prompt_injection_test_ref": "tests/prompt-library.test.mjs#static-adversarial-boundary",
+  "grounded_response_refs": [
+    "STAGE07_GROUNDED_ASSISTANT_RUNTIME_EVIDENCE.md#4-semantic-ranking-observations"
+  ],
+  "citation_validation_ref": "STAGE07_GROUNDED_ASSISTANT_RUNTIME_EVIDENCE.md#6-human-citationsupport-decision",
+  "abstention_or_no_source_ref": "tests/stage07-grounded-poc.test.mjs",
+  "prompt_injection_test_ref": "tests/stage07-grounded-poc.test.mjs",
   "unsupported_claims_open": 0,
-  "status": "candidate",
+  "status": "ready",
   "human_reviewed": true
 }
 ```
 
-`unsupported_claims_open: 0` means there are no grounded runtime responses in this task from which unsupported claims are currently open. It is not evidence of citation correctness or runtime quality.
+All ready fields above are bound to explicit repository/runtime/human evidence. None is promoted by inference.
 
-## 3. Why the baseline remains candidate
-
-Human review of tooling is complete, but the shared grounding contract still lacks runtime evidence.
-
-Current downstream evidence state:
-
-```yaml
-grounded_response_refs: []
-citation_validation_ref: null
-runtime_abstention_evidence: NOT_ESTABLISHED
-runtime_prompt_injection_evidence: NOT_ESTABLISHED
-human_reviewed: true
-```
-
-Therefore the correct state remains:
-
-```text
-status: candidate
-```
-
-`task.skillcertify.07.004` is the canonical downstream implementation task expected to produce the missing grounded-response/citation/runtime evidence.
-
-## 4. Governed immutable inputs
-
-The prompt library is bound to repository state after the `07.002` merge:
-
-```yaml
-source_revision: d2c564b10f993e83a78b6a0d2c55a7a3751012c1
-```
-
-Pinned inputs:
+## 3. Governed immutable inputs
 
 ```yaml
 use_case_adr:
@@ -122,46 +71,17 @@ authorized_catalog:
   source_ref: source.skillcertify.07.002.catalog
   path: app/certifications/catalog.ts
   blob_sha: 3a95f044198c443e4ce073fecdfea62f7f8ce396
+
+provider_runtime:
+  ref: provider-runtime.skillcertify.07.002.openai-embeddings-poc-v1
+  endpoint: /v1/embeddings
+  model: text-embedding-3-small
+  scope: POC_ONLY
 ```
 
-The catalog authorization remains limited to the exact blob above.
+No broader runtime is authorized.
 
-## 5. Human tooling decision
-
-Human decision source:
-
-```text
-https://github.com/misaelalves99/skill-certify-hub/issues/137#issuecomment-5446574085
-```
-
-Recorded decision:
-
-```text
-07.003 tooling decision: APPROVE repo-native / no external prompt manager
-```
-
-Decision semantics:
-
-```yaml
-decision_authority: HUMAN
-tool_selection_mode: repo-native-source-control
-external_prompt_manager: null
-external_tool_selected: false
-selection_status: approved_repo_native_no_external_manager
-human_reviewed: true
-```
-
-Historical Stage 07 hint remains:
-
-```yaml
-legacy_recommendation: Langfuse
-legacy_role: prompt management
-authority: derived-hint-only
-```
-
-The historical hint is not executable authority. A future external prompt-management service would require a new source-backed human decision if it becomes materially necessary.
-
-## 6. Versioned prompt library
+## 4. Versioned prompt library
 
 Artifact:
 
@@ -176,48 +96,23 @@ prompt-library.skillcertify.07.003.semantic-retrieval-v1
 1.0.0
 ```
 
-Owner role:
+Tooling remains:
 
-```text
-human-coordinator
+```yaml
+mode: repo-native-source-control
+external_prompt_manager: null
+external_tool_selected: false
+historical_hint: Langfuse
+historical_hint_authority: derived-hint-only
 ```
 
-Material refs:
+The prompt-library JSON remains the historical `07.003` candidate/configuration artifact; this shared baseline advances to `ready` only after downstream `07.004` evidence.
 
-```text
-prompt.skillcertify.07.003.query-embedding@1.0.0
-prompt.skillcertify.07.003.catalog-document-embedding@1.0.0
-prompt.skillcertify.07.003.grounded-result-contract@1.0.0
-```
+## 5. Provider-bound input contract
 
-The third ref is a local deterministic behavior contract and is not sent to the provider.
+Query input is limited to the bounded synthetic evaluation query.
 
-## 7. Query-embedding input contract
-
-Provider-bound content is intentionally minimal:
-
-```text
-{{query}}
-```
-
-Allowed context:
-
-- bounded synthetic evaluation query text;
-- evaluation case identifier.
-
-Prohibited context includes:
-
-- secrets or credentials;
-- private/restricted/user data;
-- unrelated repository content;
-- external web knowledge;
-- instructions that broaden the authorized source boundary.
-
-No natural-language system prompt is added because the selected POC runtime is `/v1/embeddings`, not a chat/Responses runtime.
-
-## 8. Catalog-document embedding contract
-
-Deterministic representation:
+Catalog-document representation remains deterministic and limited to the five authorized fields:
 
 ```text
 id: {{id}}
@@ -227,201 +122,203 @@ level: {{level}}
 summary: {{summary}}
 ```
 
-Only these five fields are allowed because they were authorized by `07.002`.
+Prohibited context remains:
 
-Provider-bound source identity:
+- secrets or credentials;
+- private/restricted/user data;
+- unrelated repository content;
+- external web knowledge;
+- instructions that broaden the authorized source boundary.
 
-```text
-source.skillcertify.07.002.catalog
-blob 3a95f044198c443e4ce073fecdfea62f7f8ce396
-```
+## 6. Output and support contract
 
-A source blob change requires source-boundary revalidation before another provider request.
-
-## 9. Output contract
-
-Output contract ref:
-
-```text
-output.skillcertify.07.003.semantic-retrieval-result-v1
-```
-
-Allowed result states:
+Allowed states:
 
 ```text
 ranked_candidates | abstain
 ```
 
-A ranked candidate is not automatically a supported product claim or AI-adoption decision.
-
-Candidate records must use governed catalog IDs and:
+Every ranked candidate must use:
 
 ```text
 source_ref = source.skillcertify.07.002.catalog
 ```
 
-No similarity/materiality threshold is invented in `07.003`.
+and a governed catalog id. Citation fields are resolved from the exact authorized catalog record.
 
-```yaml
-material_match_or_adoption_threshold: NOT_ESTABLISHED
-citation_claim_semantics: NOT_ESTABLISHED_UNTIL_07_004
+The human review approved citation/support while preserving the ranking miss:
+
+```text
+07.004 citation/support review: APPROVE with semantic ranking miss preserved
 ```
 
-## 10. Abstention and fallback contract
+Decision ref:
 
-Abstention is required when a material boundary is unavailable or violated, including:
+```text
+https://github.com/misaelalves99/skill-certify-hub/issues/139#issuecomment-5512928118
+```
 
-- request outside bounded evaluation scope;
-- authorized source absent or stale;
-- source/runtime authority unavailable;
-- prohibited context required;
-- downstream support cannot be established.
+## 7. Real runtime evidence
 
-Fallback remains:
+Artifact:
+
+```text
+STAGE07_GROUNDED_ASSISTANT_RUNTIME_EVIDENCE.md
+```
+
+Observed real external execution:
+
+```yaml
+external_api_call_performed: true
+provider_endpoint: /v1/embeddings
+provider_model: text-embedding-3-small
+source_ref: source.skillcertify.07.002.catalog
+source_blob_sha: 3a95f044198c443e4ce073fecdfea62f7f8ce396
+raw_payload_logged: false
+embedding_values_persisted: false
+```
+
+Semantic ranking result:
+
+| Query | Expected | Observed top-1 | Result |
+|---|---|---|---|
+| `web standards` | `cert-web-platform` | `cert-web-platform` | match |
+| `strong typing` | `cert-typescript-practice` | `cert-typescript-practice` | match |
+| `core website skills` | `cert-frontend-foundations` | `cert-web-platform` | **miss** |
+
+```yaml
+expected_top1_matches: 2
+expected_top1_misses: 1
+expected_top1_match_rate: 2/3
+semantic_ranking_miss_preserved: true
+```
+
+The miss remains negative semantic-quality evidence and is not rewritten as success.
+
+## 8. Citation validation
+
+Runtime observations established that returned candidates:
+
+- used the governed source ref;
+- used governed certification ids;
+- carried exact source-backed `title`, `issuer`, `level` and `summary` fields;
+- did not invent an external source id or unknown certification id.
+
+Human citation/support review approved this bounded behavior.
+
+Therefore:
+
+```yaml
+citation_validation: ESTABLISHED
+unsupported_claims_open: 0
+```
+
+`unsupported_claims_open: 0` does not mean semantic relevance is perfect. The `core website skills` result remains a ranking miss.
+
+## 9. Abstention/no-source and fallback evidence
+
+Deterministic harness evidence:
+
+```text
+tests/stage07-grounded-poc.test.mjs
+```
+
+establishes:
+
+- adversarial and unknown queries abstain before provider calls;
+- stale source authority abstains before provider calls;
+- runtime failure abstains;
+- strengthened no-AI fallback is preserved;
+- invented certification ids fail support validation;
+- the query boundary is closed to the versioned POC set.
+
+Fallback ref:
 
 ```text
 STAGE07_AI_USE_CASE_BASELINE_ADR.md#4-no-ai-baseline
 ```
 
-using the strengthened deterministic comparator:
+## 10. Prompt/adversarial boundary evidence
 
-```text
-title + issuer + level + summary
-```
+Versioned adversarial cases attempt to:
 
-## 11. Eval linkage
-
-Established evaluation refs:
-
-```text
-evaluation.skillcertify.07.001.current-lexical
-evaluation.skillcertify.07.001.strengthened-lexical
-evaluation.skillcertify.07.001.semantic-paraphrase-poc
-```
-
-Residual semantic probes remain synthetic only:
-
-| Query | Expected governed record |
-|---|---|
-| `web standards` | `cert-web-platform` |
-| `strong typing` | `cert-typescript-practice` |
-| `core website skills` | `cert-frontend-foundations` |
-
-They do not establish real-user demand.
-
-## 12. Static adversarial cases
-
-Static eval set:
-
-```text
-evalset.skillcertify.07.003.prompt-boundary-v1
-```
-
-Cases attempt to:
-
-- broaden source scope to internet knowledge;
+- broaden source scope to external internet knowledge;
 - inject credentials/API keys into provider input;
 - demand invented source references.
 
-Expected contract behavior is reject/abstain.
+The harness rejects/abstains before provider execution. Sending hostile prohibited input to the external provider is not required to establish this boundary.
 
-These are static design/contract cases only and do not establish runtime prompt-injection resistance.
-
-## 13. Deterministic tests
-
-Artifact:
+Evidence refs:
 
 ```text
+prompts/semantic-retrieval-poc.v1.json
 tests/prompt-library.test.mjs
+tests/stage07-grounded-poc.test.mjs
 ```
 
-The tests protect:
+## 11. Human decisions
 
-- prompt version/owner/purpose/input/output metadata;
-- exact authorized catalog source/blob;
-- prohibited context boundaries;
-- explicit abstention and no-AI fallback;
-- adversarial cases;
-- approved repo-native/no-external-manager disposition;
-- candidate grounding status without runtime claims.
+Tooling decision:
 
-No provider API call is made by these tests.
+```text
+07.003 tooling decision: APPROVE repo-native / no external prompt manager
+```
 
-## 14. Secret and public-repository boundary
+Citation/support decision:
 
-Committed artifacts contain only public-safe behavioral/configuration metadata.
+```text
+07.004 citation/support review: APPROVE with semantic ranking miss preserved
+```
 
-They must not contain:
+Both are human decisions. AI/tooling only recorded/materialized them.
 
-- API key values;
-- environment values;
-- private prompts or restricted source text;
-- user data;
-- raw external payload logs;
-- private provider/account metadata.
-
-## 15. Hard-stop evaluation
+## 12. Ready-condition evaluation
 
 ```yaml
-prompt_without_version_or_owner: false
-output_contract_missing: false
-prompt_contains_prohibited_data: false
-critical_prompt_only_in_loose_chat: false
-unauthorized_source_promoted: false
-fallback_or_abstention_missing: false
-behavior_without_eval_link: false
-external_prompt_tool_selected_without_authority: false
-runtime_grounding_claimed_without_evidence: false
-citation_correctness_claimed_without_evidence: false
-secret_or_pii_in_prompt_artifact: false
-human_review_missing_for_completion: false
+grounded_response_ref_present: true
+citation_validation_ref_present: true
+abstention_or_no_source_ref_present: true
+prompt_injection_test_ref_present: true
+unsupported_claims_open: 0
+human_reviewed: true
+status: ready
 ```
 
-No `07.003` design/tooling hard stop remains after the explicit human review. Runtime grounding obligations are intentionally downstream.
+No canonical grounding hard stop remains:
 
-## 16. Known limitations
+```yaml
+citation_not_verifiable: false
+abstention_or_fallback_missing: false
+material_unsupported_claim_open: false
+unauthorized_source_promoted: false
+raw_secret_or_pii_in_evidence: false
+behavior_without_test_eval_linkage: false
+```
 
-1. No external embedding request has been executed by this task.
-2. No grounded response exists yet.
-3. Citation-support behavior is not yet validated.
-4. Runtime abstention behavior is not yet observed.
-5. Runtime prompt-injection resistance is not yet observed.
-6. No similarity/materiality threshold has been established.
-7. Real-user demand for semantic search remains not established.
-8. AI value and AI requirement remain not established.
-9. Repo-native source control is approved for `07.003`; no external prompt manager is selected.
-10. Production AI remains unauthorized.
+## 13. Known limitations preserved
 
-## 17. Handoff to 07.004
+1. Real-user demand for semantic search remains not established.
+2. Bounded semantic ranking achieved only `2/3` expected top-1 matches.
+3. `core website skills` remains an explicit ranking miss.
+4. No similarity/materiality threshold is established.
+5. AI value over simpler deterministic alternatives remains not established.
+6. `ai_required` remains `false`.
+7. No external prompt manager is selected.
+8. Production AI remains unauthorized.
+9. Broader OpenAI runtime, Files/File Search, vector stores and persistent indexing remain unauthorized.
+10. G-P7 has not been performed.
 
-`07.003` may hand forward:
-
-- prompt library ref/version;
-- immutable source/data/runtime refs;
-- query/document serialization contracts;
-- output schema;
-- abstention/fallback contract;
-- deterministic tests;
-- adversarial/static cases;
-- human tooling decision ref;
-- known limitations.
-
-It does not hand forward:
-
-- grounded-response evidence;
-- citation validation;
-- runtime injection PASS;
-- production approval;
-- AI-required decision;
-- G-P7 PASS.
-
-Current disposition:
+## 14. Current disposition
 
 ```text
-VERSIONED_REPO_NATIVE_PROMPT_LIBRARY_MATERIALIZED /
-HUMAN_TOOLING_REVIEW_COMPLETE /
-NO_EXTERNAL_PROMPT_MANAGER_SELECTED /
-STATIC_SCHEMA_AND_ADVERSARIAL_CONTRACT_ESTABLISHED /
-RUNTIME_GROUNDING_NOT_PERFORMED /
-STATUS_CANDIDATE
+VERSIONED_REPO_NATIVE_PROMPT_LIBRARY_PRESERVED /
+REAL_BOUNDED_EMBEDDINGS_RUNTIME_OBSERVED /
+CITATION_SUPPORT_HUMAN_REVIEW_APPROVED /
+ABSTENTION_FALLBACK_AND_ADVERSARIAL_BOUNDARIES_ESTABLISHED /
+SHARED_GROUNDING_CONTRACT_READY /
+2_OF_3_SEMANTIC_TOP1_MATCHES_WITH_ONE_MISS_PRESERVED /
+AI_VALUE_NOT_ESTABLISHED /
+AI_REQUIRED_FALSE /
+PRODUCTION_AI_NOT_AUTHORIZED /
+G-P7_NOT_PERFORMED
 ```
