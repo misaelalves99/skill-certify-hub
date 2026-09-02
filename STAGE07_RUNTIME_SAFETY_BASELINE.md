@@ -12,8 +12,12 @@ workstream_title: Runtime Safety & Observability
 issue_ref: https://github.com/misaelalves99/skill-certify-hub/issues/141
 source_stage_manifest_version: "1.7.0"
 entry_main_revision: b172c11da25eb64872673ce5cd75e18c0977cf86
-status: candidate
-human_reviewed: false
+human_safety_review_ref: https://github.com/misaelalves99/skill-certify-hub/issues/141#issuecomment-5513559794
+status: ready
+human_reviewed: true
+review_scope: CURRENT_POC_ONLY
+production_authorization_included: false
+production_residual_risk_acceptance_included: false
 repo_native_guardrails: true
 external_guardrail_product_selected: false
 external_api_call_performed_by_07_005_materialization: false
@@ -22,7 +26,7 @@ production_ai_authorized: false
 gp7_performed: false
 ```
 
-The metadata above is an operational repository record for `07.005`. It does not invent provider authority, production authority, residual-risk acceptance, or G-P7 status.
+`status: ready` is intentionally narrow. It means the bounded runtime-safety baseline for the current local Stage 07 embeddings POC has deterministic evidence and explicit human review. It does **not** mean production AI is authorized, production residual risk is accepted, AI value is established, or G-P7 has passed.
 
 ## 1. Control question
 
@@ -70,7 +74,7 @@ scripts/stage07-runtime-safety.mjs
 
 Reason: the current POC is a local CLI with a single embeddings endpoint, fixed synthetic evaluation inputs and no production route. Adding a third-party guardrail dependency would expand operational surface without evidence that the existing repo-native controls are insufficient.
 
-This is an engineering implementation choice within the already-authorized POC boundary. It is not a human adoption decision for production.
+The human review recorded for `07.005` approves this bounded safety approach only for the current POC scope. It is not a production tooling/adoption decision.
 
 ## 4. Safety applicability matrix
 
@@ -85,18 +89,18 @@ This is an engineering implementation choice within the already-authorized POC b
 | Embedding persistence | PROHIBITED / enforced | `embedding_values_persisted: false` |
 | Credential required for external execution | ESTABLISHED / inherited | OpenAI client rejects empty credential |
 | Prompt/source injection resistance | ESTABLISHED for bounded cases | adversarial cases abstain before provider execution |
-| Explicit kill switch | ADDED by 07.005 | `--disable-runtime` disables provider execution and activates fallback |
-| Provider timeout | ADDED by 07.005 | abortable bounded fetch, 5000 ms operational POC default |
-| Correlation/trace ID | ADDED by 07.005 | each safe run receives `trace_id`; tests may inject stable IDs |
-| Runtime error classification | ADDED by 07.005 | timeout / HTTP / invalid-response classes mapped to sanitized reason codes |
-| Safe logging / redaction | ADDED by 07.005 | metadata-only event is built from a strict allowlist, not arbitrary object serialization |
+| Explicit kill switch | ESTABLISHED by 07.005 | `--disable-runtime` prevents provider execution and activates fallback |
+| Provider timeout | ESTABLISHED by 07.005 | abortable bounded fetch, 5000 ms operational POC default |
+| Correlation/trace ID | ESTABLISHED by 07.005 | each safe run receives `trace_id`; tests may inject stable IDs |
+| Runtime error classification | ESTABLISHED by 07.005 | timeout / HTTP / invalid-response classes map to sanitized reason codes |
+| Safe logging / redaction | ESTABLISHED by 07.005 | metadata-only event is built from a strict allowlist, not arbitrary object serialization |
 | Rate limiting | NOT APPLICABLE to current CLI POC | no public/multi-request application route exists in the authorized scope |
 | Multi-user auth/authorization | NOT APPLICABLE to current CLI POC | no user-facing AI runtime exists; provider key remains local operator credential |
 | Moderation | NOT APPLICABLE to current fixed synthetic catalog/query set | no open user-generated content or generative chat output is authorized |
 | Persistent trace retention | NOT ESTABLISHED / intentionally absent | no persistent logging backend is selected; 07.005 emits ephemeral sanitized metadata only |
 | Production incident response | NOT APPLICABLE / NOT AUTHORIZED | production AI is not authorized |
 
-`NOT APPLICABLE` does not mean universally unnecessary. It means the control has no current execution surface inside the bounded local POC.
+`NOT APPLICABLE` does not mean universally unnecessary. It means the control has no current execution surface inside the bounded local POC. A later production or user-facing runtime must reassess applicability.
 
 ## 5. Explicit kill switch
 
@@ -117,6 +121,22 @@ trace.kill_switch_active: true
 ```
 
 The switch is explicit, reversible and local. It does not require a new environment variable or tracked configuration secret.
+
+Human-local deterministic validation observed:
+
+```yaml
+state: abstain
+reason_code: runtime_disabled
+external_call_performed: false
+fallback_activated: true
+kill_switch_active: true
+timeout_ms: 5000
+raw_payload_logged: false
+embedding_values_persisted: false
+controlled_cli_exit_code: 2
+```
+
+The exit code `2` represents controlled abstention, not provider execution failure.
 
 ## 6. Bounded timeout
 
@@ -190,9 +210,11 @@ It intentionally excludes:
 - unrelated repository content;
 - candidate payloads and query text from the operational trace event.
 
-The allowlist approach provides redaction by omission rather than attempting to regex-scrub an arbitrary raw log payload after the fact.
+The allowlist approach provides redaction by omission rather than attempting to regex-scrub arbitrary raw log payload after the fact.
 
-## 9. Red-team / deterministic evidence target
+No persistent logging backend is selected. Therefore `ready` does not authorize or define a production trace-retention policy.
+
+## 9. Red-team and deterministic evidence
 
 `tests/stage07-runtime-safety.test.mjs` covers, without network access:
 
@@ -207,7 +229,21 @@ The allowlist approach provides redaction by omission rather than attempting to 
 9. sanitized trace output excludes injected secret/raw payload/private metadata fields;
 10. invalid timeout/trace identifiers fail closed.
 
-These tests establish behavior of the repo-native safety layer. They do not prove production robustness, adversarial completeness, AI value or residual-risk acceptance.
+Human-local validation checkpoint before review:
+
+```yaml
+repository_quality: PASS
+repository_tests: 70/70 PASS
+runtime_safety_tests: 9/9 PASS
+grounded_07_004_tests: 12/12 PASS
+prompt_library_tests: 5/5 PASS
+build: PASS
+ssg_static_generation: 10/10
+openai_api_key_present: false
+working_tree: clean
+```
+
+These results establish deterministic behavior of the repo-native safety layer. They do not prove production robustness, adversarial completeness, AI value or residual-risk acceptance.
 
 ## 10. Existing 07.004 controls preserved
 
@@ -230,21 +266,35 @@ Preserved properties include:
 - no raw embedding output;
 - no persistent vector storage.
 
+The previous semantic ranking limitation remains evidence, not erased by the safety review.
+
 ## 11. External execution boundary
 
-No new OpenAI request is required to validate the `07.005` materialization.
+No new OpenAI request was required to validate the `07.005` materialization or human safety review.
 
-The safety properties added here can be validated using deterministic fake provider transports. This avoids spending credits or exposing a credential merely to prove timeout/error/kill-switch behavior.
+The safety properties added here were validated using deterministic fake provider transports. This avoids spending credits or exposing a credential merely to prove timeout/error/kill-switch behavior.
 
 Any later real-provider execution must remain inside the already-authorized embeddings POC boundary and should use the safety wrapper rather than bypassing it.
 
-## 12. Human authority still pending
+## 12. Human bounded safety review
 
-Human review remains required before `07.005` can be considered complete.
+Human authority is recorded at:
 
-The human reviewer is not being asked to declare that production AI is safe. The bounded review question is:
+```text
+https://github.com/misaelalves99/skill-certify-hub/issues/141#issuecomment-5513559794
+```
 
-> Does this repo-native POC safety layer provide sufficient fail-closed behavior, fallback, kill-switch semantics and sanitized observability for the current Stage 07 evaluation scope, with the listed non-applicable controls and limitations preserved?
+Explicit decision:
+
+```text
+07.005 bounded runtime safety review: APPROVE for current POC scope; production authorization and residual-risk acceptance remain excluded
+```
+
+The approved bounded proposition is:
+
+> The repo-native POC safety layer provides sufficient fail-closed behavior, fallback, kill-switch semantics and sanitized observability for the current Stage 07 evaluation scope, while preserving the documented non-applicable controls and limitations.
+
+This review establishes only the current POC safety baseline. It does not expand authority.
 
 The following remain outside this decision:
 
@@ -252,13 +302,14 @@ The following remain outside this decision:
 - production authorization;
 - production SLO/latency budget;
 - production rate limits;
-- persistent trace retention policy;
+- persistent trace-retention policy;
 - residual-risk acceptance for production;
+- production incident-response approval;
 - G-P7 PASS.
 
-## 13. Hard-stop evaluation
+## 13. Hard-stop evaluation after human review
 
-Current implementation intent:
+Observed bounded state:
 
 ```yaml
 production_use_without_authority: false
@@ -269,24 +320,31 @@ invented_cost_or_latency_claim: false
 raw_payload_retention: false
 kill_switch_missing_for_current_poc: false
 telemetry_treated_as_quality_proof: false
-human_review_complete: false
+human_review_complete: true
+human_review_scope: CURRENT_POC_ONLY
+production_authorization: false
+production_residual_risk_acceptance: false
 ```
 
-Because `human_review_complete: false`, this baseline intentionally remains `status: candidate` until deterministic validation is returned and human review is explicitly recorded.
+No material hard stop remains for closing **this bounded `07.005` POC task** after final repository validation and normal PR/CI/manual-merge governance.
+
+This statement must not be reused as production residual-risk acceptance.
 
 ## 14. Current disposition
 
 ```text
 07.004 SAFETY CONTROLS REUSED /
 REPO-NATIVE RUNTIME SAFETY WRAPPER MATERIALIZED /
-EXPLICIT KILL SWITCH ADDED /
-BOUNDED TIMEOUT ADDED /
-SANITIZED METADATA TRACE ADDED /
-RED-TEAM TESTS MATERIALIZED /
-NO NEW EXTERNAL RUNTIME CALL /
-HUMAN SAFETY REVIEW PENDING /
+EXPLICIT KILL SWITCH ESTABLISHED /
+BOUNDED TIMEOUT ESTABLISHED /
+SANITIZED METADATA TRACE ESTABLISHED /
+RED-TEAM TESTS GREEN /
+NO NEW EXTERNAL RUNTIME CALL REQUIRED /
+HUMAN SAFETY REVIEW APPROVED_FOR_CURRENT_POC_ONLY /
+PRODUCTION_AUTHORIZATION_EXCLUDED /
+PRODUCTION_RESIDUAL_RISK_ACCEPTANCE_EXCLUDED /
 AI_REQUIRED_FALSE /
 PRODUCTION_AI_NOT_AUTHORIZED /
 G-P7_NOT_PERFORMED /
-STATUS_CANDIDATE
+STATUS_READY
 ```
