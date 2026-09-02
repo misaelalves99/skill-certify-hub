@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import {
@@ -8,6 +9,10 @@ import {
 } from "../scripts/stage07-eval.mjs";
 
 const dataset = loadStage07EvalDataset();
+const evalBaseline = readFileSync(
+  new URL("../STAGE07_EVAL_BASELINE.md", import.meta.url),
+  "utf8",
+);
 
 test("07.006 eval dataset is versioned, source-bound, and repo-native", () => {
   assert.equal(validateStage07EvalDataset(dataset), true);
@@ -91,4 +96,26 @@ test("07.006 CI green semantics cannot be interpreted as AI-value or adoption PA
   assert.equal(report.ci_contract_status, "pass");
   assert.match(report.ci_contract_meaning, /does not mean semantic quality, AI value, adoption, production readiness, or G-P7 passed/);
   assert.equal(report.recorded_semantic_evidence.target_top1_misses, 1);
+});
+
+test("07.006 reviewed eval baseline remains ready only for the current POC scope", () => {
+  assert.match(evalBaseline, /status: ready/);
+  assert.match(evalBaseline, /human_reviewed: true/);
+  assert.match(
+    evalBaseline,
+    /human_eval_review_ref: https:\/\/github\.com\/misaelalves99\/skill-certify-hub\/issues\/143#issuecomment-5514170474/,
+  );
+  assert.match(evalBaseline, /review_scope: CURRENT_POC_ONLY/);
+  assert.match(evalBaseline, /repo_native_tooling_approved: true/);
+  assert.match(evalBaseline, /fifteen_case_coverage_approved: true/);
+  assert.match(evalBaseline, /observed_match_rate: 2\/3/);
+  assert.match(evalBaseline, /semantic_miss_preserved: true/);
+  assert.match(evalBaseline, /material_semantic_quality_threshold: NOT_ESTABLISHED/);
+  assert.match(evalBaseline, /adoption_threshold: NOT_ESTABLISHED/);
+  assert.match(evalBaseline, /production_authorization_included: false/);
+  assert.match(evalBaseline, /production_residual_risk_acceptance_included: false/);
+  assert.match(evalBaseline, /ai_adoption_decision_included: false/);
+  assert.match(evalBaseline, /ai_required: false/);
+  assert.match(evalBaseline, /production_ai_authorized: false/);
+  assert.match(evalBaseline, /gp7_performed: false/);
 });
