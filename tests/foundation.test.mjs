@@ -19,8 +19,12 @@ test("foundation quality scripts are present and deterministic", () => {
     "node scripts/promotion-eligibility.mjs --baseline",
   );
   assert.equal(
+    packageJson.scripts["eval:stage07"],
+    "node scripts/stage07-eval.mjs",
+  );
+  assert.equal(
     packageJson.scripts.quality,
-    "npm run guard:config-secrets && npm run lint && npm run typecheck && npm run test && npm run build",
+    "npm run guard:config-secrets && npm run lint && npm run typecheck && npm run test && npm run eval:stage07 && npm run build",
   );
 });
 
