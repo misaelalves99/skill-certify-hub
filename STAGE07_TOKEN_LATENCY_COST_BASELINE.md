@@ -25,7 +25,7 @@ provider_model: text-embedding-3-small
 pricing_snapshot_date: "2026-09-02"
 input_price_usd_per_million_tokens: 0.02
 pricing_source: https://developers.openai.com/api/docs/models/text-embedding-3-small
-provider_usage_contract_source: https://developers.openai.com/api/reference/embeddings
+provider_usage_contract_source: https://developers.openai.com/api/reference/resources/embeddings/methods/create
 actual_billed_cost_status: NOT_ESTABLISHED
 material_budget: NOT_ESTABLISHED
 production_latency_slo: NOT_ESTABLISHED
@@ -84,7 +84,7 @@ usage.total_tokens
 Source:
 
 ```text
-https://developers.openai.com/api/reference/embeddings
+https://developers.openai.com/api/reference/resources/embeddings/methods/create
 ```
 
 The telemetry layer captures only these bounded integer metadata fields plus the provider response model identifier. It does not retain or log the provider response body.
