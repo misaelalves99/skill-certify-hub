@@ -10,10 +10,11 @@ task_title: Implementar assistente mínimo com fontes
 workstream_id: workstream.skillcertify.07.03
 issue_ref: https://github.com/misaelalves99/skill-certify-hub/issues/139
 runtime_evidence_comment_ref: https://github.com/misaelalves99/skill-certify-hub/issues/139#issuecomment-5512739083
+human_citation_support_review_ref: https://github.com/misaelalves99/skill-certify-hub/issues/139#issuecomment-5512928118
 implementation_commit: 7b60ca976fc26b0c6a0ee29ab48388337acda1f6
 execution_date: 2026-09-02
-status: observed_pending_human_review
-human_reviewed: false
+status: reviewed_grounding_ready_with_semantic_miss
+human_reviewed: true
 external_api_call_performed: true
 production_ai_authorized: false
 ai_required: false
@@ -22,9 +23,9 @@ gp7_performed: false
 
 ## 1. Purpose
 
-This artifact records the first real external execution of the bounded Stage 07 grounded-retrieval POC after the network-free harness passed local validation.
+This artifact records the first real external execution of the bounded Stage 07 grounded-retrieval POC and the subsequent explicit human citation/support review.
 
-It records observed runtime evidence only. It does not declare AI value, AI requirement, production readiness, broader provider authority, or G-P7 PASS.
+It records grounding/runtime evidence only. It does not declare AI value, AI requirement, production readiness, broader provider authority, or G-P7 PASS.
 
 ## 2. Governed execution boundary
 
@@ -53,7 +54,7 @@ Still prohibited and not used:
 - raw provider payload logging;
 - production AI.
 
-## 3. Observed real execution traces
+## 3. Observed trace hygiene
 
 Every supplied runtime trace recorded:
 
@@ -66,9 +67,14 @@ embedding_values_persisted: false
 
 No raw embedding vector, raw provider payload, API credential value, or unrelated repository content is recorded in this evidence.
 
-## 4. Semantic ranking observations
+Human-local post-run evidence also established:
 
-The versioned evaluation probes and expected governed records were established before the real runtime execution.
+```yaml
+OPENAI_API_KEY_present_after_cleanup: false
+working_tree: clean
+```
+
+## 4. Semantic ranking observations
 
 | Query | Expected governed record | Observed top-1 | Top-1 score | Expected-record rank | Result |
 |---|---|---|---:|---:|---|
@@ -82,7 +88,7 @@ For `core website skills`, the expected record `cert-frontend-foundations` ranke
 0.42249907457
 ```
 
-Therefore the bounded real runtime result is:
+Bounded result:
 
 ```yaml
 expected_top1_cases: 3
@@ -91,37 +97,9 @@ expected_top1_misses: 1
 expected_top1_match_rate: 2/3
 ```
 
-The third case is preserved as negative semantic-quality evidence. It must not be rewritten as a success merely because the expected record appeared in second place.
+The third case remains negative semantic-quality evidence. Human review explicitly requires that this miss remain preserved.
 
-## 5. Full observed ordering
-
-### `web standards`
-
-```text
-1. cert-web-platform          0.426090826914
-2. cert-frontend-foundations  0.314272168446
-3. cert-typescript-practice   0.247323931531
-```
-
-### `strong typing`
-
-```text
-1. cert-typescript-practice   0.308720958862
-2. cert-frontend-foundations  0.17988634689
-3. cert-web-platform          0.172339028812
-```
-
-### `core website skills`
-
-```text
-1. cert-web-platform          0.464248118835
-2. cert-frontend-foundations  0.42249907457
-3. cert-typescript-practice   0.317070434365
-```
-
-No material similarity threshold is inferred from these values.
-
-## 6. Citation/support observations
+## 5. Citation/support observations
 
 Every candidate emitted by the observed runs used:
 
@@ -129,22 +107,22 @@ Every candidate emitted by the observed runs used:
 source_ref = source.skillcertify.07.002.catalog
 ```
 
-and deterministic citation ids of the form:
+with deterministic citation ids:
 
 ```text
 source.skillcertify.07.002.catalog:<certification_id>
 ```
 
-The citation object carried only source-backed fields resolved from the exact authorized catalog record:
+Citation objects carried only exact source-backed catalog fields:
 
 - `title`;
 - `issuer`;
 - `level`;
 - `summary`.
 
-Observed runtime output did not invent an external source ref or unknown certification id.
+No observed runtime output invented an external source ref or unknown certification id.
 
-Important semantic distinction:
+Critical distinction:
 
 ```text
 ranking relevance
@@ -152,28 +130,74 @@ ranking relevance
 claim/source support
 ```
 
-The `core website skills` top-1 mismatch is a semantic-ranking miss. It is not automatically an unsupported factual claim because the returned `cert-web-platform` citation still resolves to the authorized catalog and its displayed fields remain source-backed.
+The `core website skills` miss is a ranking/relevance error. The returned `cert-web-platform` citation still resolves to the authorized catalog and its displayed fields remain source-backed.
 
-Human citation/support review is still required before this evidence can satisfy the shared grounding ready conditions.
+## 6. Human citation/support decision
 
-## 7. Abstention, adversarial and fallback evidence boundary
+Decision source:
 
-The real external execution was intentionally limited to the three positive semantic probes.
-
-Abstention, source-staleness, adversarial scope broadening, invented-source requests and runtime-failure fallback were already exercised by the deterministic local harness tests without external requests.
-
-This artifact does not falsely claim that a live external adversarial provider call was necessary or performed. The implementation boundary intentionally rejects those inputs before provider invocation.
-
-## 8. Secret and repository hygiene
-
-Human-local post-run evidence establishes:
-
-```yaml
-OPENAI_API_KEY_present_after_cleanup: false
-working_tree: clean
+```text
+https://github.com/misaelalves99/skill-certify-hub/issues/139#issuecomment-5512928118
 ```
 
-No credential value was supplied as evidence, written to this artifact, committed to the repository, or included in the Issue comment.
+Recorded human decision:
+
+```text
+07.004 citation/support review: APPROVE with semantic ranking miss preserved
+```
+
+Decision semantics:
+
+```yaml
+decision_authority: HUMAN
+citation_support_review: APPROVED
+semantic_ranking_miss_preserved: true
+unsupported_claims_open: 0
+human_reviewed: true
+```
+
+This approval means the bounded runtime result/citation structures are accepted as source-grounded evidence. It does not mean the semantic ranking quality is sufficient for adoption.
+
+## 7. Abstention, adversarial and fallback evidence
+
+External provider calls were intentionally limited to the three positive semantic probes.
+
+The deterministic harness tests establish the required safety behavior without unnecessary external calls:
+
+```text
+tests/stage07-grounded-poc.test.mjs
+```
+
+They cover:
+
+- adversarial/unknown queries abstain before provider invocation;
+- stale source authority abstains before provider invocation;
+- runtime failure abstains and invokes the strengthened no-AI fallback;
+- invented certification ids fail support validation;
+- query scope is closed to the versioned evaluation set.
+
+The prompt/adversarial contract is also versioned in:
+
+```text
+prompts/semantic-retrieval-poc.v1.json
+```
+
+This is valid grounding-control evidence; it is not a claim that hostile text was sent to the external provider.
+
+## 8. Canonical ready-condition mapping
+
+The shared `ai-prompt-grounding-baseline` ready conditions are now evidence-backed as follows:
+
+```yaml
+grounded_response_ref: STAGE07_GROUNDED_ASSISTANT_RUNTIME_EVIDENCE.md#4-semantic-ranking-observations
+citation_validation_ref: STAGE07_GROUNDED_ASSISTANT_RUNTIME_EVIDENCE.md#6-human-citationsupport-decision
+abstention_or_no_source_ref: tests/stage07-grounded-poc.test.mjs
+prompt_injection_test_ref: tests/stage07-grounded-poc.test.mjs
+unsupported_claims_open: 0
+human_reviewed: true
+```
+
+Therefore the shared prompt-grounding baseline may be `ready` for its bounded grounding contract.
 
 ## 9. What this evidence establishes
 
@@ -183,14 +207,17 @@ sanitized_external_trace: ESTABLISHED
 authorized_source_used: ESTABLISHED
 authorized_provider_endpoint_model_used: ESTABLISHED
 source_backed_candidate_citations_observed: true
+citation_support_human_review: APPROVED
+shared_prompt_grounding_contract: READY
 expected_top1_semantic_matches: 2_of_3
 semantic_ranking_miss_observed: true
+semantic_ranking_miss_preserved: true
 raw_payload_logged: false
 embedding_values_persisted: false
 credential_removed_after_execution: true
 ```
 
-## 10. What this evidence does not establish
+## 10. What remains not established
 
 ```yaml
 real_user_demand_for_semantic_search: NOT_ESTABLISHED
@@ -202,30 +229,17 @@ broader_openai_runtime_authorized: false
 gp7: NOT_PERFORMED
 ```
 
-A 2/3 expected top-1 result is evidence to evaluate, not a success threshold invented after observation.
+A `ready` grounding baseline is not an AI-value PASS and does not compensate for the observed 2/3 semantic ranking result.
 
-## 11. Human review checkpoint
-
-Human review must now evaluate whether the observed runtime candidates and citation/support structures are acceptable as grounded evidence for the bounded POC.
-
-The review must explicitly preserve the semantic-ranking miss and must not convert it into a hidden PASS.
-
-Until that review is recorded:
-
-```yaml
-human_citation_support_review: PENDING
-shared_prompt_grounding_baseline_status: candidate
-runtime_evidence_status: observed_pending_human_review
-```
-
-## 12. Current disposition
+## 11. Current disposition
 
 ```text
 REAL_EMBEDDINGS_EXECUTION_ESTABLISHED /
 SOURCE_BOUND_RUNTIME_TRACE_ESTABLISHED /
+CITATION_SUPPORT_HUMAN_REVIEW_APPROVED /
+GROUNDING_CONTRACT_READY /
 2_OF_3_EXPECTED_TOP1_MATCHES_OBSERVED /
 ONE_SEMANTIC_RANKING_MISS_PRESERVED /
-CITATION_SUPPORT_REVIEW_PENDING /
 AI_VALUE_NOT_ESTABLISHED /
 AI_REQUIRED_FALSE /
 PRODUCTION_AI_NOT_AUTHORIZED /
