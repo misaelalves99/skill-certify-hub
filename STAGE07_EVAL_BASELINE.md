@@ -12,8 +12,15 @@ workstream_title: Evaluation, Cost & Evidence
 issue_ref: https://github.com/misaelalves99/skill-certify-hub/issues/143
 source_stage_manifest_version: "1.7.0"
 entry_main_revision: 8f747eee24e530afaf558d233e62970b42118a4a
-status: candidate
-human_reviewed: false
+status: ready
+human_reviewed: true
+human_eval_review_ref: https://github.com/misaelalves99/skill-certify-hub/issues/143#issuecomment-5514170474
+review_scope: CURRENT_POC_ONLY
+repo_native_tooling_approved: true
+fifteen_case_coverage_approved: true
+production_authorization_included: false
+production_residual_risk_acceptance_included: false
+ai_adoption_decision_included: false
 dataset_id: evalset.skillcertify.07.006.semantic-retrieval-v1
 dataset_version: "1.0.0"
 eval_runner: scripts/stage07-eval.mjs
@@ -28,7 +35,7 @@ production_ai_authorized: false
 gp7_performed: false
 ```
 
-`status: candidate` means the repo-native dataset/runner/report contract has been materialized but has not yet received the required human review for this task. It does **not** mean the eval has been accepted as sufficient evidence for adoption/removal.
+`status: ready` means the repo-native dataset/runner/report contract has passed the required human review for the **current POC scope only**. It means the bounded eval path is accepted as reproducible/integrity evidence. It does **not** mean semantic quality is sufficient, AI value is established, AI adoption is approved, production is authorized, residual risk is accepted, or G-P7 has passed.
 
 ## 1. Control question
 
@@ -48,7 +55,7 @@ The source package carries `Promptfoo` only as a historical `select-at-execution
 - GitHub Actions `Quality` on pull requests and pushes to `main`;
 - deterministic repo-native Stage 07 harnesses from `07.004` and `07.005`.
 
-Therefore the smallest candidate implementation is:
+The reviewed implementation is:
 
 ```yaml
 tooling_mode: repo-native-node
@@ -56,9 +63,11 @@ external_eval_product: none
 external_dependency_added: false
 workflow_yaml_changed: false
 ci_integration: npm run quality -> npm run eval:stage07
+tooling_review: APPROVED_FOR_CURRENT_POC_ONLY
+human_review_ref: https://github.com/misaelalves99/skill-certify-hub/issues/143#issuecomment-5514170474
 ```
 
-This is a candidate tooling disposition pending human review. It is not a claim that Promptfoo is unsuitable in general.
+This is an approval of repo-native tooling for the current POC scope. It is not a claim that Promptfoo is unsuitable in general, and it does not prevent a later separately justified tooling decision.
 
 ## 3. Versioned dataset
 
@@ -91,6 +100,7 @@ The dataset contains 15 bounded cases:
 recorded_external_semantic_observations: 3
 deterministic_ci_cases: 12
 total_cases: 15
+coverage_review: APPROVED_FOR_CURRENT_POC_ONLY
 ```
 
 Coverage categories include:
@@ -109,7 +119,7 @@ Coverage categories include:
 - provider HTTP failure;
 - invalid payload / format violation.
 
-This intentionally extends beyond happy-path semantic retrieval.
+This intentionally extends beyond happy-path semantic retrieval. Human review accepted this coverage as proportionally representative for the current POC scope only.
 
 ## 5. Preserved external semantic evidence
 
@@ -144,6 +154,8 @@ target_score: 0.42249907457
 
 A future green CI run must preserve this negative observation. It must not rewrite the target or observed result to manufacture `3/3`.
 
+Human review explicitly accepted preserving `2/3` as evidence while keeping material/adoption thresholds `NOT_ESTABLISHED`.
+
 ## 6. CI eval semantics
 
 Runner:
@@ -175,7 +187,7 @@ adoption_threshold: NOT_ESTABLISHED
 ci_contract_status: pass|fail
 ```
 
-`ci_contract_status: pass` has a deliberately narrow meaning:
+`ci_contract_status: pass` has a deliberately narrow, human-reviewed meaning:
 
 > dataset/evidence integrity and deterministic grounding/safety contracts are reproducible.
 
@@ -186,6 +198,7 @@ It does **not** mean:
 - AI is required;
 - adoption is approved;
 - production is ready;
+- residual production risk is accepted;
 - G-P7 has passed.
 
 ## 7. Threshold / rubric boundary
@@ -197,6 +210,7 @@ material_semantic_quality_threshold: NOT_ESTABLISHED
 adoption_threshold: NOT_ESTABLISHED
 threshold_owner: HUMAN_REQUIRED_IF_LATER_DEFINED
 llm_as_judge: false
+human_review_disposition: PRESERVE_THRESHOLDS_NOT_ESTABLISHED
 ```
 
 The external `2/3` observation is evidence, not an adoption threshold.
@@ -209,53 +223,76 @@ No LLM-as-a-judge is used by the repo-native eval. All CI gating in this task is
 
 An auxiliary LLM judge may be evaluated later only if separately selected and may not become the sole evaluator for a material decision.
 
-## 9. Expected post-materialization validation
+## 9. Post-materialization validation evidence
 
-Before this candidate can be reviewed, human-local validation must establish the actual branch behavior. Minimum commands include:
-
-```text
-npm run quality
-npm run eval:stage07
-node --test tests/stage07-eval.test.mjs
-```
-
-The expected structural outcome is:
+Human-local validation on corrected head `6e904098f05bf7ea7685ba18c504a1241fb38c2c` established:
 
 ```yaml
-repository_quality: PASS_OR_FAIL_FROM_EXECUTION
-stage07_eval_tests: PASS_OR_FAIL_FROM_EXECUTION
-ci_eval_report: PASS_OR_FAIL_FROM_EXECUTION
+foundation_contract_tests: 2/2_PASS
+repository_tests: 75/75_PASS
+stage07_eval_contract_tests: 5/5_PASS
+deterministic_eval_cases: 12/12_PASS
+recorded_semantic_evidence_integrity: 3/3_PASS
+recorded_semantic_target_top1_matches: 2/3
+recorded_semantic_target_top1_misses: 1
+build: PASS
+static_generation: 10/10
 external_provider_network_call_performed: false
-credential_required: false
-working_tree: CLEAN_OR_DIRTY_FROM_EXECUTION
+openai_api_key_present: false
+working_tree: clean
 ```
 
-No PASS is asserted here before that execution evidence exists.
+The known `MODULE_TYPELESS_PACKAGE_JSON` warning remains non-failing and unrelated to this task.
 
-## 10. Human review still required
+## 10. Human review completed
 
-Human review is required before this baseline can be promoted from `candidate`.
+Human decision source:
 
-The bounded review should decide whether:
+```text
+https://github.com/misaelalves99/skill-certify-hub/issues/143#issuecomment-5514170474
+```
 
-- repo-native Node tooling is sufficient for this task instead of adding Promptfoo;
-- the 15-case dataset is proportionally representative for the current POC scope;
-- preserving `2/3` as evidence while leaving a material semantic threshold `NOT_ESTABLISHED` is acceptable;
-- CI-green semantics are correctly limited to reproducibility/integrity rather than adoption truth.
+Recorded human decision:
+
+```text
+07.006 eval review: APPROVE repo-native tooling and 15-case coverage for current POC scope; preserve 2/3 semantic evidence with material/adoption thresholds NOT_ESTABLISHED; CI-green remains integrity/reproducibility evidence only
+```
+
+Decision consequences:
+
+```yaml
+decision_authority: HUMAN
+review_scope: CURRENT_POC_ONLY
+repo_native_tooling: APPROVED
+fifteen_case_coverage: APPROVED
+semantic_2_of_3_evidence: PRESERVED
+material_semantic_quality_threshold: NOT_ESTABLISHED
+adoption_threshold: NOT_ESTABLISHED
+ci_green_semantics: INTEGRITY_AND_REPRODUCIBILITY_ONLY
+external_eval_tool_selected: false
+llm_as_judge: false
+ai_adoption_approved: false
+production_authorization_included: false
+production_residual_risk_acceptance_included: false
+human_reviewed: true
+```
 
 This review is not production authorization, residual-risk acceptance or an AI-adoption decision.
 
 ## 11. Current disposition
 
 ```text
-VERSIONED_EVAL_DATASET_MATERIALIZED /
-REPO_NATIVE_CI_EVAL_PATH_MATERIALIZED /
+VERSIONED_EVAL_DATASET_READY /
+REPO_NATIVE_CI_EVAL_PATH_READY /
+HUMAN_REVIEW_APPROVED_FOR_CURRENT_POC_ONLY /
 NO_EXTERNAL_EVAL_TOOL_SELECTED /
 NO_LLM_AS_JUDGE /
 SEMANTIC_2_OF_3_EVIDENCE_PRESERVED /
 MATERIAL_SEMANTIC_THRESHOLD_NOT_ESTABLISHED /
-HUMAN_REVIEW_PENDING /
+ADOPTION_THRESHOLD_NOT_ESTABLISHED /
+CI_GREEN_INTEGRITY_REPRODUCIBILITY_ONLY /
 AI_REQUIRED_FALSE /
 PRODUCTION_AI_NOT_AUTHORIZED /
+RESIDUAL_RISK_ACCEPTANCE_NOT_INCLUDED /
 G-P7_NOT_PERFORMED
 ```
