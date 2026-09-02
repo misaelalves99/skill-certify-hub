@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { performance } from "node:perf_hooks";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -11,10 +12,15 @@ import {
 } from "./stage07-runtime-safety.mjs";
 
 const CURRENT_FILE = fileURLToPath(import.meta.url);
+const ROOT = path.resolve(path.dirname(CURRENT_FILE), "..");
+const PROMPT_LIBRARY_PATH = path.join(ROOT, "prompts", "semantic-retrieval-poc.v1.json");
+const promptLibrary = JSON.parse(readFileSync(PROMPT_LIBRARY_PATH, "utf8"));
 
 export const STAGE07_TELEMETRY_CONTRACT = Object.freeze({
   taskId: "task.skillcertify.07.008",
   traceVersion: "trace.skillcertify.07.008.token-latency-cost-v1",
+  promptLibraryId: promptLibrary.library_id,
+  promptLibraryVersion: promptLibrary.version,
   providerRuntimeRef: POC_CONTRACT.providerRuntimeRef,
   providerEndpoint: POC_CONTRACT.providerEndpoint,
   providerModel: POC_CONTRACT.providerModel,
@@ -99,6 +105,8 @@ export function buildSanitizedTelemetryEvent({
     event_type: "stage07_token_latency_cost_trace",
     trace_version: STAGE07_TELEMETRY_CONTRACT.traceVersion,
     trace_id: safeTrace.trace_id,
+    prompt_library_id: STAGE07_TELEMETRY_CONTRACT.promptLibraryId,
+    prompt_library_version: STAGE07_TELEMETRY_CONTRACT.promptLibraryVersion,
     state: safeTrace.state,
     reason_code: safeTrace.reason_code,
     query_case_id: safeTrace.query_case_id,
