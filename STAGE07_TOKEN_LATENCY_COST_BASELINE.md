@@ -12,8 +12,8 @@ workstream_title: Runtime Safety & Observability
 issue_ref: https://github.com/misaelalves99/skill-certify-hub/issues/145
 source_stage_manifest_version: "1.7.0"
 entry_main_revision: 64b39562359532b04c00942e5696d44d3f18d52a
-status: candidate
-human_reviewed: false
+status: ready
+human_reviewed: true
 review_scope: CURRENT_POC_ONLY
 external_observability_tool_selected: false
 historical_tool_hint: Langfuse
@@ -29,16 +29,16 @@ provider_usage_contract_source: https://developers.openai.com/api/reference/reso
 actual_billed_cost_status: NOT_ESTABLISHED
 material_budget: NOT_ESTABLISHED
 production_latency_slo: NOT_ESTABLISHED
-p50_latency: NOT_ESTABLISHED
-p95_latency: NOT_ESTABLISHED
+p50_latency: 2372.906
+p95_latency: NOT_REPORTED_SAMPLE_TOO_SMALL
 ai_required: false
 production_ai_authorized: false
 gp7_performed: false
 ```
 
-`status: candidate` means the repo-native telemetry implementation and measurement plan are materialized, but the new implementation has not yet completed the local validation + bounded external measurement + required human review for this task.
+`status: ready` means the repo-native telemetry implementation passed deterministic validation, the three governed bounded external probes were measured successfully, and the human operator explicitly approved the evidence for `CURRENT_POC_ONLY`.
 
-It does **not** mean cost, latency, budget, production readiness, AI value, adoption, residual-risk acceptance, or G-P7 has been approved.
+It does **not** mean production AI authorization, material-budget approval, production-SLO approval, semantic-quality approval, AI adoption approval, residual-risk acceptance, or G-P7 PASS.
 
 ## 1. Control question
 
@@ -229,65 +229,71 @@ The telemetry tests are designed to validate without network access:
 
 The deterministic tests do not establish real OpenAI latency, token counts or cost. Those remain pending bounded external execution.
 
-## 9. Bounded real-measurement plan
+## 9. Bounded real-measurement evidence
 
-After deterministic local validation is green, the same three governed semantic probes already used in `07.004` should be executed through the telemetry runner:
+The same three governed semantic probes already used in `07.004` were executed through the telemetry runner on 2026-09-02.
 
-```text
-web standards
-strong typing
-core website skills
+All three bounded executions used:
+
+```yaml
+provider_endpoint: /v1/embeddings
+provider_model: text-embedding-3-small
+execution_mode: external
+external_call_performed: true
+provider_usage_source: provider_reported
+fallback_activated: false
+kill_switch_active: false
+runtime_error_class: null
+raw_payload_logged: false
+embedding_values_persisted: false
+actual_billed_cost_status: NOT_ESTABLISHED
 ```
 
-Each run must emit one sanitized telemetry event only.
+Observed evidence:
 
-The key must remain ephemeral in the current PowerShell session and must not be committed, printed or pasted into evidence.
+| Query case | Trace ID | Latency ms | Prompt tokens | Total tokens | Estimated input cost USD |
+|---|---|---:|---:|---:|---:|
+| `semantic-web-standards` | `f8db5421-8e8e-4f9a-bece-ae73e4ea03b3` | 2372.906 | 126 | 126 | 0.00000252 |
+| `semantic-strong-typing` | `dd6b35ed-0ae3-4e68-83a9-d41ccff5e507` | 2888.685 | 126 | 126 | 0.00000252 |
+| `semantic-core-website-skills` | `d272c085-6748-497c-935f-0fd6ead1fd8c` | 1444.046 | 127 | 127 | 0.00000254 |
 
-For each real run, capture only:
+The API credential remained ephemeral and was absent from the PowerShell session after execution.
 
-- trace ID;
-- query case ID;
-- model/runtime/source refs;
-- state/reason;
-- input count;
-- observed `task_latency_ms`;
-- provider-reported `prompt_tokens` and `total_tokens` if available;
-- estimated input cost using the pinned price snapshot;
-- actual billed cost status as `NOT_ESTABLISHED`;
-- fallback/error state;
-- proof that raw payload/vectors were not logged.
+No raw provider response body, embedding vector or credential is part of the evidence package.
 
-## 10. Aggregation boundary
-
-The initial real sample size is planned as:
+## 10. Aggregated bounded evidence
 
 ```yaml
 sample_size: 3
+total_prompt_tokens: 379
+total_tokens: 379
+total_estimated_input_cost_usd: 0.00000758
+p50_latency_ms: 2372.906
+p95_latency: NOT_REPORTED_SAMPLE_TOO_SMALL
+actual_billed_cost_status: NOT_ESTABLISHED
+material_budget: NOT_ESTABLISHED
+production_latency_slo: NOT_ESTABLISHED
 ```
 
-With only three bounded probes:
+The reported p50 is the median of the three observed bounded end-to-end task latencies.
 
-- individual observed latency may be reported;
-- total observed prompt tokens may be summed if all runs expose provider usage;
-- total estimated input cost may be summed from the same price snapshot;
-- median/p50 may be reported only if the calculation and sample-size limitation are explicit;
-- p95 must remain `NOT_REPORTED_SAMPLE_TOO_SMALL` for this bounded evidence package;
-- no production SLO or material budget may be inferred.
+Because the evidence package contains only three real probes, p95 is not reported.
+
+The sample does not establish a production latency distribution, production SLO or material budget.
 
 ## 11. Actual vs estimated evidence
 
-The task must preserve these distinctions:
-
-| Metric | Current status before real run | Meaning |
+| Metric | Reviewed bounded evidence | Meaning |
 |---|---|---|
-| Provider prompt tokens | `NOT_MEASURED` | Await real provider response |
-| Provider total tokens | `NOT_MEASURED` | Await real provider response |
-| Task latency | `NOT_MEASURED` | Await real telemetry run |
-| Estimated input cost | `NOT_MEASURED` | Requires provider prompt tokens |
-| Actual billed cost | `NOT_ESTABLISHED` | Not inferred from price formula |
-| Material budget | `NOT_ESTABLISHED` | Requires human/source authority |
+| Provider prompt tokens | `379 total across n=3` | Provider-reported |
+| Provider total tokens | `379 total across n=3` | Provider-reported |
+| Task latency | `1444.046-2888.685 ms` | Observed bounded end-to-end runs |
+| p50 latency | `2372.906 ms` | Median of n=3; bounded-sample limitation applies |
+| p95 latency | `NOT_REPORTED_SAMPLE_TOO_SMALL` | n=3 is insufficient |
+| Estimated input cost | `USD 0.00000758 total` | Derived from provider usage and pinned price snapshot |
+| Actual billed cost | `NOT_ESTABLISHED` | Not inferred from the estimate |
+| Material budget | `NOT_ESTABLISHED` | No authoritative budget was approved |
 | Production SLO | `NOT_ESTABLISHED` | Outside current POC authority |
-| p95 latency | `NOT_ESTABLISHED` | Insufficient current real sample |
 
 ## 12. Relationship to eval and product quality
 
@@ -304,24 +310,27 @@ A cheap or fast run can still be irrelevant. A slow or expensive run can still b
 
 ## 13. Human-review boundary
 
-Human review is still required before this baseline can become `ready`.
+Human review for this bounded evidence package was completed by explicit human authority.
 
-The later review may decide whether:
+```yaml
+human_reviewed: true
+review_scope: CURRENT_POC_ONLY
+repo_native_telemetry_sufficient_for_current_poc: true
+three_run_measurement_sufficient_as_bounded_evidence: true
+material_budget: NOT_ESTABLISHED
+production_latency_slo: NOT_ESTABLISHED
+production_ai_authorized: false
+residual_risk_accepted: false
+semantic_quality_approved: false
+ai_adoption_approved: false
+gp7_performed: false
+```
 
-- repo-native telemetry is sufficient for the current POC scope;
-- the three-run measurement is sufficient as bounded evidence;
-- a material budget should remain `NOT_ESTABLISHED` or be defined from an authoritative source;
-- any additional provider/tooling measurement is worth the cost.
+The approval means only that the repo-native telemetry mechanism and the three governed real probes are sufficient as the `07.008` evidence baseline for `CURRENT_POC_ONLY`.
 
-The review must **not** be interpreted as:
+It does **not** authorize production AI, accept residual risk, approve semantic quality or AI adoption, establish a material budget or production SLO, or imply G-P7 PASS.
 
-- production AI authorization;
-- residual-risk acceptance;
-- AI adoption approval;
-- semantic-quality PASS;
-- G-P7 PASS.
-
-## 14. Hard-stop evaluation — current candidate state
+## 14. Hard-stop evaluation — reviewed ready state
 
 ```yaml
 real_latency_invented: false
@@ -334,8 +343,8 @@ external_observability_tool_adopted_by_hint: false
 production_authority_inferred: false
 ai_value_inferred: false
 gp7_inferred: false
-real_external_measurement_complete: false
-human_review_complete: false
+real_external_measurement_complete: true
+human_review_complete: true
 ```
 
 ## 15. Current disposition
@@ -346,8 +355,8 @@ PROVIDER USAGE CONTRACT SOURCE-BACKED /
 PRICE SNAPSHOT SOURCE-BACKED /
 COST FORMULA EXPLICITLY ESTIMATED /
 ACTUAL BILLED COST NOT ESTABLISHED /
-REAL TOKEN-LATENCY-COST MEASUREMENT PENDING /
-HUMAN REVIEW PENDING /
+REAL TOKEN-LATENCY-COST MEASUREMENT COMPLETE /
+HUMAN REVIEW COMPLETE - CURRENT_POC_ONLY /
 AI_REQUIRED_FALSE /
 PRODUCTION_AI_NOT_AUTHORIZED /
 G-P7_NOT_PERFORMED
