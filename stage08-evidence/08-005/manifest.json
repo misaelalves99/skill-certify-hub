@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.08.005",
+  "status": "HUMAN_REVIEW_APPROVED",
+  "visibility": "internal",
+  "publication_authorized": false,
+  "public_safety_final": "NOT_PERFORMED",
+  "human_review_required": true,
+  "source": {
+    "commit": "d1c9d636c52865d5658bdc809327a58b52fd4031",
+    "tree": "30ab912e4b7b96341e7902922a2240764dbb9526",
+    "branch_at_capture_contract": "task/skillcertify-08-005-visual-evidence"
+  },
+  "capture_policy": {
+    "method": "MANUAL_CONTROLLED",
+    "playwright_adopted": false,
+    "gif_required_now": false,
+    "video_required_now": false,
+    "browser_e2e_claim": false
+  },
+  "environment": {
+    "application_command": "npm run dev",
+    "expected_base_url": "http://localhost:3001",
+    "browser": "MANUAL_BROWSER_CAPTURE",
+    "operating_system": "Windows",
+    "viewport": "PER_ASSET_DIMENSIONS_RECORDED",
+    "requested_default_port": 3000,
+    "actual_runtime_port": 3001,
+    "port_3000_disposition": "OCCUPIED_BY_OTHER_APPLICATION",
+    "runtime_http_check": "PASS",
+    "capture_environment_status": "CAPTURED"
+  },
+  "assets": [
+    {
+      "evidence_id": "VE-08-005-01",
+      "route": "/",
+      "file": "assets/VE-08-005-01-home.png",
+      "status": "HUMAN_REVIEW_APPROVED_INTERNAL",
+      "purpose": "Application overview surface",
+      "source_commit": "d1c9d636c52865d5658bdc809327a58b52fd4031",
+      "public_safe": "NOT_REVIEWED",
+      "sha256": "79f5006e8c41909be5c9b2c511f95da87db61a6c958779db34baca6e999b6a97",
+      "size_bytes": 94240,
+      "width_px": 1919,
+      "height_px": 862,
+      "capture_runtime_base_url": "http://localhost:3001",
+      "capture_method": "MANUAL_CONTROLLED",
+      "human_visual_review": "PASS_INTERNAL_EVIDENCE"
+    },
+    {
+      "evidence_id": "VE-08-005-02",
+      "route": "/certifications",
+      "file": "assets/VE-08-005-02-certifications.png",
+      "status": "HUMAN_REVIEW_APPROVED_INTERNAL",
+      "purpose": "Certification catalog surface",
+      "source_commit": "d1c9d636c52865d5658bdc809327a58b52fd4031",
+      "public_safe": "NOT_REVIEWED",
+      "sha256": "889685ab465bc1c2ef88c2f27e4c99ac772f2918f451a211bd1cfc6986c1d416",
+      "size_bytes": 82346,
+      "width_px": 1919,
+      "height_px": 863,
+      "capture_runtime_base_url": "http://localhost:3001",
+      "capture_method": "MANUAL_CONTROLLED",
+      "human_visual_review": "PASS_INTERNAL_EVIDENCE"
+    },
+    {
+      "evidence_id": "VE-08-005-03",
+      "route": "/certifications/cert-frontend-foundations",
+      "file": "assets/VE-08-005-03-certification-detail.png",
+      "status": "HUMAN_REVIEW_APPROVED_INTERNAL",
+      "purpose": "Representative certification detail surface",
+      "source_commit": "d1c9d636c52865d5658bdc809327a58b52fd4031",
+      "public_safe": "NOT_REVIEWED",
+      "sha256": "2b44b427544c417f233a37bd8a968b5f49b0412c7aaaa437d12d0d2c98a3e76f",
+      "size_bytes": 72874,
+      "width_px": 1919,
+      "height_px": 861,
+      "capture_runtime_base_url": "http://localhost:3001",
+      "capture_method": "MANUAL_CONTROLLED",
+      "human_visual_review": "PASS_INTERNAL_EVIDENCE"
+    },
+    {
+      "evidence_id": "VE-08-005-04",
+      "route": "/evidence",
+      "file": "assets/VE-08-005-04-evidence.png",
+      "status": "HUMAN_REVIEW_APPROVED_INTERNAL",
+      "purpose": "Evidence surface",
+      "source_commit": "d1c9d636c52865d5658bdc809327a58b52fd4031",
+      "public_safe": "NOT_REVIEWED",
+      "sha256": "a3edf8f209537747c6e4a955a3b04ff74ce7ef7c18a7d58ff3119930e430c57d",
+      "size_bytes": 77254,
+      "width_px": 1919,
+      "height_px": 860,
+      "capture_runtime_base_url": "http://localhost:3001",
+      "capture_method": "MANUAL_CONTROLLED",
+      "human_visual_review": "PASS_INTERNAL_EVIDENCE"
+    }
+  ],
+  "reserve_routes": [
+    "/practices"
+  ],
+  "governance": {
+    "claims_must_be_source_backed": true,
+    "visual_appearance_is_not_capability_proof": true,
+    "scanner_does_not_replace_human_pixel_review": true,
+    "production_claim_authorized": false,
+    "publication_authorized": false,
+    "gp8_performed": false,
+    "job_search_authorized": false
+  },
+  "human_review_status": "APPROVED",
+  "human_review_decision": "VISUAL_EVIDENCE_INTERNAL_SOURCE_LINKED",
+  "human_review_scope": "INTERNAL_VISUAL_EVIDENCE_ONLY",
+  "human_review_source": "issue-163-comment-5528934014",
+  "decision_authority": "HUMAN",
+  "human_review_pending": false,
+  "human_review_issue": 163,
+  "human_review_comment_id": 5528934014
+}
