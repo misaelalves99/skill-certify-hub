@@ -1,0 +1,32 @@
+{
+  "task_id": "task.skillcertify.08.007",
+  "stage_id": "stage.skillcertify.08",
+  "workstream_id": "workstream.skillcertify.08.03",
+  "issue": 167,
+  "branch": "task/skillcertify-08-007-public-safety",
+  "source_commit": "a85ef1572b759522baa728214a72973509541194",
+  "source_tree": "452e5ad763f674b777b4e81eb036f2f77e4bc59f",
+  "status": "HUMAN_REVIEW_APPROVED",
+  "review_mode": "MANUAL_DETERMINISTIC_BASELINE",
+  "tooling": {
+    "gitleaks_hint": true,
+    "gitleaks_executed": false,
+    "external_tool_adoption": "NOT_AUTHORIZED",
+    "repo_native_checks": "PASS",
+    "manual_media_inspection": "PASS"
+  },
+  "review": {
+    "matrix": "stage08-evidence/08-007/PUBLIC_SAFETY_REVIEW.md",
+    "findings_status": "PASS",
+    "human_review_required": true,
+    "human_decision": "APPROVE — PUBLIC_SAFETY_PASS",
+    "decision_code": "PUBLIC_SAFETY_PASS",
+    "decision_source": "issue-167-comment-5542803079"
+  },
+  "governance": {
+    "public_safe": "PUBLIC_SAFETY_PASS",
+    "publication_authorized": false,
+    "gp8_performed": false,
+    "job_search_authorized": false
+  }
+}
