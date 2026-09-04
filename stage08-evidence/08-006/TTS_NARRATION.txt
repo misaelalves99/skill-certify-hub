@@ -1,0 +1,10 @@
+This is Skill Certify Hub in its current governed frontend state.
+The interface uses synthetic preview data and does not represent a live certification backend, saved progress, or production deployment.
+
+The certifications area demonstrates a deterministic synthetic catalog used to present the frontend information architecture and navigation without representing live issuer data.
+
+This Frontend Foundations page is a representative synthetic certification record. It intentionally avoids claims about official requirements, pricing, prerequisites, renewal, or live issuer integration.
+
+The evidence area demonstrates session-only local interaction. It does not demonstrate persistence, synchronization, production storage, or a backend service.
+
+This demo is internal evidence for the current source version. It demonstrates implemented frontend surfaces and their explicit boundaries, not production deployment, comprehensive browser testing, comprehensive security review, or AI adoption.

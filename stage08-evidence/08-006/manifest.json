@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.08.006",
+  "issue": 165,
+  "status": "HUMAN_REVIEW_APPROVED",
+  "visibility": "internal",
+  "public_safe": "NOT_REVIEWED",
+  "public_safety_final": "NOT_PERFORMED",
+  "publication_authorized": false,
+  "human_review_required": true,
+  "source": {
+    "commit": "f4453f63a54d3fb6cb6abb9b3bb1038970a6ece0",
+    "tree": "b18be2d9807351309820505a0aa2443a775246a3",
+    "branch_at_demo_contract": "task/skillcertify-08-006-short-demo"
+  },
+  "recording_policy": {
+    "method": "MANUAL_CONTROLLED",
+    "loom_ai_adopted": false,
+    "external_provider_used": false,
+    "transcript_method": "MANUAL_REPO_NATIVE",
+    "audio_required": true,
+    "video_required": true,
+    "target_duration_seconds": 90,
+    "maximum_duration_seconds": 150,
+    "narration_method": "SYNTHETIC_TTS",
+    "synthetic_voice_disclosure_required": true,
+    "tts_provider": "WINDOWS_SYSTEM_SPEECH_LOCAL",
+    "tts_provider_authorized": true,
+    "voice_clone_used": false,
+    "human_voice_required": false,
+    "final_video_status": "HUMAN_REVIEW_APPROVED",
+    "tts_voice_name": "Microsoft Zira Desktop",
+    "tts_voice_culture": "en-US",
+    "tts_rate": 1,
+    "composition_method": "FFMPEG_LOCAL_DETERMINISTIC",
+    "composition_external_provider_used": false,
+    "audio_start_offset_seconds": 3.0,
+    "raw_video_duration_seconds": 72.939,
+    "narration_duration_seconds": 56.082,
+    "narration_end_seconds": 59.082,
+    "closing_margin_seconds": 13.851,
+    "composition_tool_version": "ffmpeg version 9.0.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+    "local_ffmpeg_authorization": "AUTORIZO — USO LOCAL DO FFMPEG 9.0.1 EXCLUSIVAMENTE PARA COMPOSIÇÃO DA 08.006",
+    "local_ffmpeg_authorization_source": "issue-165-comment-5541685233"
+  },
+  "demo_flow": [
+    {
+      "step": 1,
+      "route": "/",
+      "purpose": "Current frontend overview and bounded synthetic state"
+    },
+    {
+      "step": 2,
+      "route": "/certifications",
+      "purpose": "Synthetic certification catalog"
+    },
+    {
+      "step": 3,
+      "route": "/certifications/cert-frontend-foundations",
+      "purpose": "Representative synthetic certification detail"
+    },
+    {
+      "step": 4,
+      "route": "/evidence",
+      "purpose": "Session-only local evidence workflow"
+    }
+  ],
+  "expected_assets": {
+    "video": "assets/VE-08-006-01-short-demo.mp4",
+    "transcript": "TRANSCRIPT.md",
+    "script": "DEMO_SCRIPT.md"
+  },
+  "governance": {
+    "claims_must_be_source_backed": true,
+    "production_claim_authorized": false,
+    "deployment_claim_authorized": false,
+    "backend_claim_authorized": false,
+    "persistence_claim_authorized": false,
+    "comprehensive_browser_e2e_claim_authorized": false,
+    "comprehensive_security_claim_authorized": false,
+    "ai_adoption_claim_authorized": false,
+    "publication_authorized": false,
+    "gp8_performed": false,
+    "job_search_authorized": false
+  },
+  "human_review_status": "APPROVED",
+  "human_review_decision": "SHORT_DEMO_INTERNAL_SOURCE_LINKED",
+  "human_review_source": "issue-165-comment-5541685233",
+  "narration_asset": {
+    "file": "assets/VE-08-006-01-narration.wav",
+    "sha256": "86fd55550869636f39e6eb3567068dc016eb00dde8367e5cfd94e207b183464a",
+    "size_bytes": 2473270,
+    "source_text": "TTS_NARRATION.txt",
+    "generation_method": "WINDOWS_SYSTEM_SPEECH_LOCAL",
+    "external_provider_used": false,
+    "voice_clone_used": false
+  },
+  "raw_video_asset": {
+    "file": "assets/VE-08-006-01-short-demo.mp4",
+    "sha256": "398520ac435a71a6f1e1685caf84e326f5e439bbe220a86ba03767151da02c78",
+    "size_bytes": 63912618,
+    "duration_seconds": 72.939,
+    "role": "SOURCE_SCREEN_CAPTURE"
+  },
+  "final_video_asset": {
+    "file": "assets/VE-08-006-02-short-demo-narrated.mp4",
+    "sha256": "cf313ebefed243075365ae94de830d42480dee40f86a4ef60ce0ddab8c6261f7",
+    "size_bytes": 62756671,
+    "source_video_sha256": "398520ac435a71a6f1e1685caf84e326f5e439bbe220a86ba03767151da02c78",
+    "narration_sha256": "86fd55550869636f39e6eb3567068dc016eb00dde8367e5cfd94e207b183464a",
+    "audio_start_offset_seconds": 3.0,
+    "composition_method": "FFMPEG_LOCAL_DETERMINISTIC",
+    "external_provider_used": false,
+    "human_review_status": "APPROVED",
+    "human_review_decision": "SHORT_DEMO_INTERNAL_SOURCE_LINKED",
+    "human_review_source": "issue-165-comment-5541685233",
+    "duration_seconds": 72.933
+  },
+  "runtime_provenance": {
+    "base_url": "http://localhost:3000/",
+    "recording_scope": "LOCAL_RUNTIME",
+    "source": "issue-165-comment-5541685233",
+    "source_commit": "f4453f63a54d3fb6cb6abb9b3bb1038970a6ece0",
+    "source_tree": "b18be2d9807351309820505a0aa2443a775246a3",
+    "correspondence_review": "PASS",
+    "publication_implication": false
+  },
+  "review_scope": {
+    "internal_source_linked": true,
+    "public_safe": false,
+    "public_safety_review": "NOT_PERFORMED",
+    "task_08_007_performed": false
+  }
+}
