@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.001",
+  "stage_id": "stage.skillcertify.09",
+  "workstream_id": "workstream.skillcertify.09.01",
+  "canonical_title": "Definir política de dados e sistema canônico",
+  "status": "human_approved",
+  "external_action": false,
+  "baseline": {
+    "branch": "task/skillcertify-09-001-data-policy",
+    "head": "ee4eedf6d96c27cb3ba8e2f980c3806d8125bc7e",
+    "tree": "63f1c11445b185070f6f976a7957a932a9a37cb5",
+    "dependency": "task.skillcertify.08.013",
+    "gp8_performed": true,
+    "gp8_passed": true,
+    "stage09_eligible": true,
+    "task_start_authorized": true
+  },
+  "system_of_record": {
+    "canonical": "governed Git/GitHub repository execution record",
+    "repository": "misaelalves99/skill-certify-hub",
+    "chat_is_canonical": false,
+    "ai_generated_text_is_proof": false,
+    "local_checkpoint_replaces_repository_record": false
+  },
+  "data_classes": [
+    {
+      "id": "D0",
+      "name": "public"
+    },
+    {
+      "id": "D1",
+      "name": "internal"
+    },
+    {
+      "id": "D2",
+      "name": "confidential"
+    },
+    {
+      "id": "D3",
+      "name": "restricted_secret"
+    },
+    {
+      "id": "D4",
+      "name": "personal_pii"
+    }
+  ],
+  "action_classes": [
+    "read",
+    "draft",
+    "write_internal",
+    "supervised_run",
+    "external_or_irreversible"
+  ],
+  "validation_required": [
+    "human_factual_review",
+    "privacy_review"
+  ],
+  "human_review": {
+    "performed": true,
+    "factual_review": "PASS",
+    "privacy_review": "PASS",
+    "decision": "APROVO — 09.001 HUMAN FACTUAL AND PRIVACY REVIEW",
+    "authority": "HUMAN",
+    "blocking_findings": 0,
+    "required_revisions": 0,
+    "decision_artifact": "stage09-evidence/09-001/HUMAN_REVIEW_DECISION.md"
+  },
+  "legacy_tool_hint": {
+    "tool": "ChatGPT Projects",
+    "authority": "derived-hint-only",
+    "adopted": false,
+    "validated": false,
+    "authorized": false
+  },
+  "authority": {
+    "job_search_authorized": false,
+    "job_search_started": false,
+    "job_application_authorized": false,
+    "outreach_authorized": false,
+    "linkedin_mutation_authorized": false,
+    "cv_publication_export_authorized": false,
+    "publication_authorized": false,
+    "deployment_authorized": false,
+    "external_tool_adoption_authorized": false
+  },
+  "hard_stops": [
+    "source_stale_suspicious_or_unverified",
+    "data_or_tool_authority_absent",
+    "pii_or_secret_exposure",
+    "automation_boundary_ambiguous"
+  ],
+  "fallback": "manual_deterministic",
+  "artifacts": [
+    "stage09-evidence/09-001/STAGE09_DATA_SYSTEM_POLICY.md",
+    "stage09-evidence/09-001/manifest.json",
+    "stage09-evidence/09-001/HUMAN_REVIEW_DECISION.md"
+  ],
+  "mutation": {
+    "local_source_materialized": true,
+    "human_decision_materialized": true,
+    "commit_performed": false,
+    "push_performed": false,
+    "external_action_performed": false
+  },
+  "next_condition": "commit_review"
+}
