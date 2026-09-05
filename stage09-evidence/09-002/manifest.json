@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.002",
+  "title": "Executar POC da stack de candidatura",
+  "stage": "stage.skillcertify.09",
+  "status": "human_approved",
+  "dependency": [
+    "task.skillcertify.09.001"
+  ],
+  "canonical_objective": "Validar se a stack reduz custo/erro sem aumentar exposição de dados ou lock-in; fallback manual é outcome válido.",
+  "data_class": "interno",
+  "external_action": false,
+  "human_review_required": true,
+  "reviews": {
+    "factual": "PASS",
+    "privacy": "PASS",
+    "poc_decision": "APPROVED"
+  },
+  "legacy_tool_hint": {
+    "tool": "ChatGPT Projects",
+    "role": "validação",
+    "authority": "derived-hint-only",
+    "selection_required_at_execution": true,
+    "selected": false,
+    "adopted": false
+  },
+  "poc": {
+    "synthetic_only": true,
+    "live_job_search_performed": false,
+    "application_performed": false,
+    "personal_data_used": false,
+    "confidential_data_used": false,
+    "secret_data_used": false,
+    "external_tool_adopted": false,
+    "manual_fallback_valid": true,
+    "candidate_outcome": "MANUAL_DETERMINISTIC_WITH_BOUNDED_AI_ASSISTANCE_PREFERRED",
+    "candidate_outcome_human_approved": true
+  },
+  "artifacts": [
+    "STAGE09_APPLICATION_STACK_POC.md",
+    "POC_SCENARIOS.json",
+    "manifest.json"
+  ],
+  "hard_stops": [
+    "source stale suspicious or unverified",
+    "data or tool authority absent",
+    "PII or secret exposure",
+    "automation boundary ambiguous"
+  ],
+  "authority": {
+    "job_search_authorized": false,
+    "job_search_started": false,
+    "application_authorized": false,
+    "outreach_authorized": false,
+    "linkedin_mutation_authorized": false,
+    "cv_export_authorized": false,
+    "publication_authorized": false,
+    "deployment_authorized": false,
+    "external_tool_adoption_authorized": false
+  }
+}
