@@ -1,0 +1,76 @@
+{
+  "task_id": "task.skillcertify.08.008",
+  "status": "BASELINE_MATERIALIZED",
+  "source_commit": "e85ff333879147dc8321a000d3376077f9db7000",
+  "source_tree": "af793b9e7589b5e8662dc69b5e3498c83d17af77",
+  "target_role": "Frontend / Fullstack Developer",
+  "public_profile": "https://www.linkedin.com/in/misaelalves/",
+  "evidence": [
+    "LINKEDIN_CURRENT_STATE.md",
+    "CLAIM_EVIDENCE_MATRIX.md",
+    "LINKEDIN_ASSESSMENT.md"
+  ],
+  "governance": {
+    "linkedin_external_mutation": false,
+    "publication_authorized": false,
+    "services_change_authorized": false,
+    "open_to_work_change_authorized": false,
+    "gp8_performed": false,
+    "job_search_authorized": false
+  },
+  "ecommerce_security_remediation": {
+    "finding_id": "SEC-08-008-ECOM-001",
+    "current_public_tree_status": "remediated",
+    "repository": "misaelalves99/ecommerce-store-asp.net",
+    "base_commit": "7eb171c1f53f6ce5f171e224558df06da9af0e2a",
+    "remediation_commit": "1a4cbf0ad3d7bcd64ecc6cbbef1028f61f488613",
+    "merge_commit": "13f2fb4257afb0cbd231340047414b0aa5461cef",
+    "merge_tree": "411dc2609b9b2e83035604e53b96f3acdc6fd4df",
+    "pull_request": "https://github.com/misaelalves99/ecommerce-store-asp.net/pull/1",
+    "current_tracked_password_pattern_matches": 0,
+    "current_tracked_bin_obj_paths": 0,
+    "history_rewrite": "not_performed",
+    "credential_rotation": "not_performed",
+    "historical_purge": "not_established",
+    "incident_fully_closed": false,
+    "fullstack_e2e_established": false
+  },
+  "factual_positioning_decision": {
+    "status": "approved",
+    "decision": "frontend_primary_fullstack_expansion",
+    "human_authorization": "APROVO — 08.008 FACTUAL POSITIONING FRONTEND PRIMARY FULLSTACK EXPANSION",
+    "frontend_primary": true,
+    "fullstack_expansion": true,
+    "fullstack_e2e_established": false,
+    "linkedin_publication_authorized": false,
+    "external_mutation_authorized": false,
+    "gp8_performed": false
+  },
+  "career_asset_drafts": [
+    {
+      "file": "FACTUAL_POSITIONING.md",
+      "sha256": "c0234f5fca1824db52684a17b441dc4460ca214e77108b37787991e03e19a638",
+      "status": "internal_draft"
+    },
+    {
+      "file": "HUMAN_POSITIONING_DECISION.md",
+      "sha256": "da0f14319e734a994031a166bd1c7efd917df483fe3071a425201b7e7f3ec7f0",
+      "status": "internal_draft"
+    },
+    {
+      "file": "LINKEDIN_DRAFT.md",
+      "sha256": "ac52f2f1f724efd1d21b63f069951999d2c35370e8cc4810ac9ba62da326cba1",
+      "status": "internal_draft"
+    },
+    {
+      "file": "INTERVIEW_SCRIPT.md",
+      "sha256": "43fd72ec18cc3caf639ade648cf65ef644209cb40bf2ef9817419802d255437d",
+      "status": "internal_draft"
+    },
+    {
+      "file": "PROJECT_NARRATIVES.md",
+      "sha256": "5ef3a2deb9868c64d6630016516dcf91f1606e5068c106d3657a1301abe3da72",
+      "status": "internal_draft"
+    }
+  ]
+}
