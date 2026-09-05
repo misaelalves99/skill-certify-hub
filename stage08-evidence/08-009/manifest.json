@@ -1,0 +1,59 @@
+{
+  "task_id": "task.skillcertify.08.009",
+  "stage_id": "stage.skillcertify.08",
+  "checkpoint": "CP08-009-H",
+  "branch": "task/skillcertify-08-009-verifiable-resume",
+  "source_head": "06151b704fd4a0a1e019331ac0f4b521a71b05ce",
+  "source_tree": "32ede09087b3448fc0a588b279b0546c67607097",
+  "task_data_class": "confidential",
+  "full_cv_data_class": "confidential",
+  "artifact_data_class": "sanitized_public_safe_evidence",
+  "artifact_scope": "resume_evidence_baseline_not_full_cv",
+  "full_cv_present": false,
+  "personal_contact_data_present": false,
+  "unauthorized_pii_present": false,
+  "matrix_decision": "approved",
+  "editorial_refinement_decision": "approved",
+  "repository_safe_packaging_decision": "approved",
+  "final_human_factual_review": "approved",
+  "human_authorizations": [
+    "APROVO — 08.009 BULLET EVIDENCE RISK MATRIX",
+    "APROVO — 08.009 FACTUAL RESUME EDITORIAL REFINEMENT",
+    "APROVO — 08.009 REPOSITORY-SAFE RESUME EVIDENCE PACKAGING",
+    "AUTORIZO — COMMIT 08.009 VERIFIABLE RESUME EVIDENCE"
+  ],
+  "status": "human_factual_review_approved_commit_authorized",
+  "files": [
+    {
+      "path": "FACTUAL_RESUME_BASELINE.md",
+      "role": "sanitized_resume_evidence_baseline",
+      "sha256": "adffa01706ef5cb678f503c376c7082c01ff52459dbe35143dfadd671b2a4a6d"
+    },
+    {
+      "path": "BULLET_EVIDENCE_DECISION.md",
+      "role": "claim_governance",
+      "sha256": "c4e8c78928969f84333276e8c632fb46ac423ba07afa0abc1a8dda84e3a2bbd9"
+    },
+    {
+      "path": "HUMAN_MATRIX_DECISION.md",
+      "role": "human_decision_record",
+      "sha256": "4d832edec1288480bc3f2780ab043f11fcae6f6428fe9203595ce8360659be96"
+    }
+  ],
+  "excluded_independent_claims": [
+    "JavaScript"
+  ],
+  "pending_source_claims": [
+    "Firebase Authentication / Firestore",
+    "Persistência de perfil, carrinho, favoritos e pedidos",
+    "Playwright"
+  ],
+  "commit_authorized": true,
+  "push_authorized": false,
+  "publication_authorized": false,
+  "external_tool_adoption_authorized": false,
+  "external_cv_export_authorized": false,
+  "job_application_authorized": false,
+  "gp8_performed": false,
+  "job_search_authorized": false
+}
