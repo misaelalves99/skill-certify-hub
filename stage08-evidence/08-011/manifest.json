@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.08.011",
+  "stage_id": "stage.skillcertify.08",
+  "baseline": {
+    "commit": "d7a2e71322448fefeeb762ada2bbc72bcb513ea1",
+    "tree": "92fd74c3fcf219191361ce3124342e0488eebb0b"
+  },
+  "assessment": {
+    "result": "PASS",
+    "non_compensable_dimensions_total": 6,
+    "non_compensable_dimensions_passed": 6,
+    "dimensions": [
+      {
+        "id": "portfolio.evidence-provenance-integrity",
+        "result": "PASS"
+      },
+      {
+        "id": "portfolio.case-claim-integrity",
+        "result": "PASS"
+      },
+      {
+        "id": "portfolio.visual-demo-public-safety",
+        "result": "PASS"
+      },
+      {
+        "id": "portfolio.career-channel-consistency",
+        "result": "PASS"
+      },
+      {
+        "id": "portfolio.publication-release-integrity",
+        "result": "PASS",
+        "publication_outcome": "private_ready"
+      },
+      {
+        "id": "portfolio.gate-handoff-integrity",
+        "result": "PASS"
+      }
+    ]
+  },
+  "residuals": {
+    "fullstack_end_to_end": "NOT_ESTABLISHED",
+    "production_readiness": "NOT_ESTABLISHED",
+    "business_roi": "NOT_ESTABLISHED",
+    "ecommerce_current_public_tree_remediated": true,
+    "ecommerce_history_rewrite_performed": false,
+    "ecommerce_credential_rotation_performed": false,
+    "ecommerce_incident_fully_closed": false,
+    "publication_outcome": "private_ready",
+    "publication_performed": false,
+    "production_ai_established": false
+  },
+  "handoff": {
+    "ready_for_08_012": true,
+    "exact_gp8_package_created": false,
+    "gp8_performed": false,
+    "gp8_passed": false,
+    "stage09_authorized": false,
+    "job_search_authorized": false
+  },
+  "governance": {
+    "human_factual_review_required": true,
+    "assessment_is_gp8_decision": false,
+    "publication_authorized_by_assessment": false,
+    "external_action_authorized_by_assessment": false
+  },
+  "artifacts": [
+    {
+      "path": "stage08-evidence/08-011/STAGE08_ASSESSMENT.md",
+      "sha256": "a1442b9c76a99bb5ed9d0484f6a0ea06af752cd9d6ac309d2d2a662c1c3702bc"
+    }
+  ]
+}
