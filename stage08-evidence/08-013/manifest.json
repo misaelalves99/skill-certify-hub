@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.08.013",
+  "stage_id": "stage.skillcertify.08",
+  "gate_id": "gate.skillcertify.08",
+  "human_decision": {
+    "outcome": "PASS",
+    "statement": "PASS — G-P8 STAGE08",
+    "performed": true,
+    "passed": true
+  },
+  "exact_package": {
+    "id": "gp8-package.skillcertify.08.012",
+    "version": "1.0.0",
+    "digest": {
+      "algorithm": "SHA-256",
+      "value": "462acbdbea4d6105256027013e0fca45a74934a383c79b6dc1d50ee843ddf3de",
+      "target": "stage08-evidence/08-012/PACKAGE_CONTENT.json"
+    },
+    "source_commit": "d4ef9701403e800e188da0cfcb884b9304c80db3",
+    "source_tree": "9327cb1f7e7b0c3a2018187ed4fbbca50afe94eb"
+  },
+  "accepted_stage_result": {
+    "assessment": "PASS",
+    "non_compensable_dimensions_passed": 6,
+    "non_compensable_dimensions_total": 6,
+    "human_factual_review": "APPROVED",
+    "human_package_review": "APPROVED",
+    "publication_outcome": "private_ready",
+    "publication_performed": false
+  },
+  "preserved_residuals": {
+    "fullstack_end_to_end": "NOT_ESTABLISHED",
+    "production_readiness": "NOT_ESTABLISHED",
+    "production_use": "NOT_ESTABLISHED",
+    "business_roi": "NOT_ESTABLISHED",
+    "ecommerce_current_public_tree_remediated": true,
+    "ecommerce_history_rewrite_performed": false,
+    "ecommerce_credential_rotation_performed": false,
+    "ecommerce_incident_fully_eradicated_or_closed": false,
+    "production_ai_established": false,
+    "production_ai_authorized": false
+  },
+  "handoff": {
+    "stage09_eligible": true,
+    "stage09_authorized": false,
+    "stage09_started": false,
+    "job_search_authorized": false,
+    "job_search_started": false,
+    "job_application_authorized": false
+  },
+  "external_authority": {
+    "publication_authorized": false,
+    "deployment_authorized": false,
+    "linkedin_mutation_authorized": false,
+    "cv_publication_export_authorized": false,
+    "visibility_change_authorized": false,
+    "external_tool_adoption_authorized": false
+  },
+  "artifacts": [
+    {
+      "path": "stage08-evidence/08-013/HUMAN_GP8_DECISION.md",
+      "sha256": "90a83507330b08aa40d39b0f5145ee69088de3f6707a3504922d9b906df16ac5"
+    }
+  ]
+}
