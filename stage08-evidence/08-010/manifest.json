@@ -1,0 +1,56 @@
+{
+  "task_id": "task.skillcertify.08.010",
+  "stage_id": "stage.skillcertify.08",
+  "workstream_id": "workstream.skillcertify.08.05",
+  "issue": 173,
+  "status": "PRIVATE_READY_HUMAN_APPROVED",
+  "outcome": "private_ready",
+  "source_commit": "4d1bca95d7572ebcfc41fc4ef7f737ef2622991a",
+  "source_tree": "90084308e1846db1078f237ae724c59b80e42d57",
+  "branch": "task/skillcertify-08-010-publication-release",
+  "public_safety": {
+    "status": "PUBLIC_SAFETY_PASS",
+    "source_task": "task.skillcertify.08.007",
+    "decision_source": "issue-167-comment-5542803079"
+  },
+  "preflight": {
+    "corrected_checkpoint": "CP08-010-D",
+    "existing_release_count": 0,
+    "remote_tag_count": 0,
+    "definitive_broken_governed_url_count": 0,
+    "linkedin_probe": "PROBE_BLOCKED_INCONCLUSIVE",
+    "failed_non_authority_precondition_count": 0
+  },
+  "human_decision": {
+    "decision": "APROVO — 08.010 PRIVATE_READY",
+    "decision_code": "PRIVATE_READY",
+    "human_review": "approved"
+  },
+  "publication": {
+    "publication_performed": false,
+    "publication_authorized": false,
+    "github_release_created": false,
+    "git_tag_created": false,
+    "deployment_performed": false,
+    "repository_visibility_changed": false,
+    "linkedin_mutation_performed": false,
+    "cv_publication_or_export_performed": false,
+    "social_publication_performed": false
+  },
+  "governance": {
+    "private_ready": true,
+    "future_external_action_requires_specific_human_authorization": true,
+    "gp8_performed": false,
+    "gp8_passed": false,
+    "stage09_authorized": false,
+    "job_search_authorized": false,
+    "job_application_authorized": false
+  },
+  "files": [
+    {
+      "path": "PUBLICATION_DECISION.md",
+      "role": "publication_private_ready_decision",
+      "sha256": "3c9aa96dd5afb46a31ab17351540608ce3675998d79bff80fd4814490d60c452"
+    }
+  ]
+}
