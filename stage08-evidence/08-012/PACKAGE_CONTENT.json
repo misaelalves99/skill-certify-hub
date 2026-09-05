@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0.0",
+  "package": {
+    "id": "gp8-package.skillcertify.08.012",
+    "version": "1.0.0",
+    "purpose": "Exact bounded Stage 08 G-P8 decision package"
+  },
+  "task": {
+    "stage_id": "stage.skillcertify.08",
+    "package_task_id": "task.skillcertify.08.012",
+    "human_gate_task_id": "task.skillcertify.08.013"
+  },
+  "source": {
+    "repository": "misaelalves99/skill-certify-hub",
+    "commit": "d4ef9701403e800e188da0cfcb884b9304c80db3",
+    "tree": "9327cb1f7e7b0c3a2018187ed4fbbca50afe94eb"
+  },
+  "assessment": {
+    "result": "PASS",
+    "dimensions_passed": 6,
+    "dimensions_total": 6,
+    "human_factual_review": "APPROVED",
+    "dimensions": [
+      {
+        "id": "portfolio.evidence-provenance-integrity",
+        "result": "PASS"
+      },
+      {
+        "id": "portfolio.case-claim-integrity",
+        "result": "PASS"
+      },
+      {
+        "id": "portfolio.visual-demo-public-safety",
+        "result": "PASS"
+      },
+      {
+        "id": "portfolio.career-channel-consistency",
+        "result": "PASS"
+      },
+      {
+        "id": "portfolio.publication-release-integrity",
+        "result": "PASS",
+        "publication_outcome": "private_ready"
+      },
+      {
+        "id": "portfolio.gate-handoff-integrity",
+        "result": "PASS"
+      }
+    ]
+  },
+  "publication": {
+    "outcome": "private_ready",
+    "performed": false
+  },
+  "preserved_residuals": {
+    "fullstack_end_to_end": "NOT_ESTABLISHED",
+    "production_readiness": "NOT_ESTABLISHED",
+    "production_use": "NOT_ESTABLISHED",
+    "business_roi": "NOT_ESTABLISHED",
+    "ecommerce_current_public_tree_remediated": true,
+    "ecommerce_history_rewrite_performed": false,
+    "ecommerce_credential_rotation_performed": false,
+    "ecommerce_incident_fully_eradicated_or_closed": false,
+    "production_ai_established": false,
+    "production_ai_authorized": false
+  },
+  "authority_boundary": {
+    "gp8_performed": false,
+    "gp8_passed": false,
+    "stage09_authorized": false,
+    "job_search_authorized": false,
+    "job_application_authorized": false,
+    "publication_authorized_by_package": false,
+    "deployment_authorized_by_package": false,
+    "linkedin_mutation_authorized_by_package": false,
+    "cv_publication_export_authorized_by_package": false,
+    "external_tool_adoption_authorized_by_package": false
+  },
+  "evidence_reference_count": 12,
+  "evidence_references": [
+    {
+      "path": "STAGE08_EVIDENCE_PACK.md",
+      "sha256": "bdf3585685a5b810e9e6f9cb0231e543833e21d79f78428aa08847429da5e301",
+      "role": "evidence-provenance"
+    },
+    {
+      "path": "STAGE08_TECHNICAL_CASE.md",
+      "sha256": "844f1e7e2c3e14cf68feff15df544b5edc9b2dccc60660a1eb3f9f3669056eed",
+      "role": "case-claim-integrity"
+    },
+    {
+      "path": "STAGE08_TOOLING_POC_EVALUATION.md",
+      "sha256": "8047480cb761df4d9438aab606805b9d722d4367feb9963f4d0ebd19a06c6a47",
+      "role": "tooling-governance"
+    },
+    {
+      "path": "stage08-evidence/08-007/PUBLIC_SAFETY_REVIEW.md",
+      "sha256": "0a2d123360508ef04eb231c8c4b08f51de89dae955087b055acfdaa860092c62",
+      "role": "visual-demo-public-safety"
+    },
+    {
+      "path": "stage08-evidence/08-008/FACTUAL_POSITIONING.md",
+      "sha256": "c0234f5fca1824db52684a17b441dc4460ca214e77108b37787991e03e19a638",
+      "role": "career-positioning"
+    },
+    {
+      "path": "stage08-evidence/08-008/HUMAN_POSITIONING_DECISION.md",
+      "sha256": "da0f14319e734a994031a166bd1c7efd917df483fe3071a425201b7e7f3ec7f0",
+      "role": "human-career-positioning"
+    },
+    {
+      "path": "stage08-evidence/08-009/FACTUAL_RESUME_BASELINE.md",
+      "sha256": "adffa01706ef5cb678f503c376c7082c01ff52459dbe35143dfadd671b2a4a6d",
+      "role": "career-channel-consistency"
+    },
+    {
+      "path": "stage08-evidence/08-009/HUMAN_MATRIX_DECISION.md",
+      "sha256": "4d832edec1288480bc3f2780ab043f11fcae6f6428fe9203595ce8360659be96",
+      "role": "human-resume-decision"
+    },
+    {
+      "path": "stage08-evidence/08-010/PUBLICATION_DECISION.md",
+      "sha256": "3c9aa96dd5afb46a31ab17351540608ce3675998d79bff80fd4814490d60c452",
+      "role": "publication-release-integrity"
+    },
+    {
+      "path": "stage08-evidence/08-011/STAGE08_ASSESSMENT.md",
+      "sha256": "a1442b9c76a99bb5ed9d0484f6a0ea06af752cd9d6ac309d2d2a662c1c3702bc",
+      "role": "six-dimension-assessment"
+    },
+    {
+      "path": "stage08-evidence/08-011/HUMAN_ASSESSMENT_DECISION.md",
+      "sha256": "8b2cc28faf92e43b7f48e6b81e958eeff92d8906e491fee42deec3bad6f30ac1",
+      "role": "human-factual-review"
+    },
+    {
+      "path": "stage08-evidence/08-011/manifest.json",
+      "sha256": "90e0c0f309e05174b00250fdf84c63b0b88cc0466d5a3403a5d40064484d474b",
+      "role": "assessment-machine-record"
+    }
+  ]
+}
