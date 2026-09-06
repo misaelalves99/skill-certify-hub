@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.002",
+  "title": "Executar POC da stack de candidatura",
+  "data_class": "interno",
+  "external_action": false,
+  "synthetic_only": true,
+  "live_job_search_performed": false,
+  "application_performed": false,
+  "personal_data_used": false,
+  "confidential_data_used": false,
+  "secret_data_used": false,
+  "external_tool_adopted": false,
+  "objective": "Validar se a stack reduz custo/erro sem aumentar exposição de dados ou lock-in; fallback manual é outcome válido.",
+  "candidate_modes": [
+    {
+      "id": "MODE-A",
+      "name": "manual_deterministic",
+      "execution_status": "EXECUTED_AS_DESIGN_BASELINE",
+      "description": "Git/GitHub canonical record plus local deterministic/manual workflow.",
+      "external_data_transfer": "none",
+      "tool_lock_in": "low",
+      "auditability": "high",
+      "reproducibility": "high",
+      "human_control": "full"
+    },
+    {
+      "id": "MODE-B",
+      "name": "bounded_ai_assistance",
+      "execution_status": "EXECUTED_AS_INTERNAL_POC_PATTERN",
+      "description": "Canonical Git/GitHub record plus bounded AI drafting/analysis against synthetic or minimized authorized inputs; all external/irreversible actions remain human-only.",
+      "external_data_transfer": "bounded_by_policy",
+      "tool_lock_in": "low_to_moderate",
+      "auditability": "high_when_outputs_are_persisted_as_reviewed_artifacts",
+      "reproducibility": "moderate_to_high",
+      "human_control": "required"
+    },
+    {
+      "id": "MODE-C",
+      "name": "chatgpt_projects_legacy_hint",
+      "execution_status": "NOT_SELECTED_NOT_ADOPTED",
+      "description": "Legacy architecture hint retained only for comparison. Selection and adoption authority are absent.",
+      "external_data_transfer": "not_tested",
+      "tool_lock_in": "not_established",
+      "auditability": "not_established",
+      "reproducibility": "not_established",
+      "human_control": "selection_required"
+    }
+  ],
+  "synthetic_case": {
+    "vacancy_id": "SYNTHETIC-FE-001",
+    "vacancy_type": "synthetic",
+    "target_role": "Frontend Developer",
+    "source": "synthetic_internal_case",
+    "contains_real_company": false,
+    "contains_real_contact": false,
+    "contains_real_application_url": false,
+    "contains_personal_data": false,
+    "workflow_steps": [
+      "capture structured vacancy fields",
+      "classify evidence requirements",
+      "compare requirements against governed portfolio evidence",
+      "draft internal fit notes",
+      "flag unsupported claims",
+      "prepare human-review package",
+      "stop before any external submission"
+    ]
+  },
+  "evaluation_dimensions": [
+    {
+      "dimension": "auditability",
+      "manual_deterministic": "PASS",
+      "bounded_ai_assistance": "PASS_WITH_REVIEW",
+      "legacy_projects_hint": "NOT_ESTABLISHED"
+    },
+    {
+      "dimension": "data_exposure_control",
+      "manual_deterministic": "PASS",
+      "bounded_ai_assistance": "PASS_WITH_MINIMIZATION_AND_AUTHORITY",
+      "legacy_projects_hint": "NOT_ESTABLISHED"
+    },
+    {
+      "dimension": "lock_in_risk",
+      "manual_deterministic": "LOW",
+      "bounded_ai_assistance": "LOW_TO_MODERATE_IF_CANONICAL_RECORD_REMAINS_PORTABLE",
+      "legacy_projects_hint": "NOT_ESTABLISHED"
+    },
+    {
+      "dimension": "human_control",
+      "manual_deterministic": "PASS",
+      "bounded_ai_assistance": "PASS",
+      "legacy_projects_hint": "NOT_EVALUATED"
+    },
+    {
+      "dimension": "unsupported_claim_risk",
+      "manual_deterministic": "CONTROLLED_BY_CHECKLIST",
+      "bounded_ai_assistance": "CONTROLLED_ONLY_WITH_SOURCE_BACKING_AND_HUMAN_REVIEW",
+      "legacy_projects_hint": "NOT_ESTABLISHED"
+    },
+    {
+      "dimension": "fallback_viability",
+      "manual_deterministic": "PASS",
+      "bounded_ai_assistance": "PASS",
+      "legacy_projects_hint": "MANUAL_FALLBACK_REQUIRED"
+    }
+  ],
+  "preliminary_result": {
+    "status": "DRAFT_FOR_HUMAN_FACTUAL_AND_PRIVACY_REVIEW",
+    "preferred_pattern": "manual_deterministic_with_bounded_ai_assistance",
+    "rationale": "Preserves Git/GitHub as canonical portable record, keeps deterministic/manual fallback viable, and limits AI to reversible internal assistance under human review.",
+    "chatgpt_projects_adoption": "NOT_AUTHORIZED_NOT_REQUIRED_FOR_CURRENT_POC",
+    "live_application_validation": "NOT_PERFORMED",
+    "measured_time_savings": "NOT_ESTABLISHED",
+    "measured_business_roi": "NOT_ESTABLISHED",
+    "production_scale": "NOT_ESTABLISHED"
+  }
+}
