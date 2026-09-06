@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.007",
+  "record_type": "resume_claim_trace",
+  "target_vacancy": "VAC-09-004-001",
+  "claims": [
+    {
+      "claim_id": "RESUME-CLAIM-001",
+      "wording": "React project evidence",
+      "support": "VERIFIED_WITHIN_SCOPE",
+      "evidence_basis": [
+        "09.004",
+        "09.005"
+      ],
+      "boundary": "Does not imply employment duration or seniority."
+    },
+    {
+      "claim_id": "RESUME-CLAIM-002",
+      "wording": "JavaScript, HTML5 and CSS3 frontend evidence",
+      "support": "VERIFIED_WITHIN_SCOPE",
+      "evidence_basis": [
+        "09.004",
+        "09.005"
+      ],
+      "boundary": "Technical project evidence only."
+    },
+    {
+      "claim_id": "RESUME-CLAIM-003",
+      "wording": "React Context state/data flow",
+      "support": "VERIFIED_WITHIN_SCOPE",
+      "evidence_basis": [
+        "React Context evidence refs from 09.005"
+      ],
+      "boundary": "Must not be rewritten as Redux, Flux or Relay."
+    },
+    {
+      "claim_id": "RESUME-CLAIM-004",
+      "wording": "Angular project evidence",
+      "support": "VERIFIED_WITHIN_SCOPE",
+      "evidence_basis": [
+        "Angular package evidence",
+        "verified Angular commit"
+      ],
+      "boundary": "Does not establish employment duration."
+    },
+    {
+      "claim_id": "RESUME-CLAIM-005",
+      "wording": "Modern ECMAScript usage",
+      "support": "VERIFIED_WITHIN_SCOPE",
+      "evidence_basis": [
+        "09.004 requirement matrix",
+        "09.005 verification"
+      ],
+      "boundary": "No broader language-expertise claim."
+    },
+    {
+      "claim_id": "RESUME-CLAIM-006",
+      "wording": "CLI workflows and API integration",
+      "support": "PARTIAL_QUALIFIED",
+      "evidence_basis": [
+        "order-client",
+        "session-client",
+        "verified project evidence"
+      ],
+      "boundary": "Measured client-side performance is not proven."
+    },
+    {
+      "claim_id": "RESUME-CLAIM-007",
+      "wording": "Programming fundamentals and typed data structures",
+      "support": "VERIFIED_WITHIN_SCOPE",
+      "evidence_basis": [
+        "order-service",
+        "commerce-merge Set/Map evidence"
+      ],
+      "boundary": "Limited to recoverable implementation evidence."
+    },
+    {
+      "claim_id": "RESUME-CLAIM-008",
+      "wording": "Advanced English",
+      "support": "PROHIBITED_UNKNOWN",
+      "evidence_basis": [],
+      "boundary": "Must not be claimed until independently verified."
+    }
+  ],
+  "prohibited_transformations": [
+    "React Context -> Redux",
+    "React Context -> Flux",
+    "React Context -> Relay",
+    "API/CLI work -> measured performance expertise",
+    "repository age -> professional duration",
+    "repository ownership -> exclusive authorship",
+    "project evidence -> unsupported seniority",
+    "unknown English level -> Advanced English"
+  ],
+  "application_authorized": false
+}

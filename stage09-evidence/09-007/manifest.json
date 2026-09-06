@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.007",
+  "stage_id": "stage.skillcertify.09",
+  "checkpoint": "CP09-007-G",
+  "artifacts": [
+    {
+      "path": "stage09-evidence/09-007/FACTUAL_RESUME_SOURCE.json",
+      "sha256": "4a6110a30c40e84c33cb54c3b9eadf6abd6f4cd6f8a923f1813337acc2d8c346",
+      "role": "factual_authority_for_resume_generation"
+    },
+    {
+      "path": "stage09-evidence/09-007/RESUME_ADAPTATION_DESIGN.md",
+      "sha256": "9f6fcea29e50c0d4432bcd48fe47be1ccc487cfbc1351b7c45a14103f85a40a1",
+      "role": "generation_and_claim_boundary_contract"
+    },
+    {
+      "path": "stage09-evidence/09-007/RESUME_DRAFT.md",
+      "sha256": "8183898a038724c9d27770e920cf59fa93c7c9a6bc88dad0aef8d8c54bfa426c",
+      "role": "human_approved_candidate_facing_resume"
+    },
+    {
+      "path": "stage09-evidence/09-007/RESUME_CLAIM_TRACE.json",
+      "sha256": "aae19d209653b3906e1f4f65984f2ce0365bcddd64cae34d761834611bb5d7c3",
+      "role": "claim_to_evidence_trace"
+    },
+    {
+      "path": "stage09-evidence/09-007/RESUME_REVIEW_CHECKLIST.md",
+      "sha256": "4b92c51adbf381d12b92935471ab2039f24e2dc45901975bc2f71c836460ffb6",
+      "role": "completed_factual_and_privacy_review_checklist"
+    },
+    {
+      "path": "stage09-evidence/09-007/HUMAN_FACTS_PROVENANCE.json",
+      "sha256": "715140014f695544502c94dc520e173d289280e4716f20bc5e6aa1193aecdc0b",
+      "role": "privacy_preserving_direct_human_fact_provenance"
+    },
+    {
+      "path": "stage09-evidence/09-007/HUMAN_REVIEW.json",
+      "sha256": "fdd77459c5959128daf56591e25e5acbd6c3fbcd3e5d556b970b29309dcc3837",
+      "role": "human_factual_and_privacy_approval"
+    }
+  ],
+  "target": {
+    "vacancy_source_id": "VAC-09-004-001",
+    "priority_band": "P2"
+  },
+  "factual_source_materialized": true,
+  "candidate_resume_materialized": true,
+  "human_identity_facts_applied": true,
+  "human_education_facts_applied": true,
+  "formal_professional_experience_declared": false,
+  "review": {
+    "mechanical_factual_review": "PASS",
+    "mechanical_privacy_review": "PASS",
+    "human_factual_review": "APPROVED",
+    "human_privacy_review": "APPROVED"
+  },
+  "task_validation": {
+    "texto_revisado": true,
+    "human_factual_privacy_review": true,
+    "checklist_evidence_present": true
+  },
+  "external_actions": {
+    "application_authorized": false,
+    "application_performed": false,
+    "outreach_performed": false,
+    "linkedin_mutation_performed": false
+  }
+}

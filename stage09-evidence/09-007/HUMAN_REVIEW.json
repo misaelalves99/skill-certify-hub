@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.007",
+  "stage_id": "stage.skillcertify.09",
+  "record_type": "human_factual_privacy_review",
+  "checkpoint": "CP09-007-G",
+  "decision": "APPROVED",
+  "factual_review": "APPROVED",
+  "privacy_review": "APPROVED",
+  "approval_text": "APROVO FACTUAL + PRIVACIDADE DO 09.007",
+  "approval_date": "2026-09-06",
+  "approved_artifact": {
+    "path": "stage09-evidence/09-007/RESUME_DRAFT.md",
+    "sha256": "8183898a038724c9d27770e920cf59fa93c7c9a6bc88dad0aef8d8c54bfa426c"
+  },
+  "boundaries_confirmed": {
+    "advanced_english_claim": false,
+    "redux_flux_relay_claim": false,
+    "measured_client_performance_claim": false,
+    "unsupported_seniority_claim": false,
+    "unsupported_duration_claim": false,
+    "vacancy_002_requirements": false,
+    "formal_professional_experience_declared": false
+  },
+  "privacy": {
+    "candidate_facing_contact_data_approved": true,
+    "raw_pii_duplicated_in_review_record": false,
+    "raw_pii_allowed_in_transfer_checkpoint": false
+  },
+  "external_action": {
+    "application_authorized": false,
+    "application_performed": false,
+    "outreach_performed": false,
+    "linkedin_mutation_performed": false
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.007",
+  "record_type": "factual_resume_source",
+  "status": "MATERIALIZED_PENDING_RESUME_DRAFT",
+  "target": {
+    "vacancy_source_id": "VAC-09-004-001",
+    "priority_band": "P2",
+    "requirement_count": 8,
+    "coverage": {
+      "full": 5,
+      "partial": 2,
+      "none": 0,
+      "unknown": 1
+    }
+  },
+  "source_authority": {
+    "requirement_matrix": {
+      "path": "stage09-evidence/09-004/REQUIREMENT_EVIDENCE_MATRIX.json",
+      "sha256": "9de69194b9c83f7a9d22d50cdbbd3d5ca7fade50b199d415187bde489e72f44d"
+    },
+    "verification_ledger": {
+      "path": "stage09-evidence/09-005/EVIDENCE_VERIFICATION_LEDGER.json",
+      "sha256": "70dac91fd744324972a2355deec858614e864a6bc51243675f707ea9ffe64149"
+    },
+    "prioritization_decision": {
+      "path": "stage09-evidence/09-006/VACANCY_PRIORITIZATION_DECISION.json",
+      "sha256": "df4a7c9c17b8b3d2b28dd018ef7737551fb7bc9be33c61d6b74f7dfc74cbafdc"
+    },
+    "human_review": {
+      "path": "stage09-evidence/09-006/HUMAN_REVIEW.json",
+      "sha256": "4a9b677d3d0c0b4bc9302fe7f70a051ace0a8b52d1c3cf743d168f7e18ebbce5",
+      "factual": "PASS",
+      "privacy": "PASS"
+    }
+  },
+  "requirements": [
+    {
+      "matrix_row_id": "ROW-09-004-001",
+      "requirement_id": "VAC-09-004-001-REQ-01",
+      "requirement_text": "Broad practical experience with React.",
+      "coverage": "full",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/package.json",
+        "https://github.com/misaelalves99/e-commerce-shop-next/commit/51456a6a8008958ecd0899242fa3f90997661421",
+        "https://github.com/misaelalves99/e-commerce-shop-react/blob/83e9afd888db2a68059956557f90d423ca878dc9/package.json"
+      ],
+      "gap": "No material React implementation gap identified within the 09.004 mapping scope.",
+      "qualification": "Full coverage reflects multiple recoverable React/Next implementations and direct GitHub authorship evidence; it does not assert employment duration, production scale or third-party usage.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION",
+      "resume_claim_policy": "DIRECT_FACTUAL_USE_ALLOWED_WITHIN_VERIFIED_SCOPE"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-002",
+      "requirement_id": "VAC-09-004-001-REQ-02",
+      "requirement_text": "Solid Front End development experience with strong JavaScript, CSS3 and HTML5 skills.",
+      "coverage": "full",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/package.json",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/shared/ui/IconButton/IconButton.tsx",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/app/styles/utilities.css"
+      ],
+      "gap": "No material Front End / JavaScript-family / CSS / HTML-interface implementation gap identified at mapping scope.",
+      "qualification": "TypeScript/TSX, semantic HTML surfaces and authored responsive CSS materially support the requirement; this does not imply production-scale traffic.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION",
+      "resume_claim_policy": "DIRECT_FACTUAL_USE_ALLOWED_WITHIN_VERIFIED_SCOPE"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-003",
+      "requirement_id": "VAC-09-004-001-REQ-03",
+      "requirement_text": "Experience developing web applications with ReactJS and related state/data-flow technologies such as Flux, Redux or Relay.",
+      "coverage": "partial",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/context/AuthContext.tsx",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/context/CartContext.tsx",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/context/FavoritesContext.tsx",
+        "https://github.com/misaelalves99/e-commerce-shop-react/blob/83e9afd888db2a68059956557f90d423ca878dc9/src/context/AuthContext.tsx"
+      ],
+      "gap": "Recoverable React state/data-flow evidence uses Context-based implementations; no direct Flux, Redux or Relay implementation was recovered in the inspected application surfaces.",
+      "qualification": "React web-application and state-management experience is directly evidenced, but similar state technology alone is not promoted to full coverage under the frozen schema.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION",
+      "resume_claim_policy": "QUALIFIED_USE_ONLY"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-004",
+      "requirement_id": "VAC-09-004-001-REQ-04",
+      "requirement_text": "Experience with additional JavaScript frameworks; the source cites Angular, Backbone and Marionette as examples.",
+      "coverage": "full",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/ecommerce-store-angular/blob/050e0771431aece258296759f6022b64ab725e33/package.json",
+        "https://github.com/misaelalves99/ecommerce-store-angular/commit/a18c4f524165ad05a93379d8798c7d7095b1087d"
+      ],
+      "gap": "No material gap identified for experience with an additional JavaScript framework because Angular is directly recovered.",
+      "qualification": "Full coverage is limited to directly evidenced Angular experience; Backbone and Marionette are not claimed.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION",
+      "resume_claim_policy": "DIRECT_FACTUAL_USE_ALLOWED_WITHIN_VERIFIED_SCOPE"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-005",
+      "requirement_id": "VAC-09-004-001-REQ-05",
+      "requirement_text": "Experience with the ES2015 generation of JavaScript, including ES6/ES7.",
+      "coverage": "full",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/package.json",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/app/api/revalidate/route.ts",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/shared/ui/IconButton/IconButton.tsx"
+      ],
+      "gap": "No material modern-JavaScript language-feature gap identified at mapping scope.",
+      "qualification": "The evidence contains ES2015+ module syntax, const/let-era constructs, async/await, destructuring, typed interfaces and modern language behavior through current TypeScript/JavaScript.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION",
+      "resume_claim_policy": "DIRECT_FACTUAL_USE_ALLOWED_WITHIN_VERIFIED_SCOPE"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-006",
+      "requirement_id": "VAC-09-004-001-REQ-06",
+      "requirement_text": "Experience with command-line workflows, APIs and client-side performance.",
+      "coverage": "partial",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/package.json",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/data/order/order-client.ts",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/auth/session-client.ts",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/docs/case/capabilities.md"
+      ],
+      "gap": "Command-line project workflows and API integration are directly evidenced, but measured client-side performance work is not verified.",
+      "qualification": "The case explicitly prohibits unverified performance benchmark claims, so the combined requirement cannot be classified full.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION",
+      "resume_claim_policy": "QUALIFIED_USE_ONLY"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-007",
+      "requirement_id": "VAC-09-004-001-REQ-07",
+      "requirement_text": "Experience with core programming concepts, data structures, variable types and language-specific behavior.",
+      "coverage": "full",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/domain/order/order-service.ts",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/data/commerce/commerce-merge.ts",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/shared/ui/IconButton/IconButton.tsx"
+      ],
+      "gap": "No material programming-fundamentals gap identified in the inspected implementation evidence.",
+      "qualification": "Typed Maps, arrays, iteration, generics/unions, validation and language-specific type behavior directly demonstrate the listed fundamentals; 09.005 must revalidate scope and authorship.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION",
+      "resume_claim_policy": "DIRECT_FACTUAL_USE_ALLOWED_WITHIN_VERIFIED_SCOPE"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-008",
+      "requirement_id": "VAC-09-004-001-REQ-08",
+      "requirement_text": "Advanced English proficiency.",
+      "coverage": "unknown",
+      "evidence_refs": [],
+      "gap": "No direct recoverable evidence establishing advanced English proficiency was found in the inspected GitHub/case surfaces.",
+      "qualification": "English README text, identifiers, code or technology documentation are not treated as proof of advanced language proficiency.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION",
+      "resume_claim_policy": "DO_NOT_CLAIM"
+    }
+  ],
+  "hard_claim_boundaries": {
+    "advanced_english": "UNKNOWN_DO_NOT_CLAIM",
+    "redux_flux_relay": "NOT_PROVEN_DO_NOT_CLAIM",
+    "react_context": "DIRECT_EVIDENCE_ALLOWED",
+    "cli_and_api_workflows": "DIRECT_EVIDENCE_ALLOWED_WITHIN_SCOPE",
+    "measured_client_side_performance": "NOT_PROVEN_DO_NOT_CLAIM",
+    "unsupported_seniority": "DO_NOT_CLAIM",
+    "unsupported_employment_duration": "DO_NOT_CLAIM",
+    "vacancy_002_requirements": "OUT_OF_SCOPE"
+  },
+  "generation_rules": [
+    "Use only recoverable verified evidence.",
+    "Do not convert partial coverage into full proficiency.",
+    "Do not convert repository age into professional duration.",
+    "Do not infer seniority.",
+    "Do not claim Advanced English.",
+    "Do not claim Redux, Flux or Relay from React Context evidence.",
+    "Do not claim measured client-side performance.",
+    "Do not import requirements from VAC-09-004-002.",
+    "Do not keyword-stuff or manufacture an ATS score.",
+    "Human factual and privacy review remains mandatory before any application."
+  ],
+  "external_action": {
+    "application_authorized": false,
+    "application_performed": false,
+    "outreach_performed": false,
+    "linkedin_performed": false
+  }
+}
