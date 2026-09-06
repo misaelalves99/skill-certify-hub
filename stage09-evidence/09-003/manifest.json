@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.003",
+  "stage_id": "stage.skillcertify.09",
+  "workstream_id": "workstream.skillcertify.09.01",
+  "title": "Configurar buscas e alertas autorizados",
+  "status": "evidence_human_approved_pending_commit",
+  "data_class": "publico",
+  "objective": "Capturar buscas/alertas e vacancy sources com snapshot/freshness, sem aplicar ou criar pipeline fictício.",
+  "dependencies": [
+    "task.skillcertify.09.001",
+    "task.skillcertify.09.002"
+  ],
+  "artifacts": [
+    "STAGE09_AUTHORIZED_SEARCH_DESIGN.md",
+    "SEARCH_QUERY_MATRIX.json",
+    "SEARCH_EVIDENCE_SCHEMA.json"
+  ],
+  "execution_state": {
+    "design_materialized": true,
+    "live_job_search_performed": true,
+    "source_inspection_performed": true,
+    "alert_created": false,
+    "application_performed": false,
+    "outreach_performed": false,
+    "linkedin_mutation_performed": false,
+    "external_tool_adoption_performed": false
+  },
+  "human_review": {
+    "factual": "PASS",
+    "privacy": "PASS",
+    "execution_authorization": "APPROVED"
+  },
+  "legacy_tool_hint": {
+    "tool": "LinkedIn Jobs",
+    "role": "pesquisa",
+    "authority": "derived-hint-only",
+    "selected": false,
+    "adopted": false,
+    "required": false
+  },
+  "acceptance": {
+    "task_evidence_accepted": true,
+    "application_authorized": false,
+    "outreach_authorized": false,
+    "alert_creation_authorized": false,
+    "linkedin_mutation_authorized": false,
+    "external_tool_adoption_authorized": false
+  }
+}

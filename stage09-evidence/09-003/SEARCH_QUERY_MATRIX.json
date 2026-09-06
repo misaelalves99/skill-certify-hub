@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.003",
+  "status": "design_only_not_executed",
+  "positioning": {
+    "primary": "Frontend Developer",
+    "expansion": "Fullstack Developer",
+    "rule": "Frontend as primary strength; Fullstack as expansion"
+  },
+  "queries": [
+    {
+      "query_id": "Q01",
+      "text": "Frontend Developer",
+      "purpose": "primary",
+      "executed": false
+    },
+    {
+      "query_id": "Q02",
+      "text": "React Developer",
+      "purpose": "primary_technology",
+      "executed": false
+    },
+    {
+      "query_id": "Q03",
+      "text": "Next.js Developer",
+      "purpose": "primary_technology",
+      "executed": false
+    },
+    {
+      "query_id": "Q04",
+      "text": "TypeScript Developer",
+      "purpose": "technology_expansion",
+      "executed": false
+    },
+    {
+      "query_id": "Q05",
+      "text": "Fullstack Developer",
+      "purpose": "expansion",
+      "executed": false
+    }
+  ],
+  "allowed_filters": [
+    "location",
+    "remote_model",
+    "seniority_if_explicit",
+    "technology_keywords",
+    "publication_date",
+    "source_type"
+  ],
+  "forbidden_inference": [
+    "infer_seniority_when_absent",
+    "infer_current_status_from_discovery_only",
+    "infer_fit_from_title_only",
+    "infer_response_probability",
+    "infer_interview_probability",
+    "infer_offer_probability"
+  ],
+  "live_search_performed": false,
+  "alert_created": false
+}

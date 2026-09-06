@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.003",
+  "execution_mode": "authorized_public_search_only",
+  "inspected_at_local": "2026-09-05T21:24:00-03:00",
+  "execution_boundaries": {
+    "live_public_search_performed": true,
+    "authenticated_account_accessed": false,
+    "alert_created": false,
+    "application_performed": false,
+    "outreach_performed": false,
+    "linkedin_mutation_performed": false,
+    "external_tool_adoption_performed": false
+  },
+  "executed_queries": [
+    "Frontend Developer / React / Brazil / remote",
+    "React Developer / Brazil / remote",
+    "Frontend Developer / Minas Gerais / Brazil",
+    "React + TypeScript / Brazil / remote",
+    "Official employer careers verification for matching frontend sources"
+  ],
+  "source_units": [
+    {
+      "source_id": "SRC-09-003-001",
+      "source_class": "public_job_board_search",
+      "source_name": "LinkedIn Jobs public search",
+      "source_reference": "https://br.linkedin.com/jobs/desenvolvedor-front-end-react-vagas",
+      "exact_query": "Desenvolvedor Front End React em Brasil",
+      "filters": [
+        "Brasil",
+        "public search"
+      ],
+      "freshness_class": "FRESH_BOUNDED",
+      "freshness_basis": "Public search page exposed mixed recency buckets and individual relative posting ages.",
+      "factual_status": "DISCOVERY_SOURCE_ACTIVE",
+      "privacy_review": "PENDING",
+      "source_verification": "VERIFIED_DISCOVERY",
+      "limitations": [
+        "Search result discovery does not prove each vacancy is currently open.",
+        "Results include materially old listings.",
+        "No authenticated account was used."
+      ]
+    },
+    {
+      "source_id": "SRC-09-003-002",
+      "source_class": "public_job_board_vacancy",
+      "source_name": "Hire Feed via LinkedIn public vacancy page",
+      "source_reference": "https://br.linkedin.com/jobs/view/frontend-developer-typescript-remote-at-hire-feed-4454042802",
+      "exact_query": "Frontend Developer TypeScript Remote Brazil",
+      "filters": [
+        "Brazil",
+        "remote",
+        "TypeScript"
+      ],
+      "freshness_class": "STALE",
+      "freshness_basis": "Vacancy page explicitly states that applications are no longer accepted.",
+      "factual_status": "CLOSED_NOT_ACTIONABLE",
+      "privacy_review": "PENDING",
+      "source_verification": "VERIFIED_DISCOVERY",
+      "limitations": [
+        "Discovery listing only.",
+        "Must not be treated as current despite recent-looking relative time."
+      ]
+    },
+    {
+      "source_id": "SRC-09-003-003",
+      "source_class": "official_employer_careers",
+      "source_name": "BairesDev Front End Careers",
+      "source_reference": "https://talent.bairesdev.com/pt/vagas-remotas-front-end",
+      "exact_query": "BairesDev Frontend official careers",
+      "filters": [
+        "Front End",
+        "remote"
+      ],
+      "freshness_class": "FRESH_BOUNDED",
+      "freshness_basis": "Official employer careers page is publicly active, but no exact publication timestamp was established.",
+      "factual_status": "PRIMARY_SOURCE_ACTIVE",
+      "privacy_review": "PENDING",
+      "source_verification": "VERIFIED_PRIMARY",
+      "limitations": [
+        "General careers funnel may represent current and future matching opportunities.",
+        "Exact vacancy-level publication date not established."
+      ]
+    },
+    {
+      "source_id": "SRC-09-003-004",
+      "source_class": "official_employer_vacancy",
+      "source_name": "BairesDev React Frontend",
+      "source_reference": "https://talent.bairesdev.com/pt/vagas/desenvolvedor-react-frontend-remote",
+      "exact_query": "BairesDev React Frontend Remote",
+      "filters": [
+        "React",
+        "Frontend",
+        "remote"
+      ],
+      "freshness_class": "FRESH_BOUNDED",
+      "freshness_basis": "Official vacancy page is publicly reachable and presents role requirements, but exact publication age is not exposed.",
+      "factual_status": "PRIMARY_SOURCE_PRESENT",
+      "privacy_review": "PENDING",
+      "source_verification": "VERIFIED_PRIMARY",
+      "limitations": [
+        "No application action performed.",
+        "Exact posting date not established."
+      ]
+    },
+    {
+      "source_id": "SRC-09-003-005",
+      "source_class": "official_employer_application_endpoint",
+      "source_name": "BairesDev React Next.js Developer",
+      "source_reference": "https://applicants.bairesdev.com/job/697/290619/apply?lang=pt",
+      "exact_query": "React Next.js Developer BairesDev",
+      "filters": [
+        "React",
+        "Next.js",
+        "remote"
+      ],
+      "freshness_class": "FRESH_BOUNDED",
+      "freshness_basis": "Official employer endpoint is reachable and contains a concrete role description; exact public posting timestamp was not established.",
+      "factual_status": "PRIMARY_ROLE_ENDPOINT_PRESENT",
+      "privacy_review": "PENDING",
+      "source_verification": "VERIFIED_PRIMARY",
+      "limitations": [
+        "Endpoint was inspected only.",
+        "No form interaction or application submission occurred."
+      ]
+    }
+  ],
+  "conclusions": {
+    "discovery_is_not_current_confirmed": true,
+    "stale_example_observed": true,
+    "primary_source_verification_feasible": true,
+    "search_effectiveness_established": false,
+    "market_demand_established": false,
+    "vacancy_fit_established": false,
+    "application_authorized": false
+  }
+}
