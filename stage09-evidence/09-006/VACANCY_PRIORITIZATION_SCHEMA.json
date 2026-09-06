@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.006",
+  "record_type": "vacancy_prioritization_record",
+  "required_fields": [
+    "priority_record_id",
+    "vacancy_source_id",
+    "source_name",
+    "source_reference",
+    "requirement_summary",
+    "evidence_alignment",
+    "material_gaps",
+    "gap_risk",
+    "source_actionability",
+    "application_effort",
+    "priority_band",
+    "decision_basis",
+    "human_review_state"
+  ],
+  "enums": {
+    "evidence_alignment": [
+      "strong",
+      "mixed",
+      "weak",
+      "unknown"
+    ],
+    "gap_risk": [
+      "low",
+      "material",
+      "high",
+      "unknown"
+    ],
+    "source_actionability": [
+      "confirmed",
+      "unconfirmed",
+      "unavailable",
+      "unknown"
+    ],
+    "application_effort": [
+      "low",
+      "moderate",
+      "high",
+      "unknown"
+    ],
+    "priority_band": [
+      "P1",
+      "P2",
+      "HOLD",
+      "OMIT",
+      "PENDING"
+    ],
+    "human_review_state": [
+      "PENDING",
+      "PASS",
+      "FAIL"
+    ]
+  },
+  "rules": {
+    "numeric_authoritative_score": "forbidden",
+    "ats_percentage_as_fit": "forbidden",
+    "keyword_similarity_only": "not_fit",
+    "fresh_bounded_source": "not_actionability_confirmation",
+    "partial_requirement": "must_preserve_qualification",
+    "unknown_requirement": "must_remain_visible",
+    "none_requirement": "must_not_be_claimed",
+    "repository_age": "not_employment_duration",
+    "similar_technology": "not_exact_experience",
+    "source_unavailable": "not_actionable",
+    "human_material_approval": "required_before_completion"
+  }
+}

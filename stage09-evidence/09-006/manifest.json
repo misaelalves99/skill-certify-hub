@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.006",
+  "stage_id": "stage.skillcertify.09",
+  "workstream_id": "workstream.skillcertify.09.03",
+  "status": "human_review_approved_ready_for_git_closeout",
+  "artifacts": {
+    "design": {
+      "path": "stage09-evidence/09-006/VACANCY_PRIORITIZATION_DESIGN.md",
+      "sha256": "58227bf8210dbd8bd94ec5290d65d6a9c4fbcb71d4698ab43e86ddf64f490a16"
+    },
+    "schema": {
+      "path": "stage09-evidence/09-006/VACANCY_PRIORITIZATION_SCHEMA.json",
+      "sha256": "825a0a51c5de8845862da05a6e969a992ec92633ccb88b4662669ee9f60e4138"
+    },
+    "input_set": {
+      "path": "stage09-evidence/09-006/VACANCY_PRIORITIZATION_INPUT_SET.json",
+      "sha256": "a33d9f54091f8952fe3d97eb7de2af344d12f5951ef6faabd345dd42f6e6eeef"
+    },
+    "decision": {
+      "path": "stage09-evidence/09-006/VACANCY_PRIORITIZATION_DECISION.json",
+      "sha256": "df4a7c9c17b8b3d2b28dd018ef7737551fb7bc9be33c61d6b74f7dfc74cbafdc"
+    },
+    "human_review": {
+      "path": "stage09-evidence/09-006/HUMAN_REVIEW.json",
+      "sha256": "4a9b677d3d0c0b4bc9302fe7f70a051ace0a8b52d1c3cf743d168f7e18ebbce5"
+    }
+  },
+  "source_authority": {
+    "matrix_sha256": "9de69194b9c83f7a9d22d50cdbbd3d5ca7fade50b199d415187bde489e72f44d",
+    "source_set_sha256": "e7e4c5de51c85f33245886887d8856a9bffdbc89f6505c736b8a2f7256227749",
+    "ledger_sha256": "70dac91fd744324972a2355deec858614e864a6bc51243675f707ea9ffe64149",
+    "task_09_005_manifest_sha256": "afc14edd30f74e64306ff963ba2267acc4112928dc06a01db7bb6b2123011d4c"
+  },
+  "state": {
+    "vacancy_count": 2,
+    "requirement_count": 14,
+    "prioritization_performed": true,
+    "source_revalidation_performed": true,
+    "human_factual_review": "PASS",
+    "human_privacy_review": "PASS",
+    "evidence_alignment_assessed": true,
+    "gap_risk_assessed": true,
+    "application_effort_assessed": true,
+    "priority_band_assigned": true,
+    "p1_count": 0,
+    "p2_count": 1,
+    "hold_count": 1,
+    "omit_count": 0,
+    "pending_count": 0,
+    "human_review_complete": true
+  },
+  "nonclaims": {
+    "vacancy_fit_established": false,
+    "actionable_vacancy_confirmed": false,
+    "application_authorized": false,
+    "application_performed": false,
+    "outreach_performed": false,
+    "linkedin_mutation_performed": false,
+    "external_tool_adoption_performed": false
+  }
+}
