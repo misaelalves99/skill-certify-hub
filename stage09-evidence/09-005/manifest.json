@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.005",
+  "stage_id": "stage.skillcertify.09",
+  "workstream_id": "workstream.skillcertify.09.02",
+  "status": "human_review_pass_ready_for_git_closeout",
+  "baseline": {
+    "branch": "task/skillcertify-09-005-evidence-verification",
+    "head": "c385c9569bac1d09f0ee02c68ace5ab9c360ae28",
+    "source_task_id": "task.skillcertify.09.004",
+    "source_matrix_sha256": "9de69194b9c83f7a9d22d50cdbbd3d5ca7fade50b199d415187bde489e72f44d",
+    "source_manifest_sha256": "a5b25dcc7e05b1ee84c23c2432ea714b927ac39c841f2caec65306e24b342c2e",
+    "inherited_requirement_count": 14,
+    "inherited_evidence_ref_count": 21
+  },
+  "artifacts": [
+    "EVIDENCE_VERIFICATION_DESIGN.md",
+    "EVIDENCE_VERIFICATION_SCHEMA.json",
+    "EVIDENCE_VERIFICATION_LEDGER.json",
+    "manifest.json"
+  ],
+  "dependency": {
+    "task_id": "task.skillcertify.09.004",
+    "accepted": true,
+    "factual_review": "PASS",
+    "privacy_review": "PASS"
+  },
+  "execution_state": {
+    "verification_design_materialized": true,
+    "verification_schema_materialized": true,
+    "verification_ledger_materialized": true,
+    "evidence_ref_inventory_materialized": true,
+    "ref_verification_performed": true,
+    "authorship_verification_performed": true,
+    "scope_verification_performed": true,
+    "reproducibility_verification_performed": true,
+    "requirement_coverage_redecision_performed": true,
+    "evidence_final_verification_performed": true,
+    "application_performed": false,
+    "outreach_performed": false,
+    "linkedin_mutation_performed": false,
+    "external_tool_adoption_performed": false
+  },
+  "human_review": {
+    "factual": "PASS",
+    "privacy": "PASS"
+  },
+  "non_claims": {
+    "vacancy_fit_established": false,
+    "actionable_vacancy_confirmed": false,
+    "application_authorized": false
+  }
+}
