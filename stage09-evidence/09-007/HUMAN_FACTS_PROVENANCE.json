@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.007",
+  "record_type": "human_resume_fact_provenance",
+  "source": "DIRECT_HUMAN_INPUT",
+  "captured_date": "2026-09-06",
+  "identity": {
+    "name_present": true,
+    "name_sha256": "e27463c43d29de902e7fd17e8ad535c1968572bf0fbfba2dfa7b1f6165f23dc0",
+    "location_present": true,
+    "location_sha256": "6715a52ce97fd320a834fd9bdbdab4bf9b5051acf9de5547597bf8a2609e1857"
+  },
+  "contact": {
+    "email_present": true,
+    "email_sha256": "388af48b01e475482873a88073ae888118b3c124c28eaba4c9d1891994825d68",
+    "phone_present": true,
+    "phone_sha256": "871a06d53b504f64d916e1450fc4237d2d3d6da95348a6f3ccc59f4bb1a91206",
+    "linkedin_present": true,
+    "linkedin_sha256": "9565a1c2dfb97f0bf43bcc0dc755444f153318e710f37ab725b49fcce8002163",
+    "github_present": true,
+    "github_sha256": "e99be4f3fb3407eed3fef539a44c90e6891d7f32d03990ce906694d2f777bc5b"
+  },
+  "education": {
+    "present": true,
+    "institution_sha256": "fc5d853b2b2c11cd8e225c005d5058340ec3147b5040e5da5415eed08df14373",
+    "course_sha256": "ca28961993153c041f653a423dccdb7a7e7addff804232374682bff63991ad89",
+    "status_sha256": "2801cb53f1fa6f085f4dbfb4480276d96876d7bc6f85995c2877c93a7a3975a1",
+    "period_sha256": "ce2c4342f087cc0a53935a1ee3a51b727ecbae34036d57128435fc6bb58da1ba"
+  },
+  "professional_experience": {
+    "formal_experience_declared": false,
+    "employment_history_inferred": false
+  },
+  "privacy": {
+    "raw_pii_duplicated_in_provenance": false,
+    "raw_pii_allowed_in_candidate_resume": true,
+    "checkpoint_transfer_contains_raw_pii": false
+  }
+}
