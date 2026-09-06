@@ -1,0 +1,215 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.006",
+  "stage_id": "stage.skillcertify.09",
+  "workstream_id": "workstream.skillcertify.09.03",
+  "decision_status": "TECHNICAL_PRIORITIZATION_HUMAN_REVIEW_APPROVED",
+  "observed_date": "2026-09-06",
+  "methodology": {
+    "numeric_authoritative_score_used": false,
+    "ats_percentage_used": false,
+    "universal_threshold_used": false,
+    "dimensions": [
+      "evidence_alignment",
+      "gap_risk",
+      "source_actionability",
+      "application_effort",
+      "priority_band"
+    ]
+  },
+  "source_revalidation": [
+    {
+      "vacancy_source_id": "VAC-09-004-001",
+      "observed_date": "2026-09-06",
+      "source_reference": "https://talent.bairesdev.com/pt/vagas/desenvolvedor-react-frontend-remote",
+      "source_owner": "BairesDev",
+      "source_class": "official_employer_vacancy",
+      "retrieval_state": "RECOVERED_DIRECT",
+      "role_content_present": true,
+      "requirements_present": true,
+      "application_cta_present": true,
+      "source_actionability": "confirmed",
+      "limitations": [
+        "Confirmed source actionability means an official current role page and application path were recovered.",
+        "It does not authorize an application.",
+        "It does not establish that every future visit will remain available."
+      ]
+    },
+    {
+      "vacancy_source_id": "VAC-09-004-002",
+      "observed_date": "2026-09-06",
+      "source_reference": "https://applicants.bairesdev.com/job/697/290619/apply?lang=pt",
+      "source_owner": "BairesDev",
+      "source_class": "official_employer_application_endpoint",
+      "retrieval_state": "RECOVERED_OFFICIAL_DYNAMIC_ENDPOINT_WITH_LIMITATION",
+      "role_content_present": true,
+      "requirements_present": true,
+      "application_cta_present": true,
+      "source_actionability": "confirmed",
+      "limitations": [
+        "The official ApplicantSite endpoint remains represented with the React/Next.js role description and Apply action.",
+        "Direct retrieval is dynamically rendered and the current direct collector exposed only the page shell.",
+        "Actionability confirmation does not authorize an application."
+      ]
+    }
+  ],
+  "records": [
+    {
+      "priority_record_id": "PRI-09-006-001",
+      "vacancy_source_id": "VAC-09-004-001",
+      "source_name": "BairesDev React Frontend",
+      "source_reference": "https://talent.bairesdev.com/pt/vagas/desenvolvedor-react-frontend-remote",
+      "requirement_summary": {
+        "total": 8,
+        "full": 5,
+        "partial": 2,
+        "none": 0,
+        "unknown": 1
+      },
+      "evidence_alignment": "strong",
+      "evidence_alignment_basis": [
+        "Five of eight extracted requirements have full evidence coverage.",
+        "React, frontend JavaScript/CSS/HTML, Angular, modern JavaScript and programming fundamentals are directly supported.",
+        "Two requirements remain partial and advanced English remains unknown."
+      ],
+      "material_gaps": [
+        "React state/data-flow evidence is Context-based; Flux, Redux and Relay were not directly recovered.",
+        "CLI and API experience are evidenced, but measured client-side performance work is not verified.",
+        "Advanced English proficiency remains unsupported by direct recoverable evidence."
+      ],
+      "gap_risk": "material",
+      "gap_risk_basis": [
+        "No requirement is classified none.",
+        "One mandatory language requirement remains unknown.",
+        "Two technical requirements require explicit qualification."
+      ],
+      "source_actionability": "confirmed",
+      "source_actionability_basis": [
+        "Official BairesDev React Frontend role page recovered on 2026-09-06.",
+        "Current page contains role requirements and application CTA."
+      ],
+      "application_effort": "moderate",
+      "application_effort_basis": [
+        "Most technical requirements can be supported directly with verified evidence.",
+        "Material tailoring is required to preserve the state-management and performance limitations.",
+        "Advanced English cannot be claimed without separate evidence."
+      ],
+      "priority_band": "P2",
+      "priority_basis": [
+        "Strong technical evidence alignment supports continued consideration.",
+        "Material unresolved requirements prevent promotion to P1.",
+        "P2 is a prioritization decision only and does not authorize application."
+      ],
+      "fit_assessment": "QUALIFIED_POSITIVE_WITH_MATERIAL_GAPS",
+      "human_review_state": "PASS",
+      "nonclaims": {
+        "application_authorized": false,
+        "application_performed": false,
+        "outreach_performed": false
+      }
+    },
+    {
+      "priority_record_id": "PRI-09-006-002",
+      "vacancy_source_id": "VAC-09-004-002",
+      "source_name": "BairesDev React Next.js Developer",
+      "source_reference": "https://applicants.bairesdev.com/job/697/290619/apply?lang=pt",
+      "requirement_summary": {
+        "total": 6,
+        "full": 1,
+        "partial": 4,
+        "none": 0,
+        "unknown": 1
+      },
+      "evidence_alignment": "mixed",
+      "evidence_alignment_basis": [
+        "Only the TypeScript and type-safe architecture requirement has full evidence coverage.",
+        "Four requirements are partial.",
+        "Advanced English remains unknown."
+      ],
+      "material_gaps": [
+        "Current evidence does not establish four or more years of Software Engineering experience focused on React and Next.js.",
+        "Revalidation evidence does not establish complete demonstrated expertise across SSR, SSG and ISR.",
+        "Tailwind, responsive and accessibility evidence is incomplete for the full combined requirement.",
+        "Vercel deployment metadata does not establish optimized deployment or performance evidence.",
+        "Advanced English proficiency remains unsupported by direct recoverable evidence."
+      ],
+      "gap_risk": "high",
+      "gap_risk_basis": [
+        "The four-year experience requirement contains a material non-claim that cannot be resolved through repository age.",
+        "Four of six requirements remain partial.",
+        "One mandatory language requirement remains unknown."
+      ],
+      "source_actionability": "confirmed",
+      "source_actionability_basis": [
+        "Official BairesDev ApplicantSite React/Next.js endpoint remains represented with role content and Apply action.",
+        "The endpoint is dynamically rendered and direct collector retrieval has a documented limitation."
+      ],
+      "application_effort": "high",
+      "application_effort_basis": [
+        "Truthful tailoring would require multiple explicit qualifications.",
+        "The four-year requirement cannot be satisfied from the currently verified evidence.",
+        "Rendering, deployment/performance and English gaps materially increase preparation risk."
+      ],
+      "priority_band": "HOLD",
+      "priority_basis": [
+        "Current evidence alignment is insufficient for weekly prioritization ahead of the React Frontend vacancy.",
+        "The four-year requirement is a material unresolved gap.",
+        "HOLD preserves the vacancy for future evidence improvement without treating it as actionable application work."
+      ],
+      "fit_assessment": "MIXED_WITH_HIGH_MATERIAL_GAP_RISK",
+      "human_review_state": "PASS",
+      "nonclaims": {
+        "application_authorized": false,
+        "application_performed": false,
+        "outreach_performed": false
+      }
+    }
+  ],
+  "ordering": [
+    "VAC-09-004-001",
+    "VAC-09-004-002"
+  ],
+  "weekly_priority_summary": {
+    "P1": 0,
+    "P2": 1,
+    "HOLD": 1,
+    "OMIT": 0,
+    "PENDING": 0
+  },
+  "fit_assessment": {
+    "performed": true,
+    "semantics": "MULTIDIMENSIONAL_QUALIFIED_ASSESSMENT_NOT_UNIVERSAL_SCORE"
+  },
+  "source_actionability_revalidation": {
+    "performed": true,
+    "confirmed": 2,
+    "unconfirmed": 0,
+    "unavailable": 0,
+    "unknown": 0
+  },
+  "human_review": {
+    "factual": "PASS",
+    "privacy": "PASS"
+  },
+  "nonclaims": {
+    "application_authorized": false,
+    "application_performed": false,
+    "outreach_performed": false,
+    "linkedin_mutation_performed": false,
+    "external_tool_adoption_performed": false
+  },
+  "limitations": [
+    "Priority bands are contextual weekly prioritization decisions, not universal employability or ATS scores.",
+    "P2 does not mean application authorized.",
+    "HOLD does not mean the vacancy is invalid; it reflects current evidence and gap risk.",
+    "Advanced English remains unsupported for both vacancy records.",
+    "No four-year React/Next.js professional-experience claim is authorized.",
+    "No verified client-side performance benchmark is available.",
+    "Context-based state management is not promoted to Redux, Flux or Relay experience."
+  ],
+  "human_review_evidence": {
+    "path": "stage09-evidence/09-006/HUMAN_REVIEW.json",
+    "sha256": "4a9b677d3d0c0b4bc9302fe7f70a051ace0a8b52d1c3cf743d168f7e18ebbce5",
+    "approval_text": "APROVO FACTUAL + PRIVACY DO 09.006"
+  }
+}

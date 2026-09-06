@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.006",
+  "stage_id": "stage.skillcertify.09",
+  "workstream_id": "workstream.skillcertify.09.03",
+  "input_status": "FROZEN_INPUT_MATERIALIZED_PENDING_SOURCE_REVALIDATION_AND_PRIORITIZATION",
+  "source_authority": {
+    "task_09_004_matrix_sha256": "9de69194b9c83f7a9d22d50cdbbd3d5ca7fade50b199d415187bde489e72f44d",
+    "task_09_004_source_set_sha256": "e7e4c5de51c85f33245886887d8856a9bffdbc89f6505c736b8a2f7256227749",
+    "task_09_005_ledger_sha256": "70dac91fd744324972a2355deec858614e864a6bc51243675f707ea9ffe64149",
+    "task_09_005_manifest_sha256": "afc14edd30f74e64306ff963ba2267acc4112928dc06a01db7bb6b2123011d4c",
+    "factual_review": "PASS",
+    "privacy_review": "PASS"
+  },
+  "vacancy_count": 2,
+  "records": [
+    {
+      "priority_record_id": "PRI-09-006-001",
+      "vacancy_source_id": "VAC-09-004-001",
+      "source_name": "BairesDev React Frontend",
+      "source_reference": "https://talent.bairesdev.com/pt/vagas/desenvolvedor-react-frontend-remote",
+      "source_class": "official_employer_vacancy",
+      "inherited_source_verification": "VERIFIED_PRIMARY",
+      "inherited_freshness_class": "FRESH_BOUNDED",
+      "requirement_summary": {
+        "total": 8,
+        "full": 5,
+        "partial": 2,
+        "none": 0,
+        "unknown": 1
+      },
+      "requirement_ids": [
+        "VAC-09-004-001-REQ-01",
+        "VAC-09-004-001-REQ-02",
+        "VAC-09-004-001-REQ-03",
+        "VAC-09-004-001-REQ-04",
+        "VAC-09-004-001-REQ-05",
+        "VAC-09-004-001-REQ-06",
+        "VAC-09-004-001-REQ-07",
+        "VAC-09-004-001-REQ-08"
+      ],
+      "material_gaps": [
+        "Recoverable React state/data-flow evidence uses Context-based implementations; no direct Flux, Redux or Relay implementation was recovered in the inspected application surfaces.",
+        "Command-line project workflows and API integration are directly evidenced, but measured client-side performance work is not verified.",
+        "No direct recoverable evidence establishing advanced English proficiency was found in the inspected GitHub/case surfaces."
+      ],
+      "evidence_alignment": "unknown",
+      "gap_risk": "unknown",
+      "source_actionability": "unconfirmed",
+      "application_effort": "unknown",
+      "priority_band": "PENDING",
+      "decision_basis": [
+        "Input materialized from frozen 09.004 requirement matrix.",
+        "09.005 verification completed without requirement coverage changes.",
+        "Final prioritization requires source revalidation and explicit multidimensional decision."
+      ],
+      "human_review_state": "PENDING",
+      "nonclaims": {
+        "vacancy_fit_established": false,
+        "actionable_vacancy_confirmed": false,
+        "application_authorized": false
+      }
+    },
+    {
+      "priority_record_id": "PRI-09-006-002",
+      "vacancy_source_id": "VAC-09-004-002",
+      "source_name": "BairesDev React Next.js Developer",
+      "source_reference": "https://applicants.bairesdev.com/job/697/290619/apply?lang=pt",
+      "source_class": "official_employer_application_endpoint",
+      "inherited_source_verification": "VERIFIED_PRIMARY",
+      "inherited_freshness_class": "FRESH_BOUNDED",
+      "requirement_summary": {
+        "total": 6,
+        "full": 1,
+        "partial": 4,
+        "none": 0,
+        "unknown": 1
+      },
+      "requirement_ids": [
+        "VAC-09-004-002-REQ-01",
+        "VAC-09-004-002-REQ-02",
+        "VAC-09-004-002-REQ-03",
+        "VAC-09-004-002-REQ-04",
+        "VAC-09-004-002-REQ-05",
+        "VAC-09-004-002-REQ-06"
+      ],
+      "material_gaps": [
+        "Recoverable public repository evidence establishes React artifacts from at least 2024-08-16 and Next.js artifacts thereafter, but does not establish four years of Software Engineering experience focused on React and Next.js.",
+        "Next.js cache/path/tag revalidation is directly recovered, but explicit evidence establishing SSR, SSG and ISR as a complete demonstrated strategy set was not recovered.",
+        "Tailwind is directly configured and responsive/accessibility implementation is directly evidenced, but the inspected proof does not establish that Tailwind itself is the sole or primary mechanism implementing all responsive and accessibility behavior.",
+        "Vercel deployment familiarity is recoverable, but verified performance-optimization evidence or benchmarks are not.",
+        "No direct recoverable evidence establishing advanced English proficiency was found in the inspected GitHub/case surfaces."
+      ],
+      "evidence_alignment": "unknown",
+      "gap_risk": "unknown",
+      "source_actionability": "unconfirmed",
+      "application_effort": "unknown",
+      "priority_band": "PENDING",
+      "decision_basis": [
+        "Input materialized from frozen 09.004 requirement matrix.",
+        "09.005 verification completed without requirement coverage changes.",
+        "Final prioritization requires source revalidation and explicit multidimensional decision."
+      ],
+      "human_review_state": "PENDING",
+      "nonclaims": {
+        "vacancy_fit_established": false,
+        "actionable_vacancy_confirmed": false,
+        "application_authorized": false
+      }
+    }
+  ],
+  "aggregate_requirement_state": {
+    "total": 14,
+    "full": 6,
+    "partial": 6,
+    "none": 0,
+    "unknown": 2
+  },
+  "prioritization_state": {
+    "evidence_alignment_assessed": false,
+    "gap_risk_assessed": false,
+    "source_actionability_revalidated": false,
+    "application_effort_assessed": false,
+    "priority_band_assigned": false,
+    "human_review_complete": false
+  },
+  "limitations": [
+    "The input contains only vacancy sources already authorized in 09.004.",
+    "FRESH_BOUNDED does not establish that a vacancy is currently open.",
+    "Requirement coverage is evidence coverage, not an ATS score or universal fit score.",
+    "Advanced English remains unsupported in both vacancy records.",
+    "No application action is authorized by this input materialization."
+  ],
+  "nonclaims": {
+    "vacancy_fit_established": false,
+    "actionable_vacancy_confirmed": false,
+    "application_authorized": false,
+    "application_performed": false,
+    "outreach_performed": false,
+    "linkedin_mutation_performed": false,
+    "external_tool_adoption_performed": false
+  }
+}

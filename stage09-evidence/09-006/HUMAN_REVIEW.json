@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.006",
+  "stage_id": "stage.skillcertify.09",
+  "workstream_id": "workstream.skillcertify.09.03",
+  "review_type": "human_factual_and_privacy_review",
+  "review_date": "2026-09-06",
+  "approval": {
+    "explicit": true,
+    "text": "APROVO FACTUAL + PRIVACY DO 09.006",
+    "factual": "PASS",
+    "privacy": "PASS"
+  },
+  "approved_decision": {
+    "VAC_09_004_001": {
+      "evidence_alignment": "strong",
+      "gap_risk": "material",
+      "source_actionability": "confirmed",
+      "application_effort": "moderate",
+      "priority_band": "P2"
+    },
+    "VAC_09_004_002": {
+      "evidence_alignment": "mixed",
+      "gap_risk": "high",
+      "source_actionability": "confirmed",
+      "application_effort": "high",
+      "priority_band": "HOLD"
+    }
+  },
+  "approved_summary": {
+    "P1": 0,
+    "P2": 1,
+    "HOLD": 1,
+    "OMIT": 0,
+    "PENDING": 0
+  },
+  "scope": [
+    "Factual correctness of the 09.006 technical prioritization artifacts.",
+    "Privacy suitability of the 09.006 technical prioritization artifacts."
+  ],
+  "does_not_authorize": [
+    "job application",
+    "outreach",
+    "LinkedIn mutation",
+    "external tool adoption",
+    "impersonation",
+    "offer acceptance"
+  ],
+  "nonclaims": {
+    "application_authorized": false,
+    "application_performed": false,
+    "outreach_performed": false,
+    "linkedin_mutation_performed": false,
+    "external_tool_adoption_performed": false
+  }
+}
