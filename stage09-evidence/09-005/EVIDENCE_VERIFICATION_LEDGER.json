@@ -1,0 +1,1136 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.005",
+  "stage_id": "stage.skillcertify.09",
+  "workstream_id": "workstream.skillcertify.09.02",
+  "source_authority": {
+    "source_task_id": "task.skillcertify.09.004",
+    "source_matrix_sha256": "9de69194b9c83f7a9d22d50cdbbd3d5ca7fade50b199d415187bde489e72f44d",
+    "source_manifest_sha256": "a5b25dcc7e05b1ee84c23c2432ea714b927ac39c841f2caec65306e24b342c2e",
+    "source_merge_commit": "c385c9569bac1d09f0ee02c68ace5ab9c360ae28"
+  },
+  "ledger_status": "EVIDENCE_FINAL_VERIFICATION_COMPLETE_PENDING_HUMAN_REVIEW",
+  "inherited_requirement_state": {
+    "requirement_count": 14,
+    "full_count": 6,
+    "partial_count": 6,
+    "none_count": 0,
+    "unknown_count": 2
+  },
+  "evidence_ref_inventory": {
+    "total_unique_refs": 21,
+    "immutable_commit_anchored": 18,
+    "mutable_repository_metadata": 2,
+    "live_mutable_endpoints": 1,
+    "other": 0
+  },
+  "records": [
+    {
+      "evidence_id": "EVID-09-005-001",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/package.json",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-001",
+          "requirement_id": "VAC-09-004-001-REQ-01",
+          "inherited_coverage": "full"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-002",
+          "requirement_id": "VAC-09-004-001-REQ-02",
+          "inherited_coverage": "full"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-005",
+          "requirement_id": "VAC-09-004-001-REQ-05",
+          "inherited_coverage": "full"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-006",
+          "requirement_id": "VAC-09-004-001-REQ-06",
+          "inherited_coverage": "partial"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-009",
+          "requirement_id": "VAC-09-004-002-REQ-01",
+          "inherited_coverage": "partial"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-010",
+          "requirement_id": "VAC-09-004-002-REQ-02",
+          "inherited_coverage": "partial"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-011",
+          "requirement_id": "VAC-09-004-002-REQ-03",
+          "inherited_coverage": "full"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "PARTIAL",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "Package manifest proves declared React, Next.js, TypeScript and Tailwind dependencies and project scripts, not practical experience by itself.",
+        "Exact authorship of this individual blob was not independently isolated."
+      ],
+      "notes": [
+        "Recovered at immutable commit 1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d.",
+        "Companion authored commit evidence exists in EVID-09-005-002."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-002",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-next/commit/51456a6a8008958ecd0899242fa3f90997661421",
+      "ref_kind": "github_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-001",
+          "requirement_id": "VAC-09-004-001-REQ-01",
+          "inherited_coverage": "full"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "CONFIRMED",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "SUPPORTS",
+      "verification_state": "VERIFIED",
+      "limitations": [
+        "Confirmed commit authorship demonstrates contribution to the project; it does not imply exclusive authorship of the complete repository."
+      ],
+      "notes": [
+        "GitHub commit 51456a6a8008958ecd0899242fa3f90997661421 reports author and committer login misaelalves99."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-003",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-react/blob/83e9afd888db2a68059956557f90d423ca878dc9/package.json",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-001",
+          "requirement_id": "VAC-09-004-001-REQ-01",
+          "inherited_coverage": "full"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-009",
+          "requirement_id": "VAC-09-004-002-REQ-01",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "PARTIAL",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "Package manifest confirms a React and TypeScript project but does not establish employment duration.",
+        "Exact authorship of this individual blob was not independently isolated."
+      ],
+      "notes": [
+        "Recovered at immutable commit 83e9afd888db2a68059956557f90d423ca878dc9."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-004",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/shared/ui/IconButton/IconButton.tsx",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-002",
+          "requirement_id": "VAC-09-004-001-REQ-02",
+          "inherited_coverage": "full"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-005",
+          "requirement_id": "VAC-09-004-001-REQ-05",
+          "inherited_coverage": "full"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-007",
+          "requirement_id": "VAC-09-004-001-REQ-07",
+          "inherited_coverage": "full"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-011",
+          "requirement_id": "VAC-09-004-002-REQ-03",
+          "inherited_coverage": "full"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-012",
+          "requirement_id": "VAC-09-004-002-REQ-04",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "SUPPORTS",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "The component directly demonstrates typed accessible UI behavior, but exact per-file authorship was not independently isolated."
+      ],
+      "notes": [
+        "IconButtonProps requires aria-label and uses typed variants, sizes and button attributes."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-005",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/app/styles/utilities.css",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-002",
+          "requirement_id": "VAC-09-004-001-REQ-02",
+          "inherited_coverage": "full"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-012",
+          "requirement_id": "VAC-09-004-002-REQ-04",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "SUPPORTS",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "Responsive CSS and accessibility utilities are demonstrated; the file alone does not prove all responsive or accessibility behavior across the application.",
+        "Exact per-file authorship was not independently isolated."
+      ],
+      "notes": [
+        "Recovered responsive media queries and sr-only accessibility utility."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-006",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/context/AuthContext.tsx",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-003",
+          "requirement_id": "VAC-09-004-001-REQ-03",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "PARTIAL",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "Direct React Context state-management evidence is recoverable, but Context is not represented as direct Redux, Flux or Relay experience.",
+        "Exact per-file authorship was not independently isolated."
+      ],
+      "notes": [
+        "Recovered typed React Context implementation at the frozen commit."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-007",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/context/CartContext.tsx",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-003",
+          "requirement_id": "VAC-09-004-001-REQ-03",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "PARTIAL",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "Direct React Context state-management evidence is recoverable, but Context is not represented as direct Redux, Flux or Relay experience.",
+        "Exact per-file authorship was not independently isolated."
+      ],
+      "notes": [
+        "Recovered typed React Context implementation at the frozen commit."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-008",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/context/FavoritesContext.tsx",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-003",
+          "requirement_id": "VAC-09-004-001-REQ-03",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "PARTIAL",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "Direct React Context state-management evidence is recoverable, but Context is not represented as direct Redux, Flux or Relay experience.",
+        "Exact per-file authorship was not independently isolated."
+      ],
+      "notes": [
+        "Recovered typed React Context implementation at the frozen commit."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-009",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-react/blob/83e9afd888db2a68059956557f90d423ca878dc9/src/context/AuthContext.tsx",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-003",
+          "requirement_id": "VAC-09-004-001-REQ-03",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "PARTIAL",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "Direct React Context state-management evidence is recoverable, but Context is not represented as direct Redux, Flux or Relay experience.",
+        "Exact per-file authorship was not independently isolated."
+      ],
+      "notes": [
+        "Recovered typed React Context implementation at the frozen commit."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-010",
+      "evidence_ref": "https://github.com/misaelalves99/ecommerce-store-angular/blob/050e0771431aece258296759f6022b64ab725e33/package.json",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-004",
+          "requirement_id": "VAC-09-004-001-REQ-04",
+          "inherited_coverage": "full"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "SUPPORTS",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "Package manifest directly establishes Angular configuration, but exact authorship of this blob was not independently isolated."
+      ],
+      "notes": [
+        "Recovered Angular 19, Angular CLI, RxJS, TypeScript and SSR-oriented scripts."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-011",
+      "evidence_ref": "https://github.com/misaelalves99/ecommerce-store-angular/commit/a18c4f524165ad05a93379d8798c7d7095b1087d",
+      "ref_kind": "github_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-004",
+          "requirement_id": "VAC-09-004-001-REQ-04",
+          "inherited_coverage": "full"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "CONFIRMED",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "SUPPORTS",
+      "verification_state": "VERIFIED",
+      "limitations": [
+        "Confirmed commit authorship demonstrates substantial Angular contribution; it does not imply exclusive authorship of every repository artifact."
+      ],
+      "notes": [
+        "GitHub commit a18c4f524165ad05a93379d8798c7d7095b1087d reports author and committer login misaelalves99."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-012",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/app/api/revalidate/route.ts",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-005",
+          "requirement_id": "VAC-09-004-001-REQ-05",
+          "inherited_coverage": "full"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-010",
+          "requirement_id": "VAC-09-004-002-REQ-02",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "PARTIAL",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "PARTIAL",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "revalidatePath and revalidateTag are directly implemented.",
+        "This ref does not establish complete demonstrated expertise across SSR, SSG and ISR.",
+        "Exact per-file authorship was not independently isolated."
+      ],
+      "notes": [
+        "Recovered Next.js cache revalidation API route at frozen commit."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-013",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/data/order/order-client.ts",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-006",
+          "requirement_id": "VAC-09-004-001-REQ-06",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "SUPPORTS",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "API integration is directly demonstrated, but this evidence does not establish measured client-side performance optimization.",
+        "Exact per-file authorship was not independently isolated."
+      ],
+      "notes": [
+        "Recovered typed client-side API interaction at frozen commit."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-014",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/auth/session-client.ts",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-006",
+          "requirement_id": "VAC-09-004-001-REQ-06",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "SUPPORTS",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "API integration is directly demonstrated, but this evidence does not establish measured client-side performance optimization.",
+        "Exact per-file authorship was not independently isolated."
+      ],
+      "notes": [
+        "Recovered typed client-side API interaction at frozen commit."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-015",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/docs/case/capabilities.md",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-006",
+          "requirement_id": "VAC-09-004-001-REQ-06",
+          "inherited_coverage": "partial"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-013",
+          "requirement_id": "VAC-09-004-002-REQ-05",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "PARTIAL",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "PARTIAL",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "Documentation is supporting context rather than runtime proof.",
+        "The document explicitly states that verified performance benchmarks must not be claimed unless separately captured.",
+        "Exact per-file authorship was not independently isolated."
+      ],
+      "notes": [
+        "Recovered case capabilities and explicit evidence boundaries."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-016",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/domain/order/order-service.ts",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-007",
+          "requirement_id": "VAC-09-004-001-REQ-07",
+          "inherited_coverage": "full"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-011",
+          "requirement_id": "VAC-09-004-002-REQ-03",
+          "inherited_coverage": "full"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "SUPPORTS",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "Implementation directly demonstrates programming fundamentals and data structures, but exact per-file authorship was not independently isolated."
+      ],
+      "notes": [
+        "Recovered typed data structures, validation and language behavior at frozen commit."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-017",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/data/commerce/commerce-merge.ts",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-007",
+          "requirement_id": "VAC-09-004-001-REQ-07",
+          "inherited_coverage": "full"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "CONFIRMED",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "SUPPORTS",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "Implementation directly demonstrates programming fundamentals and data structures, but exact per-file authorship was not independently isolated."
+      ],
+      "notes": [
+        "Recovered typed data structures, validation and language behavior at frozen commit."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-018",
+      "evidence_ref": "https://api.github.com/repos/misaelalves99/e-commerce-shop-react",
+      "ref_kind": "github_repository_api",
+      "reference_stability": "MUTABLE_REPOSITORY_METADATA",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-009",
+          "requirement_id": "VAC-09-004-002-REQ-01",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "PARTIAL",
+      "reproducibility_state": "PARTIAL",
+      "claim_support_state": "PARTIAL",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "Repository ownership is not exclusive authorship.",
+        "Repository creation date is artifact timeline evidence and is not professional employment duration.",
+        "Repository metadata is mutable."
+      ],
+      "notes": [
+        "GitHub API reports repository owner misaelalves99 and created_at 2024-08-16T16:18:49Z."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-019",
+      "evidence_ref": "https://api.github.com/repos/misaelalves99/e-commerce-shop-next",
+      "ref_kind": "github_repository_api",
+      "reference_stability": "MUTABLE_REPOSITORY_METADATA",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-009",
+          "requirement_id": "VAC-09-004-002-REQ-01",
+          "inherited_coverage": "partial"
+        },
+        {
+          "matrix_row_id": "ROW-09-004-013",
+          "requirement_id": "VAC-09-004-002-REQ-05",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "PARTIAL",
+      "reproducibility_state": "PARTIAL",
+      "claim_support_state": "PARTIAL",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "Repository ownership is not exclusive authorship.",
+        "Repository creation date is not professional employment duration.",
+        "Homepage metadata identifies a Vercel URL but does not prove current deployment health or performance.",
+        "Repository metadata is mutable."
+      ],
+      "notes": [
+        "GitHub API reports owner misaelalves99, created_at 2025-04-03T15:50:38Z and homepage https://e-commerce-shop-next-xi.vercel.app/."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-020",
+      "evidence_ref": "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/tailwind.config.ts",
+      "ref_kind": "github_blob_at_commit",
+      "reference_stability": "IMMUTABLE_COMMIT_ANCHORED",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-012",
+          "requirement_id": "VAC-09-004-002-REQ-04",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "RECOVERED",
+      "authorship_state": "PARTIAL",
+      "scope_state": "PARTIAL",
+      "reproducibility_state": "REPRODUCIBLE",
+      "claim_support_state": "PARTIAL",
+      "verification_state": "VERIFIED_WITH_LIMITATIONS",
+      "limitations": [
+        "Tailwind configuration is directly recovered, but configuration alone does not prove that every responsive or accessible behavior is implemented through Tailwind.",
+        "Exact per-file authorship was not independently isolated."
+      ],
+      "notes": [
+        "Recovered typed Tailwind Config with application content globs and theme extension."
+      ]
+    },
+    {
+      "evidence_id": "EVID-09-005-021",
+      "evidence_ref": "https://e-commerce-shop-next-xi.vercel.app/",
+      "ref_kind": "deployment_endpoint",
+      "reference_stability": "LIVE_MUTABLE_ENDPOINT",
+      "row_links": [
+        {
+          "matrix_row_id": "ROW-09-004-013",
+          "requirement_id": "VAC-09-004-002-REQ-05",
+          "inherited_coverage": "partial"
+        }
+      ],
+      "retrieval_state": "INACCESSIBLE",
+      "authorship_state": "UNVERIFIED",
+      "scope_state": "UNVERIFIED",
+      "reproducibility_state": "UNVERIFIED",
+      "claim_support_state": "UNKNOWN",
+      "verification_state": "UNKNOWN",
+      "limitations": [
+        "The live endpoint could not be independently recovered during 09.005 revalidation.",
+        "GitHub repository metadata still records this URL as homepage, but URL presence is not deployment verification.",
+        "No performance claim may be derived from this endpoint."
+      ],
+      "notes": [
+        "Web retrieval did not recover the endpoint.",
+        "Connected Vercel access did not resolve this hostname as a current deployment."
+      ]
+    }
+  ],
+  "conclusions": {
+    "evidence_ref_count": 21,
+    "verified_count": 2,
+    "verified_with_limitations_count": 18,
+    "rejected_count": 0,
+    "unknown_count": 1,
+    "pending_count": 0,
+    "requirement_coverage_redecision_performed": true,
+    "evidence_final_verification_performed": true,
+    "vacancy_fit_established": false,
+    "actionable_vacancy_confirmed": false,
+    "application_authorized": false,
+    "final_requirement_state": {
+      "requirement_count": 14,
+      "full_count": 6,
+      "partial_count": 6,
+      "none_count": 0,
+      "unknown_count": 2,
+      "changed_from_inherited_count": 0
+    }
+  },
+  "requirement_coverage_decisions": [
+    {
+      "decision_id": "REQDEC-09-005-001",
+      "matrix_row_id": "ROW-09-004-001",
+      "vacancy_source_id": "VAC-09-004-001",
+      "requirement_id": "VAC-09-004-001-REQ-01",
+      "requirement_text": "Broad practical experience with React.",
+      "inherited_coverage": "full",
+      "final_coverage": "full",
+      "coverage_changed": false,
+      "verified_evidence_ids": [
+        "EVID-09-005-001",
+        "EVID-09-005-002",
+        "EVID-09-005-003"
+      ],
+      "evidence_states": [
+        {
+          "evidence_id": "EVID-09-005-001",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        },
+        {
+          "evidence_id": "EVID-09-005-002",
+          "verification_state": "VERIFIED",
+          "claim_support_state": "SUPPORTS"
+        },
+        {
+          "evidence_id": "EVID-09-005-003",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        }
+      ],
+      "rationale": "Multiple recoverable React artifacts plus an authored Next.js commit support practical React work across more than one project.",
+      "qualification": "Evidence supports practical React implementation; it does not establish an employment-duration claim.",
+      "decision_state": "VERIFIED_IN_09_005"
+    },
+    {
+      "decision_id": "REQDEC-09-005-002",
+      "matrix_row_id": "ROW-09-004-002",
+      "vacancy_source_id": "VAC-09-004-001",
+      "requirement_id": "VAC-09-004-001-REQ-02",
+      "requirement_text": "Solid Front End development experience with strong JavaScript, CSS3 and HTML5 skills.",
+      "inherited_coverage": "full",
+      "final_coverage": "full",
+      "coverage_changed": false,
+      "verified_evidence_ids": [
+        "EVID-09-005-001",
+        "EVID-09-005-004",
+        "EVID-09-005-005"
+      ],
+      "evidence_states": [
+        {
+          "evidence_id": "EVID-09-005-001",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        },
+        {
+          "evidence_id": "EVID-09-005-004",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "SUPPORTS"
+        },
+        {
+          "evidence_id": "EVID-09-005-005",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "SUPPORTS"
+        }
+      ],
+      "rationale": "Recovered frontend implementation includes React/TSX, CSS, typed UI and responsive styling.",
+      "qualification": "Coverage is technical implementation evidence and does not imply exclusive authorship of every file.",
+      "decision_state": "VERIFIED_IN_09_005"
+    },
+    {
+      "decision_id": "REQDEC-09-005-003",
+      "matrix_row_id": "ROW-09-004-003",
+      "vacancy_source_id": "VAC-09-004-001",
+      "requirement_id": "VAC-09-004-001-REQ-03",
+      "requirement_text": "Experience developing web applications with ReactJS and related state/data-flow technologies such as Flux, Redux or Relay.",
+      "inherited_coverage": "partial",
+      "final_coverage": "partial",
+      "coverage_changed": false,
+      "verified_evidence_ids": [
+        "EVID-09-005-006",
+        "EVID-09-005-007",
+        "EVID-09-005-008",
+        "EVID-09-005-009"
+      ],
+      "evidence_states": [
+        {
+          "evidence_id": "EVID-09-005-006",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        },
+        {
+          "evidence_id": "EVID-09-005-007",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        },
+        {
+          "evidence_id": "EVID-09-005-008",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        },
+        {
+          "evidence_id": "EVID-09-005-009",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        }
+      ],
+      "rationale": "Typed React Context state and data-flow implementations are directly recoverable across two projects.",
+      "qualification": "React Context is verified, but no direct Redux, Flux or Relay implementation was established.",
+      "decision_state": "VERIFIED_IN_09_005"
+    },
+    {
+      "decision_id": "REQDEC-09-005-004",
+      "matrix_row_id": "ROW-09-004-004",
+      "vacancy_source_id": "VAC-09-004-001",
+      "requirement_id": "VAC-09-004-001-REQ-04",
+      "requirement_text": "Experience with additional JavaScript frameworks; the source cites Angular, Backbone and Marionette as examples.",
+      "inherited_coverage": "full",
+      "final_coverage": "full",
+      "coverage_changed": false,
+      "verified_evidence_ids": [
+        "EVID-09-005-010",
+        "EVID-09-005-011"
+      ],
+      "evidence_states": [
+        {
+          "evidence_id": "EVID-09-005-010",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "SUPPORTS"
+        },
+        {
+          "evidence_id": "EVID-09-005-011",
+          "verification_state": "VERIFIED",
+          "claim_support_state": "SUPPORTS"
+        }
+      ],
+      "rationale": "Angular 19 configuration is recoverable and an Angular implementation commit has confirmed authorship.",
+      "qualification": "Confirmed contribution is not represented as exclusive authorship of the entire Angular repository.",
+      "decision_state": "VERIFIED_IN_09_005"
+    },
+    {
+      "decision_id": "REQDEC-09-005-005",
+      "matrix_row_id": "ROW-09-004-005",
+      "vacancy_source_id": "VAC-09-004-001",
+      "requirement_id": "VAC-09-004-001-REQ-05",
+      "requirement_text": "Experience with the ES2015 generation of JavaScript, including ES6/ES7.",
+      "inherited_coverage": "full",
+      "final_coverage": "full",
+      "coverage_changed": false,
+      "verified_evidence_ids": [
+        "EVID-09-005-001",
+        "EVID-09-005-004",
+        "EVID-09-005-012"
+      ],
+      "evidence_states": [
+        {
+          "evidence_id": "EVID-09-005-001",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        },
+        {
+          "evidence_id": "EVID-09-005-004",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "SUPPORTS"
+        },
+        {
+          "evidence_id": "EVID-09-005-012",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        }
+      ],
+      "rationale": "Modern JavaScript and TypeScript implementation is recoverable across the frozen frontend artifacts.",
+      "qualification": "Coverage reflects demonstrated modern language use and not a standalone certification of every ECMAScript edition.",
+      "decision_state": "VERIFIED_IN_09_005"
+    },
+    {
+      "decision_id": "REQDEC-09-005-006",
+      "matrix_row_id": "ROW-09-004-006",
+      "vacancy_source_id": "VAC-09-004-001",
+      "requirement_id": "VAC-09-004-001-REQ-06",
+      "requirement_text": "Experience with command-line workflows, APIs and client-side performance.",
+      "inherited_coverage": "partial",
+      "final_coverage": "partial",
+      "coverage_changed": false,
+      "verified_evidence_ids": [
+        "EVID-09-005-001",
+        "EVID-09-005-013",
+        "EVID-09-005-014",
+        "EVID-09-005-015"
+      ],
+      "evidence_states": [
+        {
+          "evidence_id": "EVID-09-005-001",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        },
+        {
+          "evidence_id": "EVID-09-005-013",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "SUPPORTS"
+        },
+        {
+          "evidence_id": "EVID-09-005-014",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "SUPPORTS"
+        },
+        {
+          "evidence_id": "EVID-09-005-015",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        }
+      ],
+      "rationale": "Command-line project scripts and typed client/API integration are directly recoverable.",
+      "qualification": "Measured client-side or production performance optimization is not verified.",
+      "decision_state": "VERIFIED_IN_09_005"
+    },
+    {
+      "decision_id": "REQDEC-09-005-007",
+      "matrix_row_id": "ROW-09-004-007",
+      "vacancy_source_id": "VAC-09-004-001",
+      "requirement_id": "VAC-09-004-001-REQ-07",
+      "requirement_text": "Experience with core programming concepts, data structures, variable types and language-specific behavior.",
+      "inherited_coverage": "full",
+      "final_coverage": "full",
+      "coverage_changed": false,
+      "verified_evidence_ids": [
+        "EVID-09-005-004",
+        "EVID-09-005-016",
+        "EVID-09-005-017"
+      ],
+      "evidence_states": [
+        {
+          "evidence_id": "EVID-09-005-004",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "SUPPORTS"
+        },
+        {
+          "evidence_id": "EVID-09-005-016",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "SUPPORTS"
+        },
+        {
+          "evidence_id": "EVID-09-005-017",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "SUPPORTS"
+        }
+      ],
+      "rationale": "Recovered implementation directly demonstrates validation, typed language behavior, Map, Set, arrays and domain data processing.",
+      "qualification": "Coverage is bounded to the recoverable implementations.",
+      "decision_state": "VERIFIED_IN_09_005"
+    },
+    {
+      "decision_id": "REQDEC-09-005-008",
+      "matrix_row_id": "ROW-09-004-008",
+      "vacancy_source_id": "VAC-09-004-001",
+      "requirement_id": "VAC-09-004-001-REQ-08",
+      "requirement_text": "Advanced English proficiency.",
+      "inherited_coverage": "unknown",
+      "final_coverage": "unknown",
+      "coverage_changed": false,
+      "verified_evidence_ids": [],
+      "evidence_states": [],
+      "rationale": "No direct evidence ref establishes advanced English proficiency.",
+      "qualification": "English-language code or documentation is not treated as proficiency proof.",
+      "decision_state": "VERIFIED_IN_09_005"
+    },
+    {
+      "decision_id": "REQDEC-09-005-009",
+      "matrix_row_id": "ROW-09-004-009",
+      "vacancy_source_id": "VAC-09-004-002",
+      "requirement_id": "VAC-09-004-002-REQ-01",
+      "requirement_text": "At least four years of Software Engineering experience focused on React and Next.js.",
+      "inherited_coverage": "partial",
+      "final_coverage": "partial",
+      "coverage_changed": false,
+      "verified_evidence_ids": [
+        "EVID-09-005-001",
+        "EVID-09-005-003",
+        "EVID-09-005-018",
+        "EVID-09-005-019"
+      ],
+      "evidence_states": [
+        {
+          "evidence_id": "EVID-09-005-001",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        },
+        {
+          "evidence_id": "EVID-09-005-003",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        },
+        {
+          "evidence_id": "EVID-09-005-018",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        },
+        {
+          "evidence_id": "EVID-09-005-019",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        }
+      ],
+      "rationale": "React and Next.js artifacts are recoverable and repository timelines are independently available.",
+      "qualification": "Repository dates do not establish four years of professional Software Engineering experience.",
+      "decision_state": "VERIFIED_IN_09_005"
+    },
+    {
+      "decision_id": "REQDEC-09-005-010",
+      "matrix_row_id": "ROW-09-004-010",
+      "vacancy_source_id": "VAC-09-004-002",
+      "requirement_id": "VAC-09-004-002-REQ-02",
+      "requirement_text": "Demonstrated expertise with modern rendering strategies including SSR, SSG and ISR.",
+      "inherited_coverage": "partial",
+      "final_coverage": "partial",
+      "coverage_changed": false,
+      "verified_evidence_ids": [
+        "EVID-09-005-001",
+        "EVID-09-005-012"
+      ],
+      "evidence_states": [
+        {
+          "evidence_id": "EVID-09-005-001",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        },
+        {
+          "evidence_id": "EVID-09-005-012",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        }
+      ],
+      "rationale": "Next.js cache revalidation using revalidatePath and revalidateTag is directly recoverable.",
+      "qualification": "The verified refs do not establish complete demonstrated coverage of SSR, SSG and ISR as a combined requirement.",
+      "decision_state": "VERIFIED_IN_09_005"
+    },
+    {
+      "decision_id": "REQDEC-09-005-011",
+      "matrix_row_id": "ROW-09-004-011",
+      "vacancy_source_id": "VAC-09-004-002",
+      "requirement_id": "VAC-09-004-002-REQ-03",
+      "requirement_text": "TypeScript proficiency and experience building type-safe frontend architectures.",
+      "inherited_coverage": "full",
+      "final_coverage": "full",
+      "coverage_changed": false,
+      "verified_evidence_ids": [
+        "EVID-09-005-001",
+        "EVID-09-005-004",
+        "EVID-09-005-016"
+      ],
+      "evidence_states": [
+        {
+          "evidence_id": "EVID-09-005-001",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        },
+        {
+          "evidence_id": "EVID-09-005-004",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "SUPPORTS"
+        },
+        {
+          "evidence_id": "EVID-09-005-016",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "SUPPORTS"
+        }
+      ],
+      "rationale": "TypeScript configuration and multiple typed contracts, unions, interfaces and validation paths are recoverable.",
+      "qualification": "Coverage is bounded to the verified project architecture and artifacts.",
+      "decision_state": "VERIFIED_IN_09_005"
+    },
+    {
+      "decision_id": "REQDEC-09-005-012",
+      "matrix_row_id": "ROW-09-004-012",
+      "vacancy_source_id": "VAC-09-004-002",
+      "requirement_id": "VAC-09-004-002-REQ-04",
+      "requirement_text": "Hands-on Tailwind CSS experience for responsive and accessible user interfaces.",
+      "inherited_coverage": "partial",
+      "final_coverage": "partial",
+      "coverage_changed": false,
+      "verified_evidence_ids": [
+        "EVID-09-005-004",
+        "EVID-09-005-005",
+        "EVID-09-005-020"
+      ],
+      "evidence_states": [
+        {
+          "evidence_id": "EVID-09-005-004",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "SUPPORTS"
+        },
+        {
+          "evidence_id": "EVID-09-005-005",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "SUPPORTS"
+        },
+        {
+          "evidence_id": "EVID-09-005-020",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        }
+      ],
+      "rationale": "Tailwind configuration, responsive CSS and concrete accessibility behaviors are recoverable.",
+      "qualification": "The evidence does not establish that the complete responsive and accessibility surface is implemented through Tailwind.",
+      "decision_state": "VERIFIED_IN_09_005"
+    },
+    {
+      "decision_id": "REQDEC-09-005-013",
+      "matrix_row_id": "ROW-09-004-013",
+      "vacancy_source_id": "VAC-09-004-002",
+      "requirement_id": "VAC-09-004-002-REQ-05",
+      "requirement_text": "Familiarity with Vercel or comparable platforms for deployment and performance optimization.",
+      "inherited_coverage": "partial",
+      "final_coverage": "partial",
+      "coverage_changed": false,
+      "verified_evidence_ids": [
+        "EVID-09-005-015",
+        "EVID-09-005-019",
+        "EVID-09-005-021"
+      ],
+      "evidence_states": [
+        {
+          "evidence_id": "EVID-09-005-015",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        },
+        {
+          "evidence_id": "EVID-09-005-019",
+          "verification_state": "VERIFIED_WITH_LIMITATIONS",
+          "claim_support_state": "PARTIAL"
+        },
+        {
+          "evidence_id": "EVID-09-005-021",
+          "verification_state": "UNKNOWN",
+          "claim_support_state": "UNKNOWN"
+        }
+      ],
+      "rationale": "GitHub metadata records a Vercel homepage and project documentation describes deployment-related boundaries.",
+      "qualification": "The live Vercel endpoint was not independently recovered and no verified performance benchmark exists.",
+      "decision_state": "VERIFIED_IN_09_005"
+    },
+    {
+      "decision_id": "REQDEC-09-005-014",
+      "matrix_row_id": "ROW-09-004-014",
+      "vacancy_source_id": "VAC-09-004-002",
+      "requirement_id": "VAC-09-004-002-REQ-06",
+      "requirement_text": "Advanced English proficiency.",
+      "inherited_coverage": "unknown",
+      "final_coverage": "unknown",
+      "coverage_changed": false,
+      "verified_evidence_ids": [],
+      "evidence_states": [],
+      "rationale": "No direct evidence ref establishes advanced English proficiency.",
+      "qualification": "English-language code or documentation is not treated as proficiency proof.",
+      "decision_state": "VERIFIED_IN_09_005"
+    }
+  ]
+}

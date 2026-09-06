@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.005",
+  "record_type": "evidence_verification_record",
+  "required_fields": [
+    "evidence_id",
+    "evidence_ref",
+    "ref_kind",
+    "reference_stability",
+    "row_links",
+    "retrieval_state",
+    "authorship_state",
+    "scope_state",
+    "reproducibility_state",
+    "claim_support_state",
+    "verification_state",
+    "limitations",
+    "notes"
+  ],
+  "retrieval_state_enum": [
+    "PENDING",
+    "RECOVERED",
+    "INACCESSIBLE",
+    "ERROR"
+  ],
+  "authorship_state_enum": [
+    "PENDING",
+    "CONFIRMED",
+    "PARTIAL",
+    "NOT_APPLICABLE",
+    "UNVERIFIED"
+  ],
+  "scope_state_enum": [
+    "PENDING",
+    "CONFIRMED",
+    "PARTIAL",
+    "UNVERIFIED"
+  ],
+  "reproducibility_state_enum": [
+    "PENDING",
+    "REPRODUCIBLE",
+    "PARTIAL",
+    "NOT_APPLICABLE",
+    "UNVERIFIED"
+  ],
+  "claim_support_state_enum": [
+    "PENDING",
+    "SUPPORTS",
+    "PARTIAL",
+    "DOES_NOT_SUPPORT",
+    "UNKNOWN"
+  ],
+  "verification_state_enum": [
+    "PENDING_REF_VERIFICATION",
+    "VERIFIED",
+    "VERIFIED_WITH_LIMITATIONS",
+    "REJECTED",
+    "UNKNOWN"
+  ],
+  "rules": {
+    "url_presence_only": "not_evidence_verification",
+    "inaccessible_ref": "retrieval_INACCESSIBLE_and_verification_UNKNOWN_or_REJECTED",
+    "repository_ownership": "not_exclusive_authorship",
+    "repository_date": "not_professional_duration",
+    "similar_technology": "not_exact_experience",
+    "documentation_text": "not_runtime_proof",
+    "deployment_presence": "not_performance_proof",
+    "english_code_or_docs": "not_language_proficiency_proof",
+    "upward_coverage_change": "requires_direct_verified_evidence",
+    "downward_coverage_change": "required_when_verified_evidence_does_not_support_inherited_coverage",
+    "final_verification": "requires_all_material_refs_and_requirement_decisions_reviewed"
+  }
+}
