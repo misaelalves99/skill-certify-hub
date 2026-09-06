@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "project": "skill-certify-hub",
+  "stage_id": "stage.skillcertify.09",
+  "task_id": "task.skillcertify.09.008",
+  "artifact_type": "README",
+  "evidence_expected": "README",
+  "repository_state": {
+    "branch": "task/skillcertify-09-008-pitch-star",
+    "baseline_head": "bbbb3d6be1bb8dac6c5729b7b6158ffe9165f1ed",
+    "baseline_tree": "d611788dede2422c736d0f78f77d273fdc42147e"
+  },
+  "materialization": {
+    "repository_materialized": true,
+    "human_approved": true,
+    "git_add_performed": false,
+    "git_commit_performed": false,
+    "git_push_performed": false,
+    "pr_created": false
+  },
+  "external_actions": {
+    "application_authorized": false,
+    "application_performed": false,
+    "outreach_performed": false,
+    "linkedin_mutation_performed": false
+  }
+}

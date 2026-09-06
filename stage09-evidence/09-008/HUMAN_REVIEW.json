@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.008",
+  "authority": "DIRECT_HUMAN_APPROVAL",
+  "approval_text": "APROVO FACTUAL + PRIVACIDADE + EDITORIAL DO README FINAL 09.008",
+  "approved_artifact": {
+    "type": "FINAL_PITCH_AND_STAR_README",
+    "candidate_sha256": "6e0019b19e7cc6fb6c316054b6cf639a616f29666cf60af6bd8838b81dcb8802"
+  },
+  "review": {
+    "factual": "APPROVED",
+    "privacy": "APPROVED",
+    "editorial": "APPROVED"
+  },
+  "scope": {
+    "pitch_approved": true,
+    "star_001_approved": true,
+    "star_002_approved": true,
+    "star_003_approved": true,
+    "star_004_approved": true,
+    "star_005_approved": true,
+    "final_readme_approved": true,
+    "repository_materialization_authorized": true,
+    "git_add_authorized": false,
+    "git_commit_authorized": false,
+    "git_push_authorized": false,
+    "pull_request_authorized": false,
+    "application_authorized": false,
+    "outreach_authorized": false,
+    "linkedin_mutation_authorized": false
+  }
+}
