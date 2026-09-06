@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "project": "skill-certify-hub",
+  "stage_id": "stage.skillcertify.09",
+  "task_id": "task.skillcertify.09.009",
+  "title": "Validar ATS linguagem e secrets",
+  "objective": "Validar materiais por factual consistency, privacy/secrets, linguagem e ATS somente como heurística.",
+  "source_authority": {
+    "repository_head": "ad530083dc66026c9a8a5f38934eef3b4f8869e8",
+    "repository_tree": "07758251f16c85085206c7e74deeb8ec09013cca",
+    "source_inventory_sha256": "960463f915ba7d271e9d7424d0418c93c30244c002e75de2fe955146bf3bd55d",
+    "validation_report_candidate_sha256": "9f72e41d8910404c0d504e51cee929a8857ce1b30d5360e6aa8118d25869faca",
+    "ats_observations_sha256": "91fa33609cfea1623c848cafcf6f2d7c1ac29d7cb69e3003c48daae24ea6b462",
+    "human_review_packet_sha256": "8e7a460b3068c1a204adb96c991815c5cba312aa34166ab04ff0257a807af8d1",
+    "review_context_sha256": "4daf90133272584a837f9767a86c3063302f409931bc594f538832225763cdb9",
+    "contextual_review_sha256": "ec97eef744ff0924e978a55d6dd969488f9c2635205a220c96aa23ef8fecb113",
+    "privacy_review_context_sha256": "081ff98a0e469fe76f42610512f4c8a2c6332302c954f1e5979dcfa63d700f00"
+  },
+  "validation_summary": {
+    "source_file_count": 12,
+    "resume_candidate_count": 5,
+    "language_candidate_count": 7,
+    "secret_scan_candidate_count": 12,
+    "mechanical_secret_hit_count": 0,
+    "pii_pattern_file_count": 9,
+    "factual_review_marker_count": 11,
+    "language_inflation_marker_count": 13,
+    "ats_keyword_present_observations": 27,
+    "ats_keyword_missing_observations": 8,
+    "total_findings": 40,
+    "original_review_required_count": 28,
+    "original_fail_count": 0,
+    "original_unknown_count": 0
+  },
+  "contextual_disposition": {
+    "factual_fact_004": "FALSE_POSITIVE_CONTEXTUAL",
+    "factual_fact_005": "FALSE_POSITIVE_CONTEXTUAL",
+    "factual_fact_006": "FALSE_POSITIVE_CONTEXTUAL",
+    "language_lang_004": "FALSE_POSITIVE_CONTEXTUAL",
+    "non_pii_reviewed": 24,
+    "non_pii_confirmed_violation_count": 0
+  },
+  "privacy_disposition": {
+    "privacy_rule": "PRIV-002",
+    "reviewed_sources": 4,
+    "detected_category": "PHONE",
+    "pii_values_exported": false,
+    "disposition": "APPROVED_WITH_QUALIFICATIONS",
+    "publication_boundary": "Internal frozen provenance/review scope only unless separately reviewed."
+  },
+  "ats_disposition": {
+    "mode": "HEURISTIC_ONLY",
+    "authoritative_score": false,
+    "guaranteed_pass": false,
+    "keyword_stuffing_allowed": false,
+    "factual_override_allowed": false,
+    "privacy_override_allowed": false
+  },
+  "final_human_decision": {
+    "state": "APPROVED_WITH_QUALIFICATIONS",
+    "factual": "APPROVED",
+    "privacy": "APPROVED_WITH_QUALIFICATIONS",
+    "editorial": "APPROVED",
+    "secrets": "APPROVED",
+    "ats": "APPROVED_AS_HEURISTIC_ONLY",
+    "approval_text": "APROVO FACTUAL + PRIVACIDADE + EDITORIAL DO 09.009 COM AS QUALIFICAÇÕES REGISTRADAS"
+  },
+  "external_action": {
+    "authorized": false,
+    "application_performed": false,
+    "outreach_performed": false,
+    "linkedin_mutation_performed": false
+  },
+  "task_gate": {
+    "repository_materialization_candidate_ready": true,
+    "git_add_authorized": false,
+    "git_commit_authorized": false,
+    "git_push_authorized": false,
+    "pr_authorized": false
+  }
+}
