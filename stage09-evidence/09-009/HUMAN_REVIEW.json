@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "project": "skill-certify-hub",
+  "stage_id": "stage.skillcertify.09",
+  "task_id": "task.skillcertify.09.009",
+  "approval": {
+    "approval_text": "APROVO FACTUAL + PRIVACIDADE + EDITORIAL DO 09.009 COM AS QUALIFICAÇÕES REGISTRADAS",
+    "factual_review": "APPROVED",
+    "privacy_review": "APPROVED_WITH_QUALIFICATIONS",
+    "editorial_review": "APPROVED",
+    "secrets_review": "APPROVED",
+    "ats_review": "APPROVED_AS_HEURISTIC_ONLY"
+  },
+  "qualifications": [
+    "The 24 contextual factual/editorial findings were reviewed as contextual false positives rather than confirmed candidate-claim violations.",
+    "Advanced English remains unverified and must not be claimed as an established proficiency.",
+    "React Context must not be represented as Redux, Flux or Relay experience.",
+    "API integration evidence must not be transformed into measured production-scale or performance expertise.",
+    "Seniority, expertise and professional-duration wording remain limited by the frozen evidence boundaries.",
+    "Phone-pattern PII is approved only within the already frozen internal provenance/review purpose and is not granted unrestricted republication authority.",
+    "Zero mechanical secret indicators does not by itself establish universal absence of sensitive information.",
+    "ATS observations remain advisory heuristics and cannot override factual or privacy controls.",
+    "No application, outreach or LinkedIn mutation is authorized by this approval."
+  ],
+  "finding_disposition": {
+    "total_findings": 40,
+    "contextual_reviewed_non_pii": 24,
+    "contextual_false_positive_count": 24,
+    "confirmed_factual_editorial_violation_count": 0,
+    "privacy_findings": 4,
+    "privacy_disposition": "APPROVED_WITH_QUALIFICATIONS",
+    "original_fail_count": 0,
+    "original_unknown_count": 0
+  },
+  "external_action": {
+    "application_authorized": false,
+    "application_performed": false,
+    "outreach_authorized": false,
+    "outreach_performed": false,
+    "linkedin_mutation_authorized": false,
+    "linkedin_mutation_performed": false
+  }
+}
