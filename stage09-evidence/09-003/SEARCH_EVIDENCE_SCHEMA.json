@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.003",
+  "required_fields": [
+    "source_id",
+    "source_class",
+    "source_reference",
+    "inspected_at",
+    "exact_query",
+    "filters",
+    "freshness_class",
+    "freshness_basis",
+    "factual_status",
+    "privacy_review",
+    "source_verification",
+    "limitations"
+  ],
+  "freshness_enum": [
+    "FRESH_CONFIRMED",
+    "FRESH_BOUNDED",
+    "STALE",
+    "UNKNOWN"
+  ],
+  "source_verification_enum": [
+    "VERIFIED_PRIMARY",
+    "VERIFIED_DISCOVERY",
+    "UNVERIFIED",
+    "REJECTED"
+  ],
+  "privacy_review_enum": [
+    "PASS",
+    "FAIL",
+    "PENDING"
+  ],
+  "execution_rules": {
+    "discovered_is_not_current": true,
+    "unknown_freshness_is_not_current": true,
+    "source_verification_required": true,
+    "human_factual_review_required": true,
+    "human_privacy_review_required": true,
+    "application_submission_allowed": false,
+    "outreach_allowed": false,
+    "linkedin_mutation_allowed": false,
+    "external_tool_adoption_allowed": false
+  }
+}
