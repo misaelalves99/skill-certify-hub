@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.008",
+  "artifact": "README.md",
+  "candidate_authority": {
+    "candidate_sha256": "6e0019b19e7cc6fb6c316054b6cf639a616f29666cf60af6bd8838b81dcb8802",
+    "provenance_sha256": "e69b2ed17d94bb8fcdcdb7b83130517a67665a5134e53eaf2eb2d211fc445d79",
+    "review_checklist_sha256": "400ff08f0b67b497e4ea4ad35738de6090fedcafb5acb4735e744a3802733943"
+  },
+  "human_review": {
+    "factual": "APPROVED",
+    "privacy": "APPROVED",
+    "editorial": "APPROVED"
+  },
+  "approved_components": [
+    "pitch",
+    "STAR-CAND-001",
+    "STAR-CAND-002",
+    "STAR-CAND-003",
+    "STAR-CAND-004",
+    "STAR-CAND-005"
+  ],
+  "boundaries": {
+    "project_work_not_promoted_to_formal_employment": true,
+    "react_context_not_promoted_to_redux_flux_relay": true,
+    "api_integration_not_promoted_to_measured_performance": true,
+    "portfolio_message_flow_remains_human_report": true,
+    "accessibility_not_promoted_to_wcag_compliance": true,
+    "angular_aspnet_equivalence_not_inferred": true,
+    "advanced_english_not_claimed": true,
+    "professional_duration_not_inferred_from_repository_age": true,
+    "unsupported_seniority_not_added": true
+  },
+  "external_action_authorized": false
+}
