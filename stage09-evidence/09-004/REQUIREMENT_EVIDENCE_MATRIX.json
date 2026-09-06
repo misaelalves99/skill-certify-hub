@@ -1,0 +1,257 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.004",
+  "matrix_status": "EVIDENCE_MAPPED_PENDING_09_005_VERIFICATION",
+  "coverage_semantics": [
+    "full",
+    "partial",
+    "none",
+    "unknown"
+  ],
+  "vacancy_source_ids": [
+    "VAC-09-004-001",
+    "VAC-09-004-002"
+  ],
+  "rows": [
+    {
+      "matrix_row_id": "ROW-09-004-001",
+      "vacancy_source_id": "VAC-09-004-001",
+      "vacancy_reference": "https://talent.bairesdev.com/pt/vagas/desenvolvedor-react-frontend-remote",
+      "requirement_id": "VAC-09-004-001-REQ-01",
+      "requirement_text": "Broad practical experience with React.",
+      "requirement_source_basis": "VERIFIED_PRIMARY VAC-09-004-001; source section Requisitos; semantic extraction CP09-004-E observed 2026-09-05.",
+      "coverage": "full",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/package.json",
+        "https://github.com/misaelalves99/e-commerce-shop-next/commit/51456a6a8008958ecd0899242fa3f90997661421",
+        "https://github.com/misaelalves99/e-commerce-shop-react/blob/83e9afd888db2a68059956557f90d423ca878dc9/package.json"
+      ],
+      "gap": "No material React implementation gap identified within the 09.004 mapping scope.",
+      "qualification": "Full coverage reflects multiple recoverable React/Next implementations and direct GitHub authorship evidence; it does not assert employment duration, production scale or third-party usage.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-002",
+      "vacancy_source_id": "VAC-09-004-001",
+      "vacancy_reference": "https://talent.bairesdev.com/pt/vagas/desenvolvedor-react-frontend-remote",
+      "requirement_id": "VAC-09-004-001-REQ-02",
+      "requirement_text": "Solid Front End development experience with strong JavaScript, CSS3 and HTML5 skills.",
+      "requirement_source_basis": "VERIFIED_PRIMARY VAC-09-004-001; source section Requisitos; semantic extraction CP09-004-E observed 2026-09-05.",
+      "coverage": "full",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/package.json",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/shared/ui/IconButton/IconButton.tsx",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/app/styles/utilities.css"
+      ],
+      "gap": "No material Front End / JavaScript-family / CSS / HTML-interface implementation gap identified at mapping scope.",
+      "qualification": "TypeScript/TSX, semantic HTML surfaces and authored responsive CSS materially support the requirement; this does not imply production-scale traffic.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-003",
+      "vacancy_source_id": "VAC-09-004-001",
+      "vacancy_reference": "https://talent.bairesdev.com/pt/vagas/desenvolvedor-react-frontend-remote",
+      "requirement_id": "VAC-09-004-001-REQ-03",
+      "requirement_text": "Experience developing web applications with ReactJS and related state/data-flow technologies such as Flux, Redux or Relay.",
+      "requirement_source_basis": "VERIFIED_PRIMARY VAC-09-004-001; source section Requisitos; semantic extraction CP09-004-E observed 2026-09-05.",
+      "coverage": "partial",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/context/AuthContext.tsx",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/context/CartContext.tsx",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/context/FavoritesContext.tsx",
+        "https://github.com/misaelalves99/e-commerce-shop-react/blob/83e9afd888db2a68059956557f90d423ca878dc9/src/context/AuthContext.tsx"
+      ],
+      "gap": "Recoverable React state/data-flow evidence uses Context-based implementations; no direct Flux, Redux or Relay implementation was recovered in the inspected application surfaces.",
+      "qualification": "React web-application and state-management experience is directly evidenced, but similar state technology alone is not promoted to full coverage under the frozen schema.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-004",
+      "vacancy_source_id": "VAC-09-004-001",
+      "vacancy_reference": "https://talent.bairesdev.com/pt/vagas/desenvolvedor-react-frontend-remote",
+      "requirement_id": "VAC-09-004-001-REQ-04",
+      "requirement_text": "Experience with additional JavaScript frameworks; the source cites Angular, Backbone and Marionette as examples.",
+      "requirement_source_basis": "VERIFIED_PRIMARY VAC-09-004-001; source section Requisitos; semantic extraction CP09-004-E observed 2026-09-05.",
+      "coverage": "full",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/ecommerce-store-angular/blob/050e0771431aece258296759f6022b64ab725e33/package.json",
+        "https://github.com/misaelalves99/ecommerce-store-angular/commit/a18c4f524165ad05a93379d8798c7d7095b1087d"
+      ],
+      "gap": "No material gap identified for experience with an additional JavaScript framework because Angular is directly recovered.",
+      "qualification": "Full coverage is limited to directly evidenced Angular experience; Backbone and Marionette are not claimed.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-005",
+      "vacancy_source_id": "VAC-09-004-001",
+      "vacancy_reference": "https://talent.bairesdev.com/pt/vagas/desenvolvedor-react-frontend-remote",
+      "requirement_id": "VAC-09-004-001-REQ-05",
+      "requirement_text": "Experience with the ES2015 generation of JavaScript, including ES6/ES7.",
+      "requirement_source_basis": "VERIFIED_PRIMARY VAC-09-004-001; source section Requisitos; semantic extraction CP09-004-E observed 2026-09-05.",
+      "coverage": "full",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/package.json",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/app/api/revalidate/route.ts",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/shared/ui/IconButton/IconButton.tsx"
+      ],
+      "gap": "No material modern-JavaScript language-feature gap identified at mapping scope.",
+      "qualification": "The evidence contains ES2015+ module syntax, const/let-era constructs, async/await, destructuring, typed interfaces and modern language behavior through current TypeScript/JavaScript.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-006",
+      "vacancy_source_id": "VAC-09-004-001",
+      "vacancy_reference": "https://talent.bairesdev.com/pt/vagas/desenvolvedor-react-frontend-remote",
+      "requirement_id": "VAC-09-004-001-REQ-06",
+      "requirement_text": "Experience with command-line workflows, APIs and client-side performance.",
+      "requirement_source_basis": "VERIFIED_PRIMARY VAC-09-004-001; source section Requisitos; semantic extraction CP09-004-E observed 2026-09-05.",
+      "coverage": "partial",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/package.json",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/data/order/order-client.ts",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/auth/session-client.ts",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/docs/case/capabilities.md"
+      ],
+      "gap": "Command-line project workflows and API integration are directly evidenced, but measured client-side performance work is not verified.",
+      "qualification": "The case explicitly prohibits unverified performance benchmark claims, so the combined requirement cannot be classified full.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-007",
+      "vacancy_source_id": "VAC-09-004-001",
+      "vacancy_reference": "https://talent.bairesdev.com/pt/vagas/desenvolvedor-react-frontend-remote",
+      "requirement_id": "VAC-09-004-001-REQ-07",
+      "requirement_text": "Experience with core programming concepts, data structures, variable types and language-specific behavior.",
+      "requirement_source_basis": "VERIFIED_PRIMARY VAC-09-004-001; source section Requisitos; semantic extraction CP09-004-E observed 2026-09-05.",
+      "coverage": "full",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/domain/order/order-service.ts",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/data/commerce/commerce-merge.ts",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/shared/ui/IconButton/IconButton.tsx"
+      ],
+      "gap": "No material programming-fundamentals gap identified in the inspected implementation evidence.",
+      "qualification": "Typed Maps, arrays, iteration, generics/unions, validation and language-specific type behavior directly demonstrate the listed fundamentals; 09.005 must revalidate scope and authorship.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-008",
+      "vacancy_source_id": "VAC-09-004-001",
+      "vacancy_reference": "https://talent.bairesdev.com/pt/vagas/desenvolvedor-react-frontend-remote",
+      "requirement_id": "VAC-09-004-001-REQ-08",
+      "requirement_text": "Advanced English proficiency.",
+      "requirement_source_basis": "VERIFIED_PRIMARY VAC-09-004-001; source section Requisitos; semantic extraction CP09-004-E observed 2026-09-05.",
+      "coverage": "unknown",
+      "evidence_refs": [],
+      "gap": "No direct recoverable evidence establishing advanced English proficiency was found in the inspected GitHub/case surfaces.",
+      "qualification": "English README text, identifiers, code or technology documentation are not treated as proof of advanced language proficiency.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-009",
+      "vacancy_source_id": "VAC-09-004-002",
+      "vacancy_reference": "https://applicants.bairesdev.com/job/697/290619/apply?lang=pt",
+      "requirement_id": "VAC-09-004-002-REQ-01",
+      "requirement_text": "At least four years of Software Engineering experience focused on React and Next.js.",
+      "requirement_source_basis": "VERIFIED_PRIMARY VAC-09-004-002; source section What we are looking for; semantic extraction CP09-004-E observed 2026-09-05.",
+      "coverage": "partial",
+      "evidence_refs": [
+        "https://api.github.com/repos/misaelalves99/e-commerce-shop-react",
+        "https://api.github.com/repos/misaelalves99/e-commerce-shop-next",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/package.json",
+        "https://github.com/misaelalves99/e-commerce-shop-react/blob/83e9afd888db2a68059956557f90d423ca878dc9/package.json"
+      ],
+      "gap": "Recoverable public repository evidence establishes React artifacts from at least 2024-08-16 and Next.js artifacts thereafter, but does not establish four years of Software Engineering experience focused on React and Next.js.",
+      "qualification": "Repository creation dates show artifact availability, not employment duration. Four years must not be claimed from the currently recoverable evidence.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-010",
+      "vacancy_source_id": "VAC-09-004-002",
+      "vacancy_reference": "https://applicants.bairesdev.com/job/697/290619/apply?lang=pt",
+      "requirement_id": "VAC-09-004-002-REQ-02",
+      "requirement_text": "Demonstrated expertise with modern rendering strategies including SSR, SSG and ISR.",
+      "requirement_source_basis": "VERIFIED_PRIMARY VAC-09-004-002; source section What we are looking for; semantic extraction CP09-004-E observed 2026-09-05.",
+      "coverage": "partial",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/app/api/revalidate/route.ts",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/package.json"
+      ],
+      "gap": "Next.js cache/path/tag revalidation is directly recovered, but explicit evidence establishing SSR, SSG and ISR as a complete demonstrated strategy set was not recovered.",
+      "qualification": "Next.js usage or Server Components alone is not promoted to full SSR/SSG/ISR expertise. Cache revalidation evidence supports partial coverage only.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-011",
+      "vacancy_source_id": "VAC-09-004-002",
+      "vacancy_reference": "https://applicants.bairesdev.com/job/697/290619/apply?lang=pt",
+      "requirement_id": "VAC-09-004-002-REQ-03",
+      "requirement_text": "TypeScript proficiency and experience building type-safe frontend architectures.",
+      "requirement_source_basis": "VERIFIED_PRIMARY VAC-09-004-002; source section What we are looking for; semantic extraction CP09-004-E observed 2026-09-05.",
+      "coverage": "full",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/package.json",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/shared/ui/IconButton/IconButton.tsx",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/core/domain/order/order-service.ts"
+      ],
+      "gap": "No material TypeScript/type-safety gap identified in the inspected architecture.",
+      "qualification": "Typecheck automation plus typed interfaces, unions, generic collections and domain contracts materially support proficiency and type-safe frontend architecture.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-012",
+      "vacancy_source_id": "VAC-09-004-002",
+      "vacancy_reference": "https://applicants.bairesdev.com/job/697/290619/apply?lang=pt",
+      "requirement_id": "VAC-09-004-002-REQ-04",
+      "requirement_text": "Hands-on Tailwind CSS experience for responsive and accessible user interfaces.",
+      "requirement_source_basis": "VERIFIED_PRIMARY VAC-09-004-002; source section What we are looking for; semantic extraction CP09-004-E observed 2026-09-05.",
+      "coverage": "partial",
+      "evidence_refs": [
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/tailwind.config.ts",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/app/styles/utilities.css",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/src/shared/ui/IconButton/IconButton.tsx"
+      ],
+      "gap": "Tailwind is directly configured and responsive/accessibility implementation is directly evidenced, but the inspected proof does not establish that Tailwind itself is the sole or primary mechanism implementing all responsive and accessibility behavior.",
+      "qualification": "The application also uses CSS Modules. The combined Tailwind + responsive + accessible requirement is therefore kept partial pending 09.005 verification.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-013",
+      "vacancy_source_id": "VAC-09-004-002",
+      "vacancy_reference": "https://applicants.bairesdev.com/job/697/290619/apply?lang=pt",
+      "requirement_id": "VAC-09-004-002-REQ-05",
+      "requirement_text": "Familiarity with Vercel or comparable platforms for deployment and performance optimization.",
+      "requirement_source_basis": "VERIFIED_PRIMARY VAC-09-004-002; source section What we are looking for; semantic extraction CP09-004-E observed 2026-09-05.",
+      "coverage": "partial",
+      "evidence_refs": [
+        "https://api.github.com/repos/misaelalves99/e-commerce-shop-next",
+        "https://e-commerce-shop-next-xi.vercel.app/",
+        "https://github.com/misaelalves99/e-commerce-shop-next/blob/1b61d48b646b2628b9f2e8f1cf04d14cdb276f7d/docs/case/capabilities.md"
+      ],
+      "gap": "Vercel deployment familiarity is recoverable, but verified performance-optimization evidence or benchmarks are not.",
+      "qualification": "A Vercel deployment URL proves neither deployment ownership by itself nor performance optimization. Repository metadata and authored project evidence support deployment familiarity only.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION"
+    },
+    {
+      "matrix_row_id": "ROW-09-004-014",
+      "vacancy_source_id": "VAC-09-004-002",
+      "vacancy_reference": "https://applicants.bairesdev.com/job/697/290619/apply?lang=pt",
+      "requirement_id": "VAC-09-004-002-REQ-06",
+      "requirement_text": "Advanced English proficiency.",
+      "requirement_source_basis": "VERIFIED_PRIMARY VAC-09-004-002; source section What we are looking for; semantic extraction CP09-004-E observed 2026-09-05.",
+      "coverage": "unknown",
+      "evidence_refs": [],
+      "gap": "No direct recoverable evidence establishing advanced English proficiency was found in the inspected GitHub/case surfaces.",
+      "qualification": "English source code, documentation or identifiers are not treated as language-proficiency evidence.",
+      "verification_state": "MAPPED_PENDING_09_005_VERIFICATION"
+    }
+  ],
+  "conclusions": {
+    "requirement_count": 14,
+    "full_count": 6,
+    "partial_count": 6,
+    "none_count": 0,
+    "unknown_count": 2,
+    "vacancy_fit_established": false,
+    "application_authorized": false
+  }
+}

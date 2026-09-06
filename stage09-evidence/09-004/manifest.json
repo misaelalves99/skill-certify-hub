@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.004",
+  "stage_id": "stage.skillcertify.09",
+  "workstream_id": "workstream.skillcertify.09.02",
+  "status": "human_review_pass_ready_for_09_005_handoff",
+  "baseline": {
+    "commit": "09147bcfe70b4526d2f99237cd3566146bd4e2e2",
+    "tree": "976de4342e137c8d1412f4181bf9cc0a0c84c27e"
+  },
+  "artifacts": [
+    "stage09-evidence/09-004/REQUIREMENT_EVIDENCE_MATRIX_DESIGN.md",
+    "stage09-evidence/09-004/REQUIREMENT_EVIDENCE_SCHEMA.json",
+    "stage09-evidence/09-004/REQUIREMENT_SOURCE_SET.json",
+    "stage09-evidence/09-004/REQUIREMENT_EVIDENCE_MATRIX.json",
+    "stage09-evidence/09-004/manifest.json"
+  ],
+  "dependency": {
+    "task_id": "task.skillcertify.09.003",
+    "accepted": true
+  },
+  "execution_state": {
+    "matrix_design_materialized": true,
+    "requirement_sources_seeded": true,
+    "requirement_extraction_performed": true,
+    "evidence_mapping_performed": true,
+    "application_performed": false,
+    "outreach_performed": false,
+    "linkedin_mutation_performed": false,
+    "external_tool_adoption_performed": false
+  },
+  "human_review": {
+    "factual": "PASS",
+    "privacy": "PASS"
+  },
+  "non_claims": {
+    "vacancy_fit_established": false,
+    "actionable_vacancy_confirmed": false,
+    "application_authorized": false
+  }
+}

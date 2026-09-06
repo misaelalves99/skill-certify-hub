@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.004",
+  "record_type": "requirement_evidence_matrix_row",
+  "required_fields": [
+    "matrix_row_id",
+    "vacancy_source_id",
+    "vacancy_reference",
+    "requirement_id",
+    "requirement_text",
+    "requirement_source_basis",
+    "coverage",
+    "evidence_refs",
+    "gap",
+    "qualification",
+    "verification_state"
+  ],
+  "coverage_enum": [
+    "full",
+    "partial",
+    "none",
+    "unknown"
+  ],
+  "verification_state_enum": [
+    "PENDING_REQUIREMENT_EXTRACTION",
+    "PENDING_EVIDENCE_MAPPING",
+    "MAPPED_PENDING_09_005_VERIFICATION",
+    "VERIFIED_IN_09_005"
+  ],
+  "rules": {
+    "requirement_without_source": "unknown",
+    "partial_evidence": "partial_with_qualification",
+    "no_evidence": "none",
+    "inaccessible_evidence": "unknown_with_limitation",
+    "similar_technology_only": "not_full",
+    "keyword_similarity_only": "not_evidence",
+    "unverifiable_authorship": "not_full"
+  }
+}

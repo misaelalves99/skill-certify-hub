@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "task.skillcertify.09.004",
+  "inherited_from": "task.skillcertify.09.003",
+  "source_acceptance_basis": "09.003 human factual/privacy review PASS",
+  "sources": [
+    {
+      "vacancy_source_id": "VAC-09-004-001",
+      "inherited_source_id": "SRC-09-003-004",
+      "source_name": "BairesDev React Frontend",
+      "source_reference": "https://talent.bairesdev.com/pt/vagas/desenvolvedor-react-frontend-remote",
+      "source_class": "official_employer_vacancy",
+      "source_verification": "VERIFIED_PRIMARY",
+      "freshness_class": "FRESH_BOUNDED",
+      "factual_status": "PRIMARY_SOURCE_PRESENT",
+      "requirement_extraction_status": "EXTRACTED",
+      "actionable_vacancy_confirmed": false
+    },
+    {
+      "vacancy_source_id": "VAC-09-004-002",
+      "inherited_source_id": "SRC-09-003-005",
+      "source_name": "BairesDev React Next.js Developer",
+      "source_reference": "https://applicants.bairesdev.com/job/697/290619/apply?lang=pt",
+      "source_class": "official_employer_application_endpoint",
+      "source_verification": "VERIFIED_PRIMARY",
+      "freshness_class": "FRESH_BOUNDED",
+      "factual_status": "PRIMARY_ROLE_ENDPOINT_PRESENT",
+      "requirement_extraction_status": "EXTRACTED",
+      "actionable_vacancy_confirmed": false
+    }
+  ],
+  "limitations": [
+    "FRESH_BOUNDED does not establish that a vacancy is currently open.",
+    "Requirement extraction was completed from the authorized primary sources under CP09-004-E.",
+    "Requirement-to-evidence mapping is materialized in REQUIREMENT_EVIDENCE_MATRIX.json and remains pending final evidence verification under task.skillcertify.09.005.",
+    "Vacancy fit is not established.",
+    "Application is not authorized."
+  ]
+}
