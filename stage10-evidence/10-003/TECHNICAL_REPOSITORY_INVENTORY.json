@@ -1,0 +1,786 @@
+{
+  "inventory_id": "inventory.skillcertify.10.003.v1",
+  "task_id": "task.skillcertify.10.003",
+  "stage_id": "stage.skillcertify.10",
+  "baseline": {
+    "baseline_id": "baseline.skillcertify.10.001.v1",
+    "commit": "918aed4a352647891ee9216f1fb9a523056ce8db",
+    "tree": "5a6653eca417767f966db79cf462ec192e5c3945",
+    "snapshot_digest": "f6694cd95ab4d0ad7bce526a954c2136f27cfda078823a411ff2a26c4ead354f",
+    "period_start": "08/21/2026 19:51:40",
+    "period_end": "09/07/2026 14:48:11",
+    "tracked_file_count": 238
+  },
+  "fact_policy": {
+    "facts_only": true,
+    "source_ref_required": true,
+    "artifact_identity_required": true,
+    "declaration_proves_execution": false,
+    "file_presence_proves_success": false,
+    "dependency_declaration_proves_runtime_use": false,
+    "absent_artifact_equals_failure": false,
+    "unknown_remains_explicit": true,
+    "not_observed_equals_zero": false
+  },
+  "repository_identity": {
+    "repository": "misaelalves99/skill-certify-hub",
+    "baseline_commit": "918aed4a352647891ee9216f1fb9a523056ce8db",
+    "baseline_tree": "5a6653eca417767f966db79cf462ec192e5c3945",
+    "tracked_file_count": 238,
+    "claim_status": "verified"
+  },
+  "tracked_configuration": [
+    {
+      "path": ".github/workflows/quality.yml",
+      "git_blob": "e1522256c6e81b2c1cfed85ed3fcd90740c164ed",
+      "sha256": "b330af01632e7fb038d32ba589a7977784dedf121a4e63927f4ac162ebde1347",
+      "claim_status": "verified",
+      "claim": "artifact_tracked_at_baseline"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "git_blob": "05e726d1b4201bc8c7716d2b058279676582e8c0",
+      "sha256": "870f1adccecf3051cbcd9fd307cef51d7633cf510979c181a81f4b1797273493",
+      "claim_status": "verified",
+      "claim": "artifact_tracked_at_baseline"
+    },
+    {
+      "path": "next.config.ts",
+      "git_blob": "e9ffa3083ad279ecf95fd8eae59cb253e9a539c4",
+      "sha256": "614bce25b089c3f19b1e17a6346c74b858034040154c6621e7d35303004767cc",
+      "claim_status": "verified",
+      "claim": "artifact_tracked_at_baseline"
+    },
+    {
+      "path": "package-lock.json",
+      "git_blob": "9ff8297d236531d24915b971ec589974a49a0d3e",
+      "sha256": "cd26e72c4f801561631d9762c0e64c04ea40f707a908eebdcd977049cc031b11",
+      "claim_status": "verified",
+      "claim": "artifact_tracked_at_baseline"
+    },
+    {
+      "path": "package.json",
+      "git_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+      "sha256": "d96089daa25798c763d031717bde6ed305d12ab54a3c28f006a294fb12445592",
+      "claim_status": "verified",
+      "claim": "artifact_tracked_at_baseline"
+    },
+    {
+      "path": "tsconfig.json",
+      "git_blob": "3a13f90a773b0facb675bf5b1a8239c8f33d36f5",
+      "sha256": "be18523b23b78b6e1a876ddd107d330f0168bddf09d751b57e0b5edce69c66f3",
+      "claim_status": "verified",
+      "claim": "artifact_tracked_at_baseline"
+    }
+  ],
+  "package_declaration": {
+    "path": "package.json",
+    "git_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+    "sha256": "d96089daa25798c763d031717bde6ed305d12ab54a3c28f006a294fb12445592",
+    "name": "skill-certify-hub",
+    "version": "0.1.0",
+    "package_manager": null,
+    "scripts": [
+      {
+        "name": "a11y:axe",
+        "command": "npx --yes @axe-core/cli@4.10.2 http://127.0.0.1:3000/evidence --exit",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "name": "build",
+        "command": "next build",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "name": "dev",
+        "command": "next dev",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "name": "eval:stage07",
+        "command": "node scripts/stage07-eval.mjs",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "name": "guard:config-secrets",
+        "command": "node scripts/config-secret-guard.mjs",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "name": "lint",
+        "command": "eslint",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "name": "promotion:eligibility",
+        "command": "node scripts/promotion-eligibility.mjs --baseline",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "name": "quality",
+        "command": "npm run guard:config-secrets && npm run lint && npm run typecheck && npm run test && npm run eval:stage07 && npm run build",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "name": "start",
+        "command": "next start",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "name": "test",
+        "command": "node --test tests/*.test.mjs",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "name": "test:journey",
+        "command": "node --test tests/critical-journey.test.mjs",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "name": "typecheck",
+        "command": "tsc --noEmit",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      }
+    ],
+    "dependency_declarations": [
+      {
+        "section": "dependencies",
+        "name": "next",
+        "declaration": "16.3.2",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "runtime_use_status": "not_observed"
+      },
+      {
+        "section": "dependencies",
+        "name": "react",
+        "declaration": "19.2.8",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "runtime_use_status": "not_observed"
+      },
+      {
+        "section": "dependencies",
+        "name": "react-dom",
+        "declaration": "19.2.8",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "runtime_use_status": "not_observed"
+      },
+      {
+        "section": "devDependencies",
+        "name": "@types/node",
+        "declaration": "^20",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "runtime_use_status": "not_observed"
+      },
+      {
+        "section": "devDependencies",
+        "name": "@types/react",
+        "declaration": "^19",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "runtime_use_status": "not_observed"
+      },
+      {
+        "section": "devDependencies",
+        "name": "@types/react-dom",
+        "declaration": "^19",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "runtime_use_status": "not_observed"
+      },
+      {
+        "section": "devDependencies",
+        "name": "eslint",
+        "declaration": "^9",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "runtime_use_status": "not_observed"
+      },
+      {
+        "section": "devDependencies",
+        "name": "eslint-config-next",
+        "declaration": "16.3.2",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "runtime_use_status": "not_observed"
+      },
+      {
+        "section": "devDependencies",
+        "name": "picomatch",
+        "declaration": "4.0.7",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "runtime_use_status": "not_observed"
+      },
+      {
+        "section": "devDependencies",
+        "name": "typescript",
+        "declaration": "^5",
+        "source_ref": "package.json",
+        "source_blob": "379ba7c8a157f569fb32640ca7cb0b30b392c01f",
+        "claim_status": "verified",
+        "runtime_use_status": "not_observed"
+      }
+    ]
+  },
+  "test_surface": {
+    "tracked_test_like_file_count": 17,
+    "files": [
+      {
+        "path": "tests/accessibility-contrast.test.mjs",
+        "git_blob": "30389c7d4c72058d0bf5bafb1b98a38743408057",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/app-shell.test.mjs",
+        "git_blob": "227ad799bf187f613d923498eb378bae05a76947",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/certification-catalog.test.mjs",
+        "git_blob": "9a0193773b782571d883cb46340fa6224c830f4a",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/certification-detail.test.mjs",
+        "git_blob": "30b3a85793567c18fd0189af2613e5a97336e5d9",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/certifications.test.mjs",
+        "git_blob": "c06f77218a3f9d251742b6b3f2713d442eafc360",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/config-secret-guard.test.mjs",
+        "git_blob": "50686a7da6636bd8765fd7dcf9bb4a3e9057ad28",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/critical-journey.test.mjs",
+        "git_blob": "e73a1284c3ff405afbd5d268a4a000bfdcdc8cc8",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/dashboard.test.mjs",
+        "git_blob": "60cf05d591d086ec30b58612ab5fef3ca74d8458",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/evidence.test.mjs",
+        "git_blob": "23f33226ca2df01b08fe7f2ac18d8aa9f40cfcc0",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/foundation.test.mjs",
+        "git_blob": "37c889f755918b0140eeb024f1921a7f441d6c73",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/practices.test.mjs",
+        "git_blob": "89e13f6f1e1a6cb5d9013119c25d1ffd38ea29fc",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/promotion-eligibility.test.mjs",
+        "git_blob": "d45f42da138405164bacc317481a1441751730f8",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/prompt-library.test.mjs",
+        "git_blob": "fdcce18c7a18ff2695a26dd0005f91c0ef05e321",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/stage07-eval.test.mjs",
+        "git_blob": "018f1bb61a2a1039643c450fd10b4640a3a67c97",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/stage07-grounded-poc.test.mjs",
+        "git_blob": "df91119806353607a4ac3675f6815f9a7376cd74",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/stage07-runtime-safety.test.mjs",
+        "git_blob": "5e3de7c1a1df93a1f337c1be4818ad06079cfcc8",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      },
+      {
+        "path": "tests/stage07-telemetry.test.mjs",
+        "git_blob": "dca71128b71c6cdae96e090a43a694c53bb81c9a",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      }
+    ],
+    "aggregate_execution_status": "not_observed"
+  },
+  "workflow_declaration": {
+    "tracked_workflow_count": 1,
+    "workflows": [
+      {
+        "path": ".github/workflows/quality.yml",
+        "git_blob": "e1522256c6e81b2c1cfed85ed3fcd90740c164ed",
+        "sha256": "b330af01632e7fb038d32ba589a7977784dedf121a4e63927f4ac162ebde1347",
+        "claim_status": "verified",
+        "execution_status": "not_observed"
+      }
+    ],
+    "aggregate_execution_status": "not_observed"
+  },
+  "documented_execution_evidence": {
+    "candidate_count": 24,
+    "candidates": [
+      {
+        "path": "STAGE05_AI_TEST_REVIEW_POC.md",
+        "git_blob": "59c1cbccd57df56a556d554fd33ea8cecea57b77",
+        "artifact_presence": "verified",
+        "execution_claim_status": "mixed_requires_claim_level_scoping",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "mixed_execution_and_analysis",
+        "direct_execution_scope": "local repository baseline only",
+        "semantic_rationale": "Contains a human-executed repository baseline, but the artifact purpose is an AI review POC and explicitly denies that AI narrative is execution evidence.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      },
+      {
+        "path": "STAGE05_API_CONTRACT_VALIDATION.md",
+        "git_blob": "490b40279c94d2ab72d99517f78792be2c6cd133",
+        "artifact_presence": "verified",
+        "execution_claim_status": "mixed_requires_claim_level_scoping",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "mixed_execution_and_analysis",
+        "direct_execution_scope": "repository quality and current local module behavior only",
+        "semantic_rationale": "Records repository execution results while explicitly keeping API transport and runtime contract execution blocked or not established.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      },
+      {
+        "path": "STAGE05_CRITICAL_FLOW_FORM_VALIDATION.md",
+        "git_blob": "2e0d591cb75ef98b825e55b978e84ebfe526e56e",
+        "artifact_presence": "verified",
+        "execution_claim_status": "verified_bounded",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": true,
+        "semantic_class": "direct_execution_evidence",
+        "direct_execution_scope": "repository-level deterministic critical journey and quality execution",
+        "semantic_rationale": "Explicitly records synchronized branch execution, repository quality results and critical-journey execution, while preserving browser E2E as unestablished.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": true,
+        "promotion_status": "promoted_bounded"
+      },
+      {
+        "path": "STAGE05_MINIMAL_CRITICAL_TEST_SUITE.md",
+        "git_blob": "c7b609aa8768b4cfc5d910bb4b2e4fcb3f0b9b1e",
+        "artifact_presence": "verified",
+        "execution_claim_status": "mixed_requires_claim_level_scoping",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "mixed_execution_and_analysis",
+        "direct_execution_scope": "entry repository baseline only",
+        "semantic_rationale": "Contains an executed entry baseline but explicitly states that post-materialization execution evidence remained pending in the artifact.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      },
+      {
+        "path": "STAGE05_QA_EXECUTION_BASELINE.md",
+        "git_blob": "7989e36ef3b82b24c3764dfe0af05fa26b3f16c9",
+        "artifact_presence": "verified",
+        "execution_claim_status": "verified_bounded",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": true,
+        "semantic_class": "direct_execution_evidence",
+        "direct_execution_scope": "local repository and frontend QA baseline",
+        "semantic_rationale": "Purpose and content explicitly record human-executed local QA baseline with bounded lint, typecheck, test and build outcomes.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": true,
+        "promotion_status": "promoted_bounded"
+      },
+      {
+        "path": "STAGE05_QUALITY_ASSURANCE_ASSESSMENT.md",
+        "git_blob": "772f0dea61b399952bf245e4722bc574bd4aa019",
+        "artifact_presence": "verified",
+        "execution_claim_status": "not_primary_execution_evidence",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "assessment_or_synthesis",
+        "direct_execution_scope": "none as primary authority",
+        "semantic_rationale": "Consolidates QA dimensions and references prior executed evidence; it is primarily an assessment rather than primary execution record.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      },
+      {
+        "path": "STAGE05_SECURITY_SCAN_EVIDENCE.md",
+        "git_blob": "bdbf01388417d1a1ac7d898e9e4310549f4445f0",
+        "artifact_presence": "verified",
+        "execution_claim_status": "verified_bounded",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": true,
+        "semantic_class": "direct_execution_evidence",
+        "direct_execution_scope": "npm dependency audit and bounded repository quality execution",
+        "semantic_rationale": "Explicitly records executed dependency-audit and repository-quality evidence while keeping SAST and secret scanning not established.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": true,
+        "promotion_status": "promoted_bounded"
+      },
+      {
+        "path": "STAGE05_STATIC_QUALITY_GATE.md",
+        "git_blob": "1e0c2cdfa0042614228717f769e50038b80f845c",
+        "artifact_presence": "verified",
+        "execution_claim_status": "verified_bounded",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": true,
+        "semantic_class": "direct_execution_evidence",
+        "direct_execution_scope": "lint, typecheck, repository tests and production build for recorded revision",
+        "semantic_rationale": "Contains explicit baseline execution, command-level outcomes and bounded static-quality PASS results.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": true,
+        "promotion_status": "promoted_bounded"
+      },
+      {
+        "path": "STAGE06_AI_PIPELINE_REVIEW_POC.md",
+        "git_blob": "ac4fd1f957bcc91291be1d19da8650aada2b6351",
+        "artifact_presence": "verified",
+        "execution_claim_status": "not_primary_execution_evidence",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "assessment_or_synthesis",
+        "direct_execution_scope": "none as pipeline execution authority",
+        "semantic_rationale": "Explicitly states that it is review assistance and not pipeline execution evidence.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      },
+      {
+        "path": "STAGE06_CI_EXECUTION_EVIDENCE.md",
+        "git_blob": "e596d7309b4ba71321b4e4857228e2036e6eec56",
+        "artifact_presence": "verified",
+        "execution_claim_status": "verified_bounded",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": true,
+        "semantic_class": "direct_execution_evidence",
+        "direct_execution_scope": "versioned GitHub Actions CI positive and negative execution paths recorded in artifact",
+        "semantic_rationale": "Contains direct GitHub Actions run IDs, observed failure evidence, successful conclusions and exact governed CI revision statements.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": true,
+        "promotion_status": "promoted_bounded"
+      },
+      {
+        "path": "STAGE06_DELIVERY_READINESS_ASSESSMENT.md",
+        "git_blob": "78ff564da79a0729bbad3b8f8a6623113ca9f9a5",
+        "artifact_presence": "verified",
+        "execution_claim_status": "not_primary_execution_evidence",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "assessment_or_synthesis",
+        "direct_execution_scope": "none as primary authority",
+        "semantic_rationale": "Consolidates downstream evidence into delivery-readiness assessment and references direct CI evidence rather than serving as the primary CI execution record.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      },
+      {
+        "path": "STAGE06_EXPLICIT_PROMOTION_CONTRACT.md",
+        "git_blob": "266fa6b418f74c6235b43864461be00e632c1301",
+        "artifact_presence": "verified",
+        "execution_claim_status": "not_primary_execution_evidence",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "documentation_contract_or_governance",
+        "direct_execution_scope": "none for promotion execution",
+        "semantic_rationale": "Defines promotion governance and explicitly states that no promotion or deployment is performed.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      },
+      {
+        "path": "STAGE06_GP6_DECISION.md",
+        "git_blob": "2025e3dd531f3428d6a7ea901826cd21b64686be",
+        "artifact_presence": "verified",
+        "execution_claim_status": "not_primary_execution_evidence",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "documentation_contract_or_governance",
+        "direct_execution_scope": "none as technical execution authority",
+        "semantic_rationale": "Human gate-decision record for exact package identity; gate authority is governance, not technical execution evidence.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      },
+      {
+        "path": "STAGE06_PIPELINE_REPRODUCIBILITY_BASELINE.md",
+        "git_blob": "90dce45d728f0a3a3b551dec8f094fa056f70c57",
+        "artifact_presence": "verified",
+        "execution_claim_status": "verified_bounded",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": true,
+        "semantic_class": "direct_execution_evidence",
+        "direct_execution_scope": "local clean-install and repository quality execution",
+        "semantic_rationale": "Explicitly records human-executed local clean-install and repository-quality evidence while keeping CI unestablished at that historical point.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": true,
+        "promotion_status": "promoted_bounded"
+      },
+      {
+        "path": "STAGE06_PROMOTION_ELIGIBILITY_ENFORCEMENT.md",
+        "git_blob": "b68e1e7286d5cb90b0973709c79263f4935f8e33",
+        "artifact_presence": "verified",
+        "execution_claim_status": "verified_bounded",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": true,
+        "semantic_class": "direct_execution_evidence",
+        "direct_execution_scope": "promotion-eligibility evaluator and repository test execution only",
+        "semantic_rationale": "Records human execution of the eligibility evaluator and its deterministic tests while explicitly distinguishing eligibility evaluation from promotion.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": true,
+        "promotion_status": "promoted_bounded"
+      },
+      {
+        "path": "STAGE06_RELEASE_PROVENANCE_CONTRACT.md",
+        "git_blob": "b6d21415aac28855e90b7d361ed2e136f9e46959",
+        "artifact_presence": "verified",
+        "execution_claim_status": "not_primary_execution_evidence",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "documentation_contract_or_governance",
+        "direct_execution_scope": "none for release execution",
+        "semantic_rationale": "Primarily defines release provenance requirements and explicitly states that it does not create a release, tag, deployment or artifact publication.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      },
+      {
+        "path": "STAGE07_AI_CLOUD_ASSESSMENT.md",
+        "git_blob": "254fd66224d931ee4451705bf70e0e1b2f8a8e70",
+        "artifact_presence": "verified",
+        "execution_claim_status": "not_primary_execution_evidence",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "assessment_or_synthesis",
+        "direct_execution_scope": "none as primary authority",
+        "semantic_rationale": "Stage-wide AI evidence assessment; it reconciles bounded evidence and does not itself establish new execution.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      },
+      {
+        "path": "STAGE07_EVAL_BASELINE.md",
+        "git_blob": "5e883955e9de22a92a2f22866a875c5fa83fbe2f",
+        "artifact_presence": "verified",
+        "execution_claim_status": "mixed_requires_claim_level_scoping",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "mixed_execution_and_analysis",
+        "direct_execution_scope": "bounded deterministic eval path where explicitly recorded",
+        "semantic_rationale": "Defines and validates a deterministic evaluation path and CI integration but also acts as a baseline/contract rather than solely an execution record.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      },
+      {
+        "path": "STAGE07_GP7_EVIDENCE_PACKAGE.md",
+        "git_blob": "3a4ced05c35f89ff9623ff48141f23f66b4962e9",
+        "artifact_presence": "verified",
+        "execution_claim_status": "not_primary_execution_evidence",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "documentation_contract_or_governance",
+        "direct_execution_scope": "none as primary execution authority",
+        "semantic_rationale": "Exact evidence-package definition bound to source commit, blobs and digest; it packages evidence rather than executing the system.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      },
+      {
+        "path": "STAGE07_GROUNDED_ASSISTANT_RUNTIME_EVIDENCE.md",
+        "git_blob": "0d6883eb4fd9859686d492a2f56ba50e194db087",
+        "artifact_presence": "verified",
+        "execution_claim_status": "verified_bounded",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": true,
+        "semantic_class": "direct_execution_evidence",
+        "direct_execution_scope": "bounded external embeddings and grounded-retrieval POC execution",
+        "semantic_rationale": "Explicitly records the first real external execution of the bounded grounded-retrieval POC with implementation and source provenance.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": true,
+        "promotion_status": "promoted_bounded"
+      },
+      {
+        "path": "STAGE07_RUNTIME_SAFETY_BASELINE.md",
+        "git_blob": "b9eae6361df97fc4f578ded48810d6ad65510cd7",
+        "artifact_presence": "verified",
+        "execution_claim_status": "verified_bounded",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": true,
+        "semantic_class": "direct_execution_evidence",
+        "direct_execution_scope": "repo-native deterministic runtime-safety behavior",
+        "semantic_rationale": "Records deterministic runtime-safety test results and bounded safety execution while preserving real-provider limitations.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": true,
+        "promotion_status": "promoted_bounded"
+      },
+      {
+        "path": "STAGE08_EVIDENCE_PACK.md",
+        "git_blob": "9e425c998ab3848cd2c6ebee923911d5bac5b698",
+        "artifact_presence": "verified",
+        "execution_claim_status": "not_primary_execution_evidence",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "documentation_contract_or_governance",
+        "direct_execution_scope": "none as primary execution authority",
+        "semantic_rationale": "Claim-to-evidence map that binds and summarizes existing evidence without creating new technical facts.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      },
+      {
+        "path": "STAGE08_TECHNICAL_CASE.md",
+        "git_blob": "6a701d4333d865c62692bae30fa0955085780fee",
+        "artifact_presence": "verified",
+        "execution_claim_status": "not_primary_execution_evidence",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "assessment_or_synthesis",
+        "direct_execution_scope": "none as primary authority",
+        "semantic_rationale": "Portfolio-oriented technical synthesis that references governed evidence and quality results rather than serving as their primary execution source.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      },
+      {
+        "path": "STAGE08_TOOLING_POC_EVALUATION.md",
+        "git_blob": "27fb779538968f089e24360576d0cb1e5dc327e3",
+        "artifact_presence": "verified",
+        "execution_claim_status": "not_primary_execution_evidence",
+        "content_review_required": true,
+        "promoted_to_execution_evidence": false,
+        "semantic_class": "assessment_or_synthesis",
+        "direct_execution_scope": "none as primary authority",
+        "semantic_rationale": "Evaluates tooling value and provenance workflow; any embedded execution statement is subordinate to the underlying evidence sources.",
+        "semantic_review_status": "completed",
+        "direct_promotion_candidate": false,
+        "promotion_status": "not_promoted"
+      }
+    ],
+    "content_review_completed": true,
+    "promoted_execution_evidence_count": 9,
+    "semantic_classification_completed": true,
+    "semantic_classification_source": "CP10-003-F_20260907-171835-chat.txt",
+    "promotion_policy": "direct_execution_evidence_only_with_bounded_scope",
+    "non_promoted_candidate_count": 15,
+    "semantic_class_counts": {
+      "direct_execution_evidence": 9,
+      "mixed_execution_and_analysis": 4,
+      "documentation_contract_or_governance": 5,
+      "assessment_or_synthesis": 6,
+      "unknown": 0
+    }
+  },
+  "human_reviewed": true,
+  "approval_artifact_present": true,
+  "status": "ready",
+  "semantic_reconciliation": {
+    "completed": true,
+    "source_checkpoint": "CP10-003-F_20260907-171835-chat.txt",
+    "direct_execution_evidence_count": 9,
+    "mixed_execution_analysis_count": 4,
+    "documentation_contract_governance_count": 5,
+    "assessment_synthesis_count": 6,
+    "unknown_count": 0,
+    "promoted_bounded_count": 9,
+    "universal_pass_inferred": false,
+    "production_readiness_inferred": false,
+    "scope_preservation_required": true
+  },
+  "reconciliation_status": "human_approved",
+  "approval_artifact": {
+    "path": "stage10-evidence/10-003/HUMAN_TECHNICAL_INVENTORY_APPROVAL.md",
+    "sha256": "a6edae25dcf8ce358265150ac9ab0e2f34dbaff5b7a96e44af6ccf9bafbd2988",
+    "source_inventory_id": "inventory.skillcertify.10.003.draft.v2",
+    "factual_approved": true,
+    "privacy_approved": true,
+    "authority_approved": true,
+    "scope_approved": true,
+    "freeze_authorized": true,
+    "approved_at": "2026-09-07T17:38:22-03:00"
+  },
+  "freeze_status": "frozen",
+  "freeze": {
+    "authorized": true,
+    "approved_at": "2026-09-07T17:38:22-03:00",
+    "source_inventory_sha256": "18b0f027760921f0aa7b0f241d1424c3dcf7a05370cc5c2995e3a5f0742f86ab",
+    "source_report_sha256": "36cec3984597d54b410b45ca850dc4087128e73983733b090ccde4b9ffb58055",
+    "approval_sha256": "a6edae25dcf8ce358265150ac9ab0e2f34dbaff5b7a96e44af6ccf9bafbd2988",
+    "mutation_after_freeze_allowed": false
+  }
+}
