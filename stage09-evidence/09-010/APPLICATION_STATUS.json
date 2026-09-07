@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "task_id": "task.skillcertify.09.010",
+  "stage": "stage.skillcertify.09",
+  "target": {
+    "vacancy_id": "VAC-09-004-001",
+    "role": "BairesDev React Frontend"
+  },
+  "application": {
+    "status": "CANDIDATURA_ATIVA",
+    "matching_state": "CORRESPONDENCIA_DE_PERFIL",
+    "profile_completed": true,
+    "profile_active": true,
+    "profile_changes_saved": true,
+    "curriculum_replaced": true,
+    "curriculum_basename": "Misael-Alves_Frontend-Developer_BairesDev.pdf",
+    "english_audio_submitted": true
+  },
+  "evidence_contract": {
+    "expected": "application-status+receipt-or-disposition",
+    "application_status_component": "SATISFIED",
+    "receipt_component": "NOT_SATISFIED",
+    "disposition_component": "SATISFIED",
+    "satisfied": true,
+    "sufficiency": "SUFFICIENT_WITH_EXPLICIT_RECEIPT_LIMITATION"
+  },
+  "receipt": {
+    "vacancy_specific_receipt_captured": false,
+    "vacancy_specific_submission_confirmation_observed": false
+  },
+  "disposition": {
+    "recorded": true,
+    "scope": "PLATFORM_LEVEL",
+    "qualified": true,
+    "text": "Platform-level candidacy is active and in profile matching. No vacancy-specific receipt or vacancy-specific submission confirmation for VAC-09-004-001 was observed in the captured BairesDev UI."
+  },
+  "boundaries": {
+    "vacancy_specific_acceptance_claimed": false,
+    "platform_matching_status_equated_with_vacancy_specific_acceptance": false,
+    "previous_professional_employment_declared": false,
+    "advanced_english_claimed": false,
+    "professional_seniority_claimed": false,
+    "unsupported_years_of_experience_claimed": false,
+    "problem_solving_test_performed": false,
+    "outreach_performed": false,
+    "linkedin_mutation_performed": false
+  },
+  "privacy": {
+    "sanitized_text_only": true,
+    "raw_screenshots_included": false,
+    "raw_audio_included": false,
+    "phone_included": false,
+    "email_included": false,
+    "date_of_birth_included": false,
+    "secrets_included": false
+  },
+  "human_review": {
+    "required": true,
+    "status": "APPROVED",
+    "factual_approval": true,
+    "privacy_approval": true,
+    "approval_text": "APROVO FACTUAL + PRIVACIDADE DO STATUS SANITIZADO 09.010"
+  }
+}
