@@ -1,0 +1,34 @@
+{
+  "digest_convention": "sha256_utf8_nobom_exact_json_bytes_of_this_file",
+  "baseline_id": "baseline.skillcertify.10.001.v1",
+  "stage_id": "stage.skillcertify.10",
+  "period_start": "2026-08-21T19:51:40-03:00",
+  "period_end": "2026-09-07T14:48:11-03:00",
+  "source_refs": [
+    "source.skillcertify.10.001.repo.start",
+    "source.skillcertify.10.001.repo.end",
+    "source.skillcertify.10.001.task-registry",
+    "source.skillcertify.10.001.baseline-contract",
+    "source.skillcertify.10.001.stage-docs",
+    "source.skillcertify.10.001.workstream-docs",
+    "source.skillcertify.10.001.issues-view",
+    "source.skillcertify.10.001.human-temporal-approval",
+    "source-index.skillcertify.10.001.v1",
+    "source.skillcertify.10.001.human-freeze-approval"
+  ],
+  "missing_or_unknown_sources": [
+    "stage01-specific repository evidence unavailable",
+    "CP01 operational checkpoints unavailable",
+    "project activity before repository root commit unknown"
+  ],
+  "contradictions": [],
+  "facts_only": true,
+  "human_reviewed": true,
+  "status": "ready",
+  "source_index_id": "source-index.skillcertify.10.001.v1",
+  "source_index_sha256": "7b6c42384f18d387955eacf58917f47f61fa32a4c7c2e60bc781365a821484e7",
+  "temporal_approval_sha256": "548e2b07829012e1131ee0782cedf67eeec845c5cbff432c28e0906c472330b6",
+  "freeze_approval_sha256": "b7db56e3323f648aa0aa80e59ff260eb0f45337b7a6ac44cd90872e5d93a52e9",
+  "start_commit": "48e45e2f38cd8ad61bc04a0000af77be1b641a44",
+  "end_commit": "b3c7f61fcb4f820a14e42ed920ef79da75180b80"
+}

@@ -1,0 +1,145 @@
+{
+  "source_index_id": "source-index.skillcertify.10.001.v1",
+  "task_id": "task.skillcertify.10.001",
+  "stage_id": "stage.skillcertify.10",
+  "period_start": "2026-08-21T19:51:40-03:00",
+  "period_end": "2026-09-07T14:48:11-03:00",
+  "start_ref": "48e45e2f38cd8ad61bc04a0000af77be1b641a44",
+  "end_ref": "b3c7f61fcb4f820a14e42ed920ef79da75180b80",
+  "sources": [
+    {
+      "source_id": "source.skillcertify.10.001.repo.start",
+      "subject": "recoverable cycle start boundary",
+      "kind": "git_commit",
+      "authority": "primary",
+      "data_class": "public_repo_metadata",
+      "freshness": "2026-08-21T19:51:40-03:00",
+      "locator": "git:commit:48e45e2f38cd8ad61bc04a0000af77be1b641a44",
+      "sha256": null,
+      "limitations": [
+        "First recoverable Git boundary used for this baseline.",
+        "Does not prove absence of project activity before repository creation."
+      ]
+    },
+    {
+      "source_id": "source.skillcertify.10.001.repo.end",
+      "subject": "Stage 09 closure and G-P9 merged boundary",
+      "kind": "git_commit",
+      "authority": "primary",
+      "data_class": "public_repo_metadata",
+      "freshness": "2026-09-07T14:48:11-03:00",
+      "locator": "git:commit:b3c7f61fcb4f820a14e42ed920ef79da75180b80",
+      "sha256": null,
+      "limitations": []
+    },
+    {
+      "source_id": "source.skillcertify.10.001.task-registry",
+      "subject": "task definition and dependency authority",
+      "kind": "canonical_control_file",
+      "authority": "canonical",
+      "data_class": "internal",
+      "freshness": "snapshot_at_materialization",
+      "locator": "01-primary/01-skillcert/00-control/execution/registries/task-registry.json",
+      "sha256": "84953e78ff0ccbbb838e7cc8e3c029579df4cbf0c22a7ca01b6c7aad4e9d742e",
+      "limitations": [
+        "Registry planning status is not automatically runtime execution state."
+      ]
+    },
+    {
+      "source_id": "source.skillcertify.10.001.baseline-contract",
+      "subject": "baseline schema",
+      "kind": "canonical_contract",
+      "authority": "canonical",
+      "data_class": "internal",
+      "freshness": "snapshot_at_materialization",
+      "locator": "01-primary/01-skillcert/00-control/contracts/cycle-baseline-provenance-baseline.schema.json",
+      "sha256": "6e80a4098c67cd36ad7b165e427becd06c89bdcc713c37f33973ec5f37091dca",
+      "limitations": []
+    },
+    {
+      "source_id": "source.skillcertify.10.001.stage-docs",
+      "subject": "Cycle Review stage semantics and authority rules",
+      "kind": "canonical_documentation",
+      "authority": "canonical",
+      "data_class": "internal",
+      "freshness": "snapshot_at_materialization",
+      "locator": "01-primary/01-skillcert/10-cycle-review/idx-docs.md",
+      "sha256": "9d4c8d30e2c71af9017a25b6a7e9e190f0965739d63f3d7f5130e37eed52e120",
+      "limitations": []
+    },
+    {
+      "source_id": "source.skillcertify.10.001.workstream-docs",
+      "subject": "10.001 workstream semantics",
+      "kind": "canonical_documentation",
+      "authority": "canonical",
+      "data_class": "internal",
+      "freshness": "snapshot_at_materialization",
+      "locator": "01-primary/01-skillcert/10-cycle-review/01-cycle-base/idx-docs.md",
+      "sha256": "3ab5ef5ca9fb4f29b8decee961a59bafdcc13d0654ee33dbc5f5c4bbf7e19604",
+      "limitations": []
+    },
+    {
+      "source_id": "source.skillcertify.10.001.issues-view",
+      "subject": "legacy GitHub-project task view",
+      "kind": "derived_view",
+      "authority": "derived",
+      "data_class": "internal",
+      "freshness": "snapshot_at_materialization",
+      "locator": "01-primary/01-skillcert/10-cycle-review/00-visual-aids/github-project/issues.csv",
+      "sha256": "0486da512241a0cc8af160b9a24f94e35321fb866c8384d07ef431e7b28d1c20",
+      "limitations": [
+        "Derived view.",
+        "Not source of truth for task or gate runtime state by itself."
+      ]
+    },
+    {
+      "source_id": "source.skillcertify.10.001.human-temporal-approval",
+      "subject": "human-approved temporal cut",
+      "kind": "human_source",
+      "authority": "human",
+      "data_class": "internal",
+      "freshness": "2026-09-07",
+      "locator": "stage10-evidence/10-001/HUMAN_TEMPORAL_CUT_APPROVAL.md",
+      "sha256": "548e2b07829012e1131ee0782cedf67eeec845c5cbff432c28e0906c472330b6",
+      "limitations": [
+        "Approval is scoped to the temporal cut and baseline candidate materialization."
+      ]
+    },
+    {
+      "source_id": "source.skillcertify.10.001.human-freeze-approval",
+      "subject": "human-approved factual privacy authority completeness freeze",
+      "kind": "human_source",
+      "authority": "human",
+      "data_class": "internal",
+      "freshness": "2026-09-07",
+      "locator": "stage10-evidence/10-001/HUMAN_BASELINE_FREEZE_APPROVAL.md",
+      "sha256": "b7db56e3323f648aa0aa80e59ff260eb0f45337b7a6ac44cd90872e5d93a52e9",
+      "limitations": [
+        "Approval is scoped to freezing the reviewed 10.001 baseline and source index.",
+        "It does not authorize automatic publication or downstream execution."
+      ]
+    }
+  ],
+  "excluded_or_non_authoritative": [
+    {
+      "ref": "historical-90-day-review",
+      "reason": "Historical planning context only; not current temporal authority."
+    },
+    {
+      "ref": "historical-gantt-2026-08-01",
+      "reason": "Historical planning start; explicitly non-authoritative for current execution state."
+    },
+    {
+      "ref": "historical-baseline-v0.1",
+      "reason": "Historical reference remains unconfirmed and is not treated as current fact."
+    }
+  ],
+  "missing_or_unknown": [
+    "No recoverable Stage 01 evidence directory was found in the current repository state.",
+    "No CP01 operational checkpoint was available in the current checkpoint collection.",
+    "Whether project activity existed before the repository root commit is unknown and is not inferred."
+  ],
+  "contradictions": [],
+  "facts_only": true,
+  "status": "ready"
+}

@@ -1,0 +1,28 @@
+{
+  "baseline_id": "baseline.skillcertify.10.001.v1",
+  "stage_id": "stage.skillcertify.10",
+  "period_start": "2026-08-21T19:51:40-03:00",
+  "period_end": "2026-09-07T14:48:11-03:00",
+  "source_refs": [
+    "source.skillcertify.10.001.repo.start",
+    "source.skillcertify.10.001.repo.end",
+    "source.skillcertify.10.001.task-registry",
+    "source.skillcertify.10.001.baseline-contract",
+    "source.skillcertify.10.001.stage-docs",
+    "source.skillcertify.10.001.workstream-docs",
+    "source.skillcertify.10.001.issues-view",
+    "source.skillcertify.10.001.human-temporal-approval",
+    "source-index.skillcertify.10.001.v1",
+    "source.skillcertify.10.001.human-freeze-approval"
+  ],
+  "missing_or_unknown_sources": [
+    "stage01-specific repository evidence unavailable",
+    "CP01 operational checkpoints unavailable",
+    "project activity before repository root commit unknown"
+  ],
+  "contradictions": [],
+  "snapshot_digest": "f6694cd95ab4d0ad7bce526a954c2136f27cfda078823a411ff2a26c4ead354f",
+  "facts_only": true,
+  "human_reviewed": true,
+  "status": "ready"
+}
