@@ -1,0 +1,67 @@
+{
+  "contract_version": "1.0.0",
+  "task": "task.skillcertify.09.012",
+  "environment": "AI DevFlow project workflow using ChatGPT Projects for bounded six-dimension Job Search assessment preparation from frozen Stage 09 evidence",
+  "constraints": [
+    "Task scope is assessment preparation only.",
+    "task.skillcertify.09.012 cannot approve G-P9.",
+    "All six canonical Job Search dimensions are hard-stop dimensions.",
+    "The provisional evidence assessment resolved all six dimensions as ready with no open hard stop.",
+    "The assessment schema requires can_pass_gate=false.",
+    "No external action is authorized.",
+    "No application submission, outreach, interview response, negotiation or offer action is authorized.",
+    "Frozen Stage 09 evidence and human-approved factual/privacy boundaries must remain unchanged.",
+    "Vacancy-specific receipt remains not observed and must not be invented.",
+    "Screening, interview, rejection and offer remain NOT_OBSERVED rather than verified zero.",
+    "No cross-stage conversion rate or causal hiring claim is authorized.",
+    "Legacy AI recommendation is derived-hint-only and is not execution-time selection authority."
+  ],
+  "selected": {
+    "tool": "ChatGPT Projects",
+    "role": "Contextual six-dimension assessment synthesis, evidence continuity and bounded review preparation for task.skillcertify.09.012",
+    "fit": 96,
+    "fit_semantics": "Contextual execution suitability score from 0 to 100 for task.skillcertify.09.012 only; not a hiring, ATS, interview, conversion, gate-pass or outcome probability."
+  },
+  "alternatives": [
+    {
+      "tool": "ChatGPT Work",
+      "role": "Multi-step execution and artifact-oriented workflow using project context",
+      "fit": 82,
+      "disposition": "NOT_SELECTED",
+      "reason": "Capable and compatible, but its broader execution surface is unnecessary for this bounded read-review-materialize assessment preparation where no external action is authorized."
+    },
+    {
+      "tool": "Standalone ChatGPT chat outside Projects",
+      "role": "Ad hoc evidence review and synthesis",
+      "fit": 60,
+      "disposition": "NOT_SELECTED",
+      "reason": "Can perform the reasoning task but provides weaker continuity for the long-running Stage 09 chain of checkpoints, files, instructions and frozen evidence."
+    }
+  ],
+  "selection_rationale": "ChatGPT Projects is selected independently for task.skillcertify.09.012 because the task requires sustained contextual review across a long-running project containing related chats, files, instructions, checkpoints and frozen evidence. Current official OpenAI documentation describes Projects as dedicated spaces that keep related chats, files, instructions and context together and as suitable for repeated and evolving work. ChatGPT Work remains a viable alternative for larger execution-oriented workflows, but its broader action and multi-step execution surface is not required for this bounded assessment-preparation task. This selection concerns task execution fit only and does not establish hiring effectiveness, ATS success, interview probability, conversion probability or G-P9 outcome.",
+  "risks": [
+    "Project context can contain stale or superseded information unless frozen checkpoints, hashes and canonical sources remain authoritative.",
+    "A contextual fit score can be misread as an outcome score unless fit semantics remain explicit.",
+    "AI synthesis can overstate evidence unless every dimension remains bound to recoverable evidence refs.",
+    "The absence of observed funnel outcomes can be misread as verified zero unless NOT_OBSERVED semantics remain explicit.",
+    "Tool convenience must not be treated as authority to pass G-P9.",
+    "Product capabilities can change and require later reevaluation."
+  ],
+  "human_controls": [
+    "Human review remains required for the task.skillcertify.09.012 assessment.",
+    "Only task.skillcertify.09.014 may record the human G-P9 decision.",
+    "Application submission remains human-controlled.",
+    "Interview responses, negotiation and offer acceptance remain human-controlled.",
+    "No external action is authorized by this tool selection.",
+    "No unsupported experience, employment duration, advanced English, seniority, performance benchmark or vacancy-specific receipt claim may be introduced.",
+    "Tool selection cannot override frozen evidence, canonical schemas, task boundaries or human approvals."
+  ],
+  "validated_at": "2026-09-07",
+  "review_due": "2026-10-07",
+  "official_sources": [
+    "OpenAI Help Center: Projects in ChatGPT, article 10169521, verified 2026-09-07",
+    "OpenAI Academy: Using projects in ChatGPT, published 2026-04-10, verified 2026-09-07",
+    "OpenAI Help Center: ChatGPT Work and Codex, verified 2026-09-07"
+  ],
+  "curation_source": "Independent execution-time selection derived from the canonical ai-tool-selection contract, CP09-012-D-R1 readiness state, frozen Stage 09 evidence boundaries and current official OpenAI documentation reviewed on 2026-09-07."
+}

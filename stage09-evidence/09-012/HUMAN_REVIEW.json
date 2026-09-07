@@ -1,0 +1,44 @@
+{
+  "task_id": "task.skillcertify.09.012",
+  "review_scope": "JOB_SEARCH_ASSESSMENT_AND_AI_TOOL_SELECTION",
+  "reviewed_artifacts": [
+    {
+      "path": "stage09-evidence/09-012/JOB_SEARCH_ASSESSMENT.json",
+      "sha256": "f5c85f2563171690e821190f8d3b92f16f9c43f7d31aff2d2ee52e01b7bc2625"
+    },
+    {
+      "path": "stage09-evidence/09-012/AI_TOOL_SELECTION.json",
+      "sha256": "e0661782ecec9846e9630d42f389165cce730e1f57535d614b438a3c2db8723d"
+    }
+  ],
+  "approval": {
+    "status": "APPROVED",
+    "factual_review": "APPROVED",
+    "privacy_review": "APPROVED",
+    "assessment_review": "APPROVED",
+    "schema_consistency": "APPROVED",
+    "approval_text": "APROVO FACTUAL + PRIVACIDADE + ASSESSMENT DO 09.012 COM can_pass_gate=false E SEM DECISÃO G-P9"
+  },
+  "assessment_boundary": {
+    "dimension_count": 6,
+    "non_ready_dimension_count": 0,
+    "open_hard_stop_count": 0,
+    "overall_status": "ready_for_human_review",
+    "can_pass_gate": false
+  },
+  "authority_boundary": {
+    "g_p9_decision_authorized": false,
+    "g_p9_decision_recorded": false,
+    "g_p9_package_freeze_authorized": false,
+    "task_09_013_started": false,
+    "task_09_014_authority_preserved": true,
+    "external_action_authorized": false
+  },
+  "privacy_boundary": {
+    "raw_pii_persisted": false,
+    "raw_screenshots_persisted": false,
+    "raw_audio_persisted": false,
+    "secrets_persisted": false
+  },
+  "approved_at": "2026-09-07"
+}

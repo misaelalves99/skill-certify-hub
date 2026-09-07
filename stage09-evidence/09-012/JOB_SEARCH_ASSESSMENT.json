@@ -1,0 +1,73 @@
+{
+  "assessment_id": "assessment.skillcertify.09.012.v1",
+  "stage_id": "stage.skillcertify.09",
+  "package_version": "1.0.0",
+  "dimensions": [
+    {
+      "dimension_id": "job-search.search-source-governance-integrity",
+      "status": "ready",
+      "evidence_refs": [
+        "stage09-evidence/09-003/SEARCH_EXECUTION_EVIDENCE.json",
+        "stage09-evidence/09-003/SOURCE_INSPECTION_REPORT.md",
+        "stage09-evidence/09-003/HUMAN_REVIEW_DECISION.md"
+      ],
+      "hard_stop_open": false
+    },
+    {
+      "dimension_id": "job-search.requirement-proof-integrity",
+      "status": "ready",
+      "evidence_refs": [
+        "stage09-evidence/09-004/REQUIREMENT_EVIDENCE_MATRIX.json",
+        "stage09-evidence/09-004/REQUIREMENT_SOURCE_SET.json",
+        "stage09-evidence/09-005/EVIDENCE_VERIFICATION_LEDGER.json"
+      ],
+      "hard_stop_open": false
+    },
+    {
+      "dimension_id": "job-search.material-truth-privacy-integrity",
+      "status": "ready",
+      "evidence_refs": [
+        "stage09-evidence/09-006/VACANCY_PRIORITIZATION_DECISION.json",
+        "stage09-evidence/09-006/HUMAN_REVIEW.json",
+        "stage09-evidence/09-007/FACTUAL_RESUME_SOURCE.json",
+        "stage09-evidence/09-007/RESUME_CLAIM_TRACE.json",
+        "stage09-evidence/09-007/HUMAN_REVIEW.json",
+        "stage09-evidence/09-008/README_PROVENANCE.json",
+        "stage09-evidence/09-008/HUMAN_REVIEW.json",
+        "stage09-evidence/09-009/VALIDATION_REPORT_FINAL.json",
+        "stage09-evidence/09-009/HUMAN_REVIEW.json"
+      ],
+      "hard_stop_open": false
+    },
+    {
+      "dimension_id": "job-search.application-authority-integrity",
+      "status": "ready",
+      "evidence_refs": [
+        "stage09-evidence/09-010/APPLICATION_STATUS.json",
+        "stage09-evidence/09-010/README.md"
+      ],
+      "hard_stop_open": false
+    },
+    {
+      "dimension_id": "job-search.funnel-feedback-integrity",
+      "status": "ready",
+      "evidence_refs": [
+        "stage09-evidence/09-011/FUNNEL_TOOL_REEVALUATION_REPORT.json",
+        "stage09-evidence/09-011/FUNNEL_TOOL_REEVALUATION_REPORT.md",
+        "stage09-evidence/09-011/HUMAN_REVIEW.json"
+      ],
+      "hard_stop_open": false
+    },
+    {
+      "dimension_id": "job-search.gate-handoff-integrity",
+      "status": "ready",
+      "evidence_refs": [
+        "stage09-evidence/09-011/FUNNEL_TOOL_REEVALUATION_REPORT.json"
+      ],
+      "hard_stop_open": false
+    }
+  ],
+  "overall_status": "ready_for_human_review",
+  "can_pass_gate": false,
+  "prepared_by_task_id": "task.skillcertify.09.012"
+}
