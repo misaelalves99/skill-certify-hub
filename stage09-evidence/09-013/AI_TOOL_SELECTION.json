@@ -1,0 +1,71 @@
+{
+  "contract_version": "1.0.0",
+  "task": "task.skillcertify.09.013",
+  "environment": "AI DevFlow project workflow using ChatGPT Projects for exact G-P9 review-package preparation from a frozen 23-artifact Stage 09 input set and canonical gate/package contracts",
+  "constraints": [
+    "Task scope is exact G-P9 review-package preparation and freeze only.",
+    "task.skillcertify.09.013 cannot record or approve the G-P9 human decision.",
+    "The review package must bind an exact package ID, version and digest.",
+    "All six canonical Job Search dimensions are hard-stop dimensions.",
+    "The resolved assessment reports all six dimensions ready and zero open hard stops.",
+    "The package schema contains exactly 15 allowed properties and rejects additional properties.",
+    "The freeze input set contains exactly 23 recoverable Stage 09 artifacts resolved by CP09-013-B-R1.",
+    "Every package evidence ref must remain recoverable and consistent with frozen Stage 09 evidence.",
+    "Vacancy-specific receipt remains not observed and must not be invented.",
+    "Screening, interview, rejection and offer remain NOT_OBSERVED rather than verified zero.",
+    "No cross-stage conversion rate, causal hiring claim or unsupported quantitative conclusion is authorized.",
+    "Human gate authority belongs exclusively to task.skillcertify.09.014.",
+    "No application, outreach, interview response, negotiation, offer acceptance or other external action is authorized.",
+    "The legacy AI recommendation is derived-hint-only and is not execution-time selection authority."
+  ],
+  "selected": {
+    "tool": "ChatGPT Projects",
+    "role": "Contextual G-P9 package synthesis, exact evidence-binding review, digest-preparation support and continuity across the frozen Stage 09 governance chain",
+    "fit": 97,
+    "fit_semantics": "Contextual execution suitability score from 0 to 100 for task.skillcertify.09.013 only; not a G-P9 pass probability, hiring probability, ATS score, interview probability, conversion probability or outcome probability."
+  },
+  "alternatives": [
+    {
+      "tool": "ChatGPT Work",
+      "role": "Long-running multi-step analysis and artifact-oriented execution",
+      "fit": 84,
+      "disposition": "NOT_SELECTED",
+      "reason": "Capable for long multi-step work, but its broader agentic execution and connected-app surface is unnecessary for a bounded local governance task whose package contents, input refs and authority boundaries are already frozen."
+    },
+    {
+      "tool": "Standalone ChatGPT chat outside Projects",
+      "role": "Ad hoc package review and synthesis",
+      "fit": 59,
+      "disposition": "NOT_SELECTED",
+      "reason": "Can perform the reasoning but provides weaker continuity for the long-running Stage 09 checkpoint chain, exact frozen hashes, canonical contracts and human-review boundaries."
+    }
+  ],
+  "selection_rationale": "ChatGPT Projects is selected independently for task.skillcertify.09.013 because this task depends on continuity across a long-running project containing related chats, checkpoints, files, canonical contracts and frozen evidence while remaining a bounded review-package preparation task with no external action. Current official OpenAI documentation describes Projects as workspaces that keep related chats, files, instructions and context together and as suitable for repeated and evolving work. ChatGPT Work is a viable alternative for broader long-running multi-step execution and finished deliverables, but that additional execution surface is unnecessary here because package preparation must remain deterministically constrained by the canonical G-P9 schema, exact evidence refs and task authority.",
+  "risks": [
+    "Project context can contain stale or superseded information unless the exact CP09-013-B-R1 freeze input hashes remain authoritative.",
+    "AI synthesis can omit a material residual risk or unknown unless every required package field is validated against the canonical package schema and gate evidence requirements.",
+    "A contextual fit score can be misread as a gate-pass score unless fit semantics remain explicit.",
+    "Package convenience can be misread as decision authority unless task.skillcertify.09.014 remains the sole human G-P9 decision task.",
+    "NOT_OBSERVED funnel outcomes can be misread as verified zero unless the frozen 09.011 semantics are preserved.",
+    "A digest can be meaningless if its canonicalization procedure is ambiguous, so digest construction must be deterministic and independently revalidated before freeze.",
+    "Product capabilities can change and require later reevaluation."
+  ],
+  "human_controls": [
+    "Human review is required for the task.skillcertify.09.013 package before it may be committed as the exact review package.",
+    "Only task.skillcertify.09.014 may record the human G-P9 decision.",
+    "The G-P9 gate must remain pending after package preparation.",
+    "No unsupported experience, employment duration, advanced English, seniority, performance benchmark or vacancy-specific receipt claim may be introduced.",
+    "Residual risks and open unknowns must remain explicit and cannot be silently converted into resolved facts.",
+    "The exact 23-artifact freeze input set from CP09-013-B-R1 remains authoritative unless a deliberate revision triggers a new package version and human review.",
+    "Tool selection cannot override frozen evidence, canonical schemas, package digest rules, task boundaries or human approvals.",
+    "No external application, outreach, interview, negotiation or offer action is authorized."
+  ],
+  "validated_at": "2026-09-07",
+  "review_due": "2026-10-07",
+  "official_sources": [
+    "OpenAI Help Center: Projects in ChatGPT, verified 2026-09-07",
+    "OpenAI Academy: Projects resource, last updated 2026-09-02, verified 2026-09-07",
+    "OpenAI Help Center: ChatGPT Work and Codex, verified 2026-09-07"
+  ],
+  "curation_source": "Independent execution-time selection for task.skillcertify.09.013 derived from the canonical ai-tool-selection contract, CP09-013-B-R1 exact package/freeze-input resolution, frozen Stage 09 authority boundaries and current official OpenAI documentation reviewed on 2026-09-07."
+}

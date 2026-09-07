@@ -1,0 +1,48 @@
+{
+  "task_id": "task.skillcertify.09.013",
+  "stage_id": "stage.skillcertify.09",
+  "gate_id": "gate.skillcertify.09",
+  "review_scope": {
+    "factual": "APPROVED",
+    "privacy": "APPROVED",
+    "residual_risks_and_open_unknowns": "APPROVED",
+    "exact_package_freeze": "APPROVED"
+  },
+  "approval": {
+    "status": "APPROVED",
+    "exact_text": "APROVO FACTUAL + PRIVACIDADE + RISCOS/UNKNOWNS + FREEZE DO PACKAGE G-P9 09.013, SEM DECISÃO G-P9",
+    "approved_at": "2026-09-07"
+  },
+  "package_binding": {
+    "package_id": "package.skillcertify.g-p9.v1",
+    "version": "1.0.0",
+    "package_sha256": "ebd9f33c4bef511530510629e37eef9472a23b3301b89b9448462ff0d3ef20e7",
+    "digest": "b83c8f40ae32357dab64d58a9d4ce3180c31e157c6255edd45cbbc765b2de8c3",
+    "digest_basis_sha256": "b83c8f40ae32357dab64d58a9d4ce3180c31e157c6255edd45cbbc765b2de8c3",
+    "review_sha256": "21869836bb6a080bbbc9bc951cd71bfad513e1d69bd2dc0b6e54c3bb3dc68e81",
+    "ai_selection_sha256": "b19263413f903fd44eac15862248f581e2eea56c9db4d62acbb7858dd43f61c6"
+  },
+  "reviewed_boundaries": {
+    "baseline_ref_count": 6,
+    "evidence_ref_count": 23,
+    "residual_risk_count": 6,
+    "open_unknown_count": 6,
+    "vacancy_specific_receipt_observed": false,
+    "advanced_english_proven": false,
+    "measured_client_performance_benchmark_proven": false,
+    "funnel_outcomes_verified_as_zero": false,
+    "cross_stage_conversion_rate_authorized": false,
+    "causal_hiring_claim_authorized": false
+  },
+  "authority_boundary": {
+    "package_freeze_authorized": true,
+    "package_freeze_performed": false,
+    "g_p9_status": "pending",
+    "g_p9_decision_authorized": false,
+    "g_p9_decision_recorded": false,
+    "task_09_014_authority_preserved": true,
+    "task_09_014_started": false,
+    "task_10_001_unlocked": false
+  },
+  "statement": "Human approval authorizes freezing the exact task.skillcertify.09.013 G-P9 review package identified by package ID, version and digest. It does not approve, reject, waive or otherwise decide G-P9. Human G-P9 decision authority remains exclusively with task.skillcertify.09.014."
+}
