@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0.0",
+  "project": "skill-certify-hub",
+  "stage_id": "stage.skillcertify.09",
+  "task_id": "task.skillcertify.09.011",
+  "title": "Funnel Review and Tool Reevaluation",
+  "evidence_type": "report",
+  "analysis_period": {
+    "start": "2026-09-05",
+    "end": "2026-09-07",
+    "inclusive_days": 3,
+    "basis": "FIRST_RECOVERABLE_SEARCH_EVENT_THROUGH_CURRENT_CLOSURE_DATE"
+  },
+  "denominators": {
+    "model": "SEPARATE_STAGE_DENOMINATORS_NO_CROSS_STAGE_RATE_WITHOUT_COMPATIBLE_EVENT_SEMANTICS",
+    "discovery": {
+      "value": 5,
+      "unit": "source_units",
+      "semantics": "SOURCE_UNITS_NOT_APPLICATIONS"
+    },
+    "prioritization": {
+      "value": 2,
+      "unit": "vacancies"
+    },
+    "application": {
+      "value": 1,
+      "unit": "human_authorized_target_flow",
+      "semantics": "HUMAN_AUTHORIZED_TARGET_FLOW"
+    },
+    "outcome": {
+      "value": null,
+      "availability": "UNAVAILABLE"
+    }
+  },
+  "discovery": {
+    "source_units": 5,
+    "closed_not_actionable": 1,
+    "verified_primary_sources": 3,
+    "search_effectiveness_established": false,
+    "market_demand_established": false
+  },
+  "prioritization": {
+    "total": 2,
+    "P1": 0,
+    "P2": 1,
+    "HOLD": 1,
+    "OMIT": 0,
+    "PENDING": 0
+  },
+  "application": {
+    "target_vacancy_id": "VAC-09-004-001",
+    "target_denominator": 1,
+    "platform_active_candidacy_observed": 1,
+    "platform_status": "CANDIDATURA_ATIVA",
+    "matching_state": "CORRESPONDENCIA_DE_PERFIL",
+    "scope": "PLATFORM_LEVEL",
+    "vacancy_specific_receipt_observed": 0,
+    "vacancy_specific_receipt_captured": false,
+    "vacancy_specific_submission_confirmation_observed": false
+  },
+  "outcomes": {
+    "screening": "NOT_OBSERVED",
+    "interview": "NOT_OBSERVED",
+    "rejection": "NOT_OBSERVED",
+    "offer": "NOT_OBSERVED",
+    "screening_count_resolved": false,
+    "interview_count_resolved": false,
+    "rejection_count_resolved": false,
+    "offer_count_resolved": false,
+    "outcome_rate_calculation_authorized": false
+  },
+  "tool_reevaluation": {
+    "authenticated_search_tool_used": false,
+    "external_tool_adoption_performed": false,
+    "automated_application_performed": false,
+    "manual_application_flow_performed": true,
+    "official_employer_sources_used": true,
+    "tool_causal_effectiveness_established": false,
+    "tool_replacement_decision_authorized": false,
+    "tool_adoption_decision_authorized": false,
+    "recommendation": "RETAIN_CURRENT_CONSERVATIVE_WORKFLOW_AND_COLLECT_MORE_COMPATIBLE_OUTCOME_EVIDENCE",
+    "recommendation_scope": "PROVISIONAL_OPERATIONAL_NOT_CAUSAL"
+  },
+  "boundaries": {
+    "cross_stage_conversion_rate_authorized": false,
+    "causal_claims_authorized": false,
+    "sample_size_conclusion_authorized": false,
+    "market_demand_conclusion_authorized": false,
+    "raw_interview_pii_required": false,
+    "vacancy_specific_acceptance_claim_authorized": false
+  },
+  "source_evidence": [
+    "stage09-evidence/09-003/SEARCH_EXECUTION_EVIDENCE.json",
+    "stage09-evidence/09-006/VACANCY_PRIORITIZATION_DECISION.json",
+    "stage09-evidence/09-010/APPLICATION_STATUS.json"
+  ],
+  "report_markdown": "stage09-evidence/09-011/FUNNEL_TOOL_REEVALUATION_REPORT.md",
+  "human_review": {
+    "required": true,
+    "status": "APPROVED",
+    "approval_text": "APROVO FACTUAL + PRIVACIDADE + ANALITICA DO RELATORIO 09.011",
+    "approved_report_sha256": "551eba624a74bf7d6183852d4fd3e4457f9b9787649b70e8d7fd56b19d0d90d7"
+  }
+}

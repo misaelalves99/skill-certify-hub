@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "project": "skill-certify-hub",
+  "stage_id": "stage.skillcertify.09",
+  "task_id": "task.skillcertify.09.011",
+  "approval": {
+    "approval_text": "APROVO FACTUAL + PRIVACIDADE + ANALITICA DO RELATORIO 09.011",
+    "factual_review": "APPROVED",
+    "privacy_review": "APPROVED",
+    "analytical_review": "APPROVED",
+    "approved_report_sha256": "551eba624a74bf7d6183852d4fd3e4457f9b9787649b70e8d7fd56b19d0d90d7"
+  },
+  "qualifications": [
+    "Discovery, prioritization and application use different denominators and must not be represented as a classical statistical conversion funnel.",
+    "Screening, interview, rejection and offer remain NOT_OBSERVED rather than verified zero outcomes.",
+    "No compatible outcome denominator is available.",
+    "No vacancy-specific receipt or vacancy-specific submission confirmation for VAC-09-004-001 was observed.",
+    "No causal tool-effectiveness conclusion is authorized.",
+    "No market-demand conclusion is authorized.",
+    "No small-sample hiring-performance conclusion is authorized.",
+    "Raw interview content or unnecessary PII must not be copied into analytics evidence."
+  ],
+  "materialization": {
+    "report_materialization_authorized": true,
+    "external_action_authorized": false
+  }
+}

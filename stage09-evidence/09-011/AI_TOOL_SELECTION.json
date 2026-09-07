@@ -1,0 +1,58 @@
+{
+  "contract_version": "1.0.0",
+  "task": "task.skillcertify.09.011",
+  "environment": "AI DevFlow project workflow using ChatGPT Projects for contextual review of frozen Stage 09 evidence",
+  "constraints": [
+    "Task scope is analytics review, not application execution.",
+    "No external action is authorized by task.skillcertify.09.011.",
+    "Existing Stage 09 evidence and human-approved report boundaries must remain unchanged.",
+    "Different funnel stages use different denominators and must not be converted into a classical cross-stage rate.",
+    "Screening, interview, rejection and offer outcomes remain NOT_OBSERVED rather than verified zero.",
+    "No causal hiring-outcome claim may be derived from tool choice.",
+    "No raw interview content or unnecessary PII may be introduced.",
+    "Legacy recommendation is derived-hint-only and is not selection authority."
+  ],
+  "selected": {
+    "tool": "ChatGPT Projects",
+    "role": "Contextual review, evidence synthesis and continuity for task.skillcertify.09.011",
+    "fit": 94,
+    "fit_semantics": "Contextual execution suitability score from 0 to 100 for this task only; not a hiring, ATS, conversion or outcome probability."
+  },
+  "alternatives": [
+    {
+      "tool": "ChatGPT Work",
+      "role": "Longer multi-step execution and artifact-oriented workflow",
+      "fit": 78,
+      "disposition": "NOT_SELECTED",
+      "reason": "More execution-oriented capability than required for this bounded read-review-materialize task; no autonomous or external action is needed."
+    },
+    {
+      "tool": "Standalone ChatGPT chat outside Projects",
+      "role": "Ad hoc conversational review",
+      "fit": 62,
+      "disposition": "NOT_SELECTED",
+      "reason": "Can perform review but provides weaker continuity for this long-running project structure of chats, files, instructions and checkpoints."
+    }
+  ],
+  "selection_rationale": "ChatGPT Projects is selected independently of the legacy hint because the current task requires sustained contextual review across related chats, files, project instructions and frozen evidence. Official OpenAI documentation describes Projects as workspaces that keep related chats, files, instructions and context together and identifies them as suitable for repeated and evolving work. This selection concerns execution fit for task.skillcertify.09.011 only. It does not establish causal effectiveness for job-search, application, interview or hiring outcomes.",
+  "risks": [
+    "Long project context can still contain stale or superseded information unless checkpoint and hash gates are enforced.",
+    "A contextual fit score can be misread as an outcome score unless its semantics remain explicit.",
+    "Tool convenience can create overconfidence if frozen evidence boundaries are not revalidated.",
+    "Product capabilities can change over time, requiring periodic reevaluation."
+  ],
+  "human_controls": [
+    "Human approval remains authoritative for factual, privacy and analytical review.",
+    "Application submission remains human-controlled.",
+    "No external action is authorized by this selection.",
+    "No unsupported experience, advanced English, seniority or vacancy-specific receipt claim may be introduced.",
+    "Tool selection must not override frozen evidence, human approval or canonical task boundaries."
+  ],
+  "validated_at": "2026-09-07",
+  "review_due": "2026-10-07",
+  "official_sources": [
+    "OpenAI Help Center: Projects in ChatGPT, article 10169521, verified 2026-09-07",
+    "OpenAI Academy: Using projects in ChatGPT, published 2026-04-10, verified 2026-09-07"
+  ],
+  "curation_source": "Execution-time selection derived from the canonical ai-tool-selection contract, current task constraints, frozen Stage 09 evidence boundaries and current official OpenAI documentation."
+}
