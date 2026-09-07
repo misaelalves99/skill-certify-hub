@@ -1,0 +1,120 @@
+{
+  "baseline_id": "baseline.skillcertify.10.002.metrics.v1",
+  "stage_id": "stage.skillcertify.10",
+  "metric_definitions": [
+    {
+      "metric_id": "metric.skillcertify.discovery-source-units",
+      "definition_ref": "stage10-evidence/10-002/METRICS_DICTIONARY_REPORT.md#metric-discovery-source-units",
+      "source_refs": [
+        "stage09-evidence/09-011/FUNNEL_TOOL_REEVALUATION_REPORT.json",
+        "stage09-evidence/09-011/FUNNEL_TOOL_REEVALUATION_REPORT.md"
+      ],
+      "period_or_window": "Stage 09 discovery observation window within 2026-08-21T19:51:40-03:00 to 2026-09-07T14:48:11-03:00",
+      "denominator_ref": null,
+      "limitations": [
+        "Discovery units are source observations, not applications.",
+        "This metric must not be used as a denominator for a cross-stage conversion claim."
+      ],
+      "status": "measurable"
+    },
+    {
+      "metric_id": "metric.skillcertify.prioritized-vacancies",
+      "definition_ref": "stage10-evidence/10-002/METRICS_DICTIONARY_REPORT.md#metric-prioritized-vacancies",
+      "source_refs": [
+        "stage09-evidence/09-006/VACANCY_PRIORITIZATION_DECISION.json",
+        "stage09-evidence/09-011/FUNNEL_TOOL_REEVALUATION_REPORT.json"
+      ],
+      "period_or_window": "Stage 09 prioritization observation window within 2026-08-21T19:51:40-03:00 to 2026-09-07T14:48:11-03:00",
+      "denominator_ref": null,
+      "limitations": [
+        "Priority bands are contextual decisions, not universal employability or hiring-probability scores.",
+        "Do not divide this count by discovery source units to claim statistical conversion."
+      ],
+      "status": "measurable"
+    },
+    {
+      "metric_id": "metric.skillcertify.human-authorized-application-targets",
+      "definition_ref": "stage10-evidence/10-002/METRICS_DICTIONARY_REPORT.md#metric-human-authorized-application-targets",
+      "source_refs": [
+        "stage09-evidence/09-010/APPLICATION_STATUS.json",
+        "stage09-evidence/09-011/FUNNEL_TOOL_REEVALUATION_REPORT.json"
+      ],
+      "period_or_window": "Stage 09 application observation window within 2026-08-21T19:51:40-03:00 to 2026-09-07T14:48:11-03:00",
+      "denominator_ref": null,
+      "limitations": [
+        "Platform-level active candidacy does not establish vacancy-specific receipt.",
+        "This metric does not establish application success, interview selection, employment or hiring."
+      ],
+      "status": "measurable"
+    },
+    {
+      "metric_id": "metric.skillcertify.screening-rate",
+      "definition_ref": "stage10-evidence/10-002/METRICS_DICTIONARY_REPORT.md#metric-screening-rate",
+      "source_refs": [
+        "stage09-evidence/09-011/FUNNEL_TOOL_REEVALUATION_REPORT.json",
+        "stage09-evidence/09-011/HUMAN_REVIEW.json"
+      ],
+      "period_or_window": "Stage 09 outcome observation window within 2026-08-21T19:51:40-03:00 to 2026-09-07T14:48:11-03:00",
+      "denominator_ref": null,
+      "limitations": [
+        "Compatible outcome denominator is unavailable.",
+        "Screening is NOT_OBSERVED rather than verified zero.",
+        "The true screening count remains unresolved."
+      ],
+      "status": "insufficient_data"
+    },
+    {
+      "metric_id": "metric.skillcertify.interview-rate",
+      "definition_ref": "stage10-evidence/10-002/METRICS_DICTIONARY_REPORT.md#metric-interview-rate",
+      "source_refs": [
+        "stage09-evidence/09-011/FUNNEL_TOOL_REEVALUATION_REPORT.json",
+        "stage09-evidence/09-011/HUMAN_REVIEW.json"
+      ],
+      "period_or_window": "Stage 09 outcome observation window within 2026-08-21T19:51:40-03:00 to 2026-09-07T14:48:11-03:00",
+      "denominator_ref": null,
+      "limitations": [
+        "Compatible outcome denominator is unavailable.",
+        "Interview is NOT_OBSERVED rather than verified zero.",
+        "The true interview count remains unresolved."
+      ],
+      "status": "insufficient_data"
+    },
+    {
+      "metric_id": "metric.skillcertify.rejection-rate",
+      "definition_ref": "stage10-evidence/10-002/METRICS_DICTIONARY_REPORT.md#metric-rejection-rate",
+      "source_refs": [
+        "stage09-evidence/09-011/FUNNEL_TOOL_REEVALUATION_REPORT.json",
+        "stage09-evidence/09-011/HUMAN_REVIEW.json"
+      ],
+      "period_or_window": "Stage 09 outcome observation window within 2026-08-21T19:51:40-03:00 to 2026-09-07T14:48:11-03:00",
+      "denominator_ref": null,
+      "limitations": [
+        "Compatible outcome denominator is unavailable.",
+        "Rejection is NOT_OBSERVED rather than verified zero.",
+        "The true rejection count remains unresolved."
+      ],
+      "status": "insufficient_data"
+    },
+    {
+      "metric_id": "metric.skillcertify.offer-rate",
+      "definition_ref": "stage10-evidence/10-002/METRICS_DICTIONARY_REPORT.md#metric-offer-rate",
+      "source_refs": [
+        "stage09-evidence/09-011/FUNNEL_TOOL_REEVALUATION_REPORT.json",
+        "stage09-evidence/09-011/HUMAN_REVIEW.json"
+      ],
+      "period_or_window": "Stage 09 outcome observation window within 2026-08-21T19:51:40-03:00 to 2026-09-07T14:48:11-03:00",
+      "denominator_ref": null,
+      "limitations": [
+        "Compatible outcome denominator is unavailable.",
+        "Offer is NOT_OBSERVED rather than verified zero.",
+        "The true offer count remains unresolved."
+      ],
+      "status": "insufficient_data"
+    }
+  ],
+  "universal_targets_inferred": false,
+  "causal_claims_made": false,
+  "data_quality_status": "limited",
+  "human_reviewed": true,
+  "status": "ready"
+}
