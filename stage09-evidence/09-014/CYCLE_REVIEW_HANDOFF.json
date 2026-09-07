@@ -1,0 +1,20 @@
+{
+  "handoff_id": "handoff.skillcertify.09-to-10.v1",
+  "from_stage_id": "stage.skillcertify.09",
+  "from_task_id": "task.skillcertify.09.014",
+  "gate_id": "gate.skillcertify.09",
+  "gate_alias": "G-P9",
+  "gate_decision": "pass",
+  "human_decision": true,
+  "decision_ref": "stage09-evidence/09-014/G_P9_DECISION.json",
+  "package_ref": "package.skillcertify.g-p9.v1",
+  "package_version": "1.0.0",
+  "package_digest": "b83c8f40ae32357dab64d58a9d4ce3180c31e157c6255edd45cbbc765b2de8c3",
+  "unlocks_task_id": "task.skillcertify.10.001",
+  "next_stage_id": "stage.skillcertify.10",
+  "next_stage_role": "Cycle Review",
+  "auto_execute_next_stage": false,
+  "external_career_action_authorized": false,
+  "residual_risks_and_unknowns_preserved": true,
+  "handoff_status": "candidate_pending_human_review_and_commit"
+}
