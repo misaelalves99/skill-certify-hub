@@ -1,0 +1,48 @@
+{
+  "baseline_id": "baseline.skillcertify.10.001.v1",
+  "stage_id": "stage.skillcertify.10",
+  "fact_refs": [
+    "fact.10.004.001",
+    "fact.10.004.002",
+    "fact.10.004.003",
+    "fact.10.004.004"
+  ],
+  "inferences": [
+    {
+      "statement": "The available evidence is sufficient for a bounded retrospective of the verified window, but insufficient for a factual 90-day historical retrospective.",
+      "support_refs": [
+        "stage10-evidence/10-001/CYCLE_BASELINE_DRAFT.json",
+        "stage10-evidence/10-001/SOURCE_INDEX.json"
+      ],
+      "confidence": "high",
+      "limitations": [
+        "The inference is restricted to source availability and temporal authority.",
+        "It does not establish what occurred outside the verified window."
+      ]
+    },
+    {
+      "statement": "The evidence model favors explicit proof boundaries over treating repository declarations or file presence as proof of successful execution.",
+      "support_refs": [
+        "stage10-evidence/10-003/TECHNICAL_REPOSITORY_INVENTORY.json"
+      ],
+      "confidence": "high",
+      "limitations": [
+        "This describes the evidence policy and observed inventory classification.",
+        "It does not establish production readiness or universal execution success."
+      ]
+    }
+  ],
+  "unknowns": [
+    "stage01-specific repository evidence unavailable",
+    "CP01 operational checkpoints unavailable",
+    "project activity before repository root commit unknown",
+    "Verified project history covering the remainder of the nominal 90-day retrospective window is unavailable in the currently authorized evidence set."
+  ],
+  "learning_refs": [
+    "learning.10.004.001",
+    "learning.10.004.002"
+  ],
+  "causal_claims_without_evidence": false,
+  "human_reviewed": true,
+  "status": "ready"
+}
