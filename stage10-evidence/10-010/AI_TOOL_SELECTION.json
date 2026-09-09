@@ -1,0 +1,47 @@
+{
+  "contract_version": "1.0.0",
+  "task": "task.skillcertify.10.010",
+  "environment": "Local repository-native Stage 10 Cycle Review planning",
+  "constraints": [
+    "planning input only",
+    "external_action=false",
+    "human review required",
+    "no ClinicFlow execution",
+    "no new cycle",
+    "no Strategy mutation",
+    "no WIP mutation"
+  ],
+  "selected": {
+    "tool": "No external tool; repository-native Markdown issue planning",
+    "role": "Candidate outcome design and bounded issue materialization",
+    "fit": 100
+  },
+  "alternatives": [
+    {
+      "tool": "ChatGPT Projects",
+      "role": "planning",
+      "authority": "derived-hint-only",
+      "disposition": "not selected for this bounded materialization"
+    }
+  ],
+  "selection_rationale": "The authorized Task 10.010 scope requires source-bounded candidate outcome planning and local issue evidence materialization. The repository already contains the required frozen inputs. An external planning system adds no required evidence and is not necessary for this bounded draft.",
+  "risks": [
+    "The fit value is a contextual task-selection heuristic, not an empirical tool-performance score.",
+    "Candidate planning must not be mistaken for ClinicFlow or next-cycle execution authority.",
+    "The legacy ChatGPT Projects recommendation must not be promoted from derived hint to execution authority."
+  ],
+  "human_controls": [
+    "Human review is required before the Task 10.010 draft can be frozen.",
+    "Each outcome must retain owner, evidence and stop conditions.",
+    "ClinicFlow must not start automatically.",
+    "No new cycle may start automatically.",
+    "Strategy and WIP must remain unchanged.",
+    "Git and remote actions require separate explicit authorization."
+  ],
+  "validated_at": "2026-09-09",
+  "review_due": "2026-10-09",
+  "official_sources": [
+    "No external tool documentation required for the selected no-external-tool path."
+  ],
+  "curation_source": "task.skillcertify.10.010 registry contract and frozen Stage 10 repository evidence"
+}
