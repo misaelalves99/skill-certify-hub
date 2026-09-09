@@ -1,0 +1,53 @@
+{
+  "contract_version": "1.0.0",
+  "task": "task.skillcertify.10.012",
+  "environment": "Local repository-native Stage 10 Cycle Review assessment synthesis",
+  "constraints": [
+    "internal evidence only",
+    "external_action=false",
+    "human review required",
+    "can_pass_gate=false",
+    "no public-safe determination",
+    "no new publication",
+    "no ClinicFlow execution",
+    "no new cycle",
+    "no Strategy mutation",
+    "no WIP mutation",
+    "no Git or remote mutation without separate authorization"
+  ],
+  "selected": {
+    "tool": "No external tool; repository-native evidence synthesis",
+    "role": "Six-dimension Cycle Review assessment synthesis and schema-bound materialization",
+    "fit": 100
+  },
+  "alternatives": [
+    {
+      "tool": "External AI or analytics platform",
+      "role": "Supplementary synthesis",
+      "authority": "not required",
+      "disposition": "not selected"
+    }
+  ],
+  "selection_rationale": "Task 10.012 is a bounded synthesis of already frozen repository evidence under an explicit local JSON schema and strict human gate boundaries. No external system adds required evidence or authority. Repository-native synthesis minimizes disclosure and mutation surface while preserving direct evidence references.",
+  "risks": [
+    "The fit score is a contextual task-selection heuristic, not empirical tool-performance evidence.",
+    "Assessment readiness must not be interpreted as G-P10 pass.",
+    "Public repository accessibility must not be interpreted as public-safe classification.",
+    "Human review remains mandatory."
+  ],
+  "human_controls": [
+    "Human review is required before the Task 10.012 assessment can be frozen.",
+    "Task 10.012 must retain can_pass_gate=false.",
+    "A later explicit human decision owns G-P10.",
+    "ClinicFlow must not start automatically.",
+    "No new cycle may start automatically.",
+    "Strategy and WIP must remain unchanged.",
+    "Git and remote actions require separate explicit authorization."
+  ],
+  "validated_at": "2026-09-09",
+  "review_due": "2026-10-09",
+  "official_sources": [
+    "No external tool documentation required for the selected no-external-tool path."
+  ],
+  "curation_source": "task.skillcertify.10.012 canonical registry, cycle-review-assessment schema, frozen Stage 10 dependency evidence, and Task 10.012 publication-state reconciliation"
+}

@@ -1,0 +1,64 @@
+{
+  "assessment_id": "assessment.skillcertify.10.012.v1",
+  "stage_id": "stage.skillcertify.10",
+  "package_version": "1.0.0",
+  "dimensions": [
+    {
+      "dimension_id": "cycle.baseline-provenance-integrity",
+      "status": "ready",
+      "evidence_refs": [
+        "stage10-evidence/10-004/RETROSPECTIVE_90_DAY_REPORT.md"
+      ],
+      "hard_stop_open": false
+    },
+    {
+      "dimension_id": "cycle.metrics-data-quality-integrity",
+      "status": "ready",
+      "evidence_refs": [
+        "stage10-evidence/10-002/METRICS_DICTIONARY_REPORT.md"
+      ],
+      "hard_stop_open": false
+    },
+    {
+      "dimension_id": "cycle.retrospective-learning-integrity",
+      "status": "ready",
+      "evidence_refs": [
+        "stage10-evidence/10-004/RETROSPECTIVE_90_DAY_REPORT.md"
+      ],
+      "hard_stop_open": false
+    },
+    {
+      "dimension_id": "cycle.decision-next-cycle-integrity",
+      "status": "ready",
+      "evidence_refs": [
+        "stage10-evidence/10-008/SCOPE_DEBT_DECISION_ADR.md",
+        "stage10-evidence/10-009/HUMAN_PRODUCT_DIRECTION_DECISION.md",
+        "stage10-evidence/10-009/PRODUCT_DIRECTION_ADR.md",
+        "stage10-evidence/10-010/NEXT_CYCLE_OUTCOME_CANDIDATES.md"
+      ],
+      "hard_stop_open": false
+    },
+    {
+      "dimension_id": "cycle.feedback-publication-integrity",
+      "status": "ready",
+      "evidence_refs": [
+        "stage10-evidence/10-011/PUBLIC_CYCLE_REVIEW_SUMMARY.md",
+        "stage10-evidence/10-011/HUMAN_PRIVATE_READY_FREEZE_APPROVAL.md",
+        "stage10-evidence/10-012/PUBLICATION_STATE_RECONCILIATION.md"
+      ],
+      "hard_stop_open": false
+    },
+    {
+      "dimension_id": "cycle.gate-handoff-integrity",
+      "status": "ready",
+      "evidence_refs": [
+        "00-control/contracts/cycle-review-assessment.schema.json",
+        "stage10-evidence/10-012/PUBLICATION_STATE_RECONCILIATION.md"
+      ],
+      "hard_stop_open": false
+    }
+  ],
+  "overall_status": "ready_for_human_review",
+  "can_pass_gate": false,
+  "prepared_by_task_id": "task.skillcertify.10.012"
+}
