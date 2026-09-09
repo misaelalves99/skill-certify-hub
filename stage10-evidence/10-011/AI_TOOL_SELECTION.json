@@ -1,0 +1,70 @@
+{
+  "contract_version": "1.0.0",
+  "task_id": "task.skillcertify.10.011",
+  "environment": "Local repository-native Stage 10 Cycle Review publication-integrity preparation",
+  "constraints": [
+    "private_ready materialization only",
+    "no public-safe determination",
+    "no publication authorization",
+    "no external publication",
+    "no Gitleaks installation",
+    "no Gitleaks execution",
+    "no mutation of frozen source evidence",
+    "no Strategy or WIP mutation",
+    "no ClinicFlow or new-cycle execution"
+  ],
+  "selected": {
+    "tool": "manual evidence minimization + repository-native sanitized derivative",
+    "role": "Produce one minimal claim-bounded derivative without mutating frozen source evidence",
+    "fit": 100,
+    "fit_type": "contextual_heuristic_non_empirical"
+  },
+  "alternatives": [
+    {
+      "tool": "Gitleaks",
+      "role": "Complementary secret scan before a later publication gate",
+      "authority": "derived-hint-only",
+      "disposition": "not selected for current private_ready materialization",
+      "availability": "not installed locally at CP10-011-C"
+    }
+  ],
+  "rationale": [
+    "The task requires evidence minimization, claim integrity and human publication authority boundaries.",
+    "A single repository-native derivative reduces disclosure surface compared with publishing frozen source evidence wholesale.",
+    "The current authorized gate is private_ready materialization only.",
+    "A secret scanner can complement later publication review but cannot replace manual sensitivity, claim, metadata and authorization review."
+  ],
+  "risks": [
+    "A contextual fit score is heuristic and not empirical tool-performance evidence.",
+    "No scanner result exists for the current derivative.",
+    "private_ready does not imply public-safe.",
+    "Absence of obvious sensitive content does not establish absence of all disclosure risk."
+  ],
+  "human_controls": [
+    "human review required before public-safe classification",
+    "explicit human publication authorization required before any external publication",
+    "claims must remain bounded to frozen evidence",
+    "confidential career content must remain excluded",
+    "future product direction and ClinicFlow planning remain excluded",
+    "Strategy and WIP remain unchanged"
+  ],
+  "validated_at": "2026-09-09",
+  "review_due": "2026-10-09",
+  "official_sources": [
+    "No external tool documentation required for the selected repository-native manual minimization path."
+  ],
+  "curation_source": [
+    "stage10-evidence frozen source set",
+    "10-cycle-review/05-strategy-fb publication-integrity contract",
+    "CP10-011-C",
+    "CP10-011-D"
+  ],
+  "disposition": {
+    "materialization_status": "private_ready",
+    "public_safe_determined": false,
+    "publication_authorized": false,
+    "publication_performed": false,
+    "gitleaks_installed": false,
+    "gitleaks_executed": false
+  }
+}
