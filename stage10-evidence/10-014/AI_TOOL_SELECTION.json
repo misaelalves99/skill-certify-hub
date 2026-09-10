@@ -1,19 +1,15 @@
 {
   "contract_version": "1.0.0",
   "task": "task.skillcertify.10.014",
-  "environment": "Repository-native Stage 10 Cycle Review exact G-P10 review-package materialization",
+  "environment": "Repository-native Stage 10 G-P10 human-decision recording, exact-package verification, and feedback.strategy handoff evidence for task.skillcertify.10.014",
   "constraints": [
-    "Task scope is limited to local exact G-P10 review-package preparation.",
-    "The current assessment must remain ready_for_human_review with can_pass_gate=false.",
-    "G-P10 must remain pending after package preparation.",
-    "The review package must bind an exact version and SHA-256 digest.",
-    "The digest basis must exclude only the digest field.",
-    "The digest basis must be compact JSON encoded as exact UTF-8 without BOM bytes.",
-    "No human G-P10 decision may be recorded by task.skillcertify.10.013.",
-    "No Git staging, commit, push, pull request or merge is authorized.",
-    "No publication or public-safe classification is authorized.",
-    "No ClinicFlow POC or new cycle is authorized.",
-    "No Strategy or WIP mutation is authorized."
+    "Task scope is limited to recording the already-authorized human G-P10 decision and its feedback.strategy handoff evidence.",
+    "The G-P10 PASS decision derives solely from the explicit human decision source bound to package.skillcertify.g-p10.v1 and its exact approved digest.",
+    "G-P10 PASS unlocks feedback.strategy only; it does not itself modify Strategy or WIP.",
+    "No automatic next-cycle execution, ClinicFlow/POC startup, new-product startup, or other downstream execution is authorized.",
+    "No automatic publication or public-safe classification is authorized.",
+    "Git staging, commit, push, pull request, merge, and any further persistence require their own explicit authorization.",
+    "Canonical registries must not be mutated without a separately proven transition mechanism and explicit authorization."
   ],
   "selected": {
     "tool": "none",
@@ -33,14 +29,17 @@
     "The execution boundary prohibits automatic Strategy/WIP changes, automatic next-cycle execution, ClinicFlow/POC startup, new-product startup, automatic publication, or unapproved Git/external actions."
   ],
   "risks": [
-    "Incorrect property order or encoding could produce a digest inconsistent with the exact digest basis.",
-    "Including the digest field inside its own digest basis would create an invalid circular binding.",
-    "A package must not be interpreted as a G-P10 human decision."
+    "A recorded G-P10 PASS could be incorrectly interpreted as authority to mutate Strategy/WIP or start a subsequent cycle.",
+    "The feedback.strategy handoff could be incorrectly interpreted as an executed Strategy write rather than an advisory handoff.",
+    "This AI/tool-selection sidecar could be incorrectly treated as decision authority even though the human decision source is authoritative.",
+    "Canonical task or gate registries could be mutated by inference despite no proven transition mechanism authorizing such synchronization."
   ],
   "human_controls": [
-    "Explicit human authorization was required before creating stage10-evidence/10-013.",
-    "Human G-P10 decision remains reserved to task.skillcertify.10.014.",
-    "Any Git persistence or remote action requires separate explicit authorization."
+    "The human decision source is the sole authority for the G-P10 PASS decision.",
+    "The exact package reference and digest must remain bound to the human decision record.",
+    "feedback.strategy is unlocked only as an advisory handoff; Strategy/WIP changes require separate authorization.",
+    "Next-cycle execution, ClinicFlow/POC, publication, registries, and other downstream mutations require separate explicit authorization.",
+    "Every Git staging, commit, push, pull request, or merge action requires its own bounded authorization."
   ],
   "validated_at": "2026-09-09T22:49:45.8273015-03:00",
   "review_due": "on material environment/tool change or before future reuse",
@@ -49,5 +48,5 @@
     "00-control/execution/registries/task-registry.json",
     "00-control/execution/registries/gate-registry.json"
   ],
-  "curation_source": "CP10-013-A through CP10-013-F canonical read-only harvest"
+  "curation_source": "CP10-014-C through CP10-014-Q canonical contract harvest, human-decision materialization, exact-byte publication verification, and post-push closure reconciliation"
 }
