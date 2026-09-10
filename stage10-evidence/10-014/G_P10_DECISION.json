@@ -1,0 +1,18 @@
+{
+  "decision_id": "decision.skillcertify.g-p10.v1",
+  "gate_id": "gate.skillcertify.10",
+  "decided_by_task_id": "task.skillcertify.10.014",
+  "package_ref": "package.skillcertify.g-p10.v1",
+  "package_digest": "261d63502a79b9b18e1f2b4a628c36cc6d41799bf8600cd2e2273efc312f5864",
+  "decision": "pass",
+  "human_decision": true,
+  "decision_source_ref": "stage10-evidence/10-014/HUMAN_G_P10_DECISION_SOURCE.md",
+  "decided_at": "2026-09-09T22:03:20.4727709-03:00",
+  "unlocks": "feedback.strategy",
+  "strategy_feedback_handoff_ref": "stage10-evidence/10-014/FEEDBACK_STRATEGY_HANDOFF.json",
+  "auto_execute_next_cycle": false,
+  "auto_change_strategy": false,
+  "auto_change_wip": false,
+  "auto_start_new_product": false,
+  "auto_publish_evidence": false
+}

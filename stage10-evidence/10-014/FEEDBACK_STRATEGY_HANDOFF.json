@@ -1,0 +1,17 @@
+{
+  "baseline_id": "handoff.skillcertify.g-p10-to-feedback.strategy.v1",
+  "stage_id": "stage.skillcertify.10",
+  "strategy_feedback_refs": [
+    "stage10-evidence/10-011/PUBLIC_CYCLE_REVIEW_SUMMARY.md"
+  ],
+  "feedback_is_advisory_only": true,
+  "strategy_write_performed": false,
+  "publication_disposition": "private_ready",
+  "sanitization_ref": null,
+  "public_artifact_refs": [],
+  "publication_authorized_by_human": false,
+  "publication_authority_ref": null,
+  "contains_secret_or_pii": false,
+  "human_reviewed": true,
+  "status": "ready"
+}
