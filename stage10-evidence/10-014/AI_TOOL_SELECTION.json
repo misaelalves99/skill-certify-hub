@@ -1,0 +1,53 @@
+{
+  "contract_version": "1.0.0",
+  "task": "task.skillcertify.10.014",
+  "environment": "Repository-native Stage 10 Cycle Review exact G-P10 review-package materialization",
+  "constraints": [
+    "Task scope is limited to local exact G-P10 review-package preparation.",
+    "The current assessment must remain ready_for_human_review with can_pass_gate=false.",
+    "G-P10 must remain pending after package preparation.",
+    "The review package must bind an exact version and SHA-256 digest.",
+    "The digest basis must exclude only the digest field.",
+    "The digest basis must be compact JSON encoded as exact UTF-8 without BOM bytes.",
+    "No human G-P10 decision may be recorded by task.skillcertify.10.013.",
+    "No Git staging, commit, push, pull request or merge is authorized.",
+    "No publication or public-safe classification is authorized.",
+    "No ClinicFlow POC or new cycle is authorized.",
+    "No Strategy or WIP mutation is authorized."
+  ],
+  "selected": {
+    "tool": "none",
+    "role": "deterministic repository-native materialization",
+    "external_execution": false
+  },
+  "alternatives": [
+    {
+      "tool": "external AI/tooling",
+      "disposition": "not selected",
+      "rationale": "No external tool is required to serialize deterministic JSON, calculate SHA-256, verify local evidence refs, or enforce the explicit governance boundary."
+    }
+  ],
+  "selection_rationale": [
+    "Task 10.014 is a bounded decision-recording and feedback.strategy handoff task; AI/tool use is limited to evidence preparation, factual consistency checks, contract interpretation, and deterministic documentation support.",
+    "The human decision source is the sole authority for the G-P10 PASS decision; the selected AI/tool has no gate-decision authority.",
+    "The execution boundary prohibits automatic Strategy/WIP changes, automatic next-cycle execution, ClinicFlow/POC startup, new-product startup, automatic publication, or unapproved Git/external actions."
+  ],
+  "risks": [
+    "Incorrect property order or encoding could produce a digest inconsistent with the exact digest basis.",
+    "Including the digest field inside its own digest basis would create an invalid circular binding.",
+    "A package must not be interpreted as a G-P10 human decision."
+  ],
+  "human_controls": [
+    "Explicit human authorization was required before creating stage10-evidence/10-013.",
+    "Human G-P10 decision remains reserved to task.skillcertify.10.014.",
+    "Any Git persistence or remote action requires separate explicit authorization."
+  ],
+  "validated_at": "2026-09-09T22:49:45.8273015-03:00",
+  "review_due": "on material environment/tool change or before future reuse",
+  "official_sources": [
+    "00-control/contracts/cycle-review-gate-package.schema.json",
+    "00-control/execution/registries/task-registry.json",
+    "00-control/execution/registries/gate-registry.json"
+  ],
+  "curation_source": "CP10-013-A through CP10-013-F canonical read-only harvest"
+}
